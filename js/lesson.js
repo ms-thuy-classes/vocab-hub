@@ -911,9 +911,11 @@ function renderMatching(container) {
     const totalPairs = pageVocab.length;
 
     let html = `
-      <div class="mb-4 text-center">
-        <span class="text-sm font-semibold">Trang ${page + 1}/${totalPages} - Ghép từ với nghĩa</span>
-      </div>
+    <div style="width:100%; text-align:center; margin-bottom:20px;">
+  <span class="text-sm font-semibold">
+    Trang ${page + 1}/${totalPages} - Ghép từ với nghĩa
+  </span>
+</div>
       <div class="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
         <div id="word-column" class="space-y-2"></div>
         <div id="meaning-column" class="space-y-2"></div>
