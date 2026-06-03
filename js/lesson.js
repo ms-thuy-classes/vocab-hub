@@ -1437,6 +1437,7 @@ function renderTest(container) {
 
 // ---------- Results & Certificate Modals ----------
 function showResultsModal() {
+   console.log('User trong modal:', Storage.getUser());
   const name = Storage.getUser()?.name || 'Ẩn danh';
   const date = new Date().toLocaleDateString('vi-VN');
   const exercises = [
