@@ -1017,79 +1017,61 @@
   margin: 0 auto;
 }
 
-/* Căn giữa và tăng kích thước cho matching */
-.matching-word, .matching-meaning {
-  font-size: 1.2rem;
-  padding: 18px 24px;
-}
 /* ========== CẢI THIỆN MATCHING ========== */
-/* Không xuống dòng, chữ to, cân đối */
-.matching-word,
-.matching-meaning {
-  font-size: 1.2rem !important;
-  padding: 14px 20px !important;
-  white-space: nowrap;           /* giữ trên một dòng (máy tính) */
-  display: inline-block;
-  width: auto !important;
-  min-width: 140px;
-  text-align: center;
-}
 
-/* Dàn đều hai cột */
-#word-column, #meaning-column {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* Đảm bảo lưới 2 căng đều */
-.grid-cols-2 {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 24px !important;
-  align-items: start;
-  justify-items: center;
-}
-
-/* Trang hiện tại (trang 1/...) nằm giữa, nền nhẹ */
+/* Căn giữa tiêu đề phân trang */
 #matching .mb-4.text-center {
-  text-align: center;
-  font-size: 1rem;
-  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#matching .mb-4.text-center span {
   background: #f3e8ff;
-  display: inline-block;
   padding: 6px 20px;
   border-radius: 40px;
-  margin: 0 auto 20px;
-  width: fit-content;
-}
-
-/* Khoảng cách giữa các tab bài tập – gần hơn để dễ nhấn */
-.exercise-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;                    /* thay vì margin-right */
-  margin-bottom: 20px;
-}
-.tab-btn {
-  margin-right: 0 !important;
-  padding: 8px 18px;
+  font-weight: 600;
+  display: inline-block;
   font-size: 0.9rem;
 }
 
-/* Nội dung bài tập cách tab một khoảng vừa phải */
-.tab-content {
-  padding-top: 10px;
+/* Hai cột cân đối, ô kéo dài theo chiều ngang */
+#matching .grid-cols-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 20px !important;
+  justify-items: stretch;
+  align-items: start;
 }
 
-/* Màn hình lớn: chữ matching to hơn */
+/* Ô từ và nghĩa: không xuống dòng, nội dung dài có thể cuộn nhẹ */
+.matching-word, .matching-meaning {
+  white-space: nowrap !important;
+  overflow-x: auto !important;
+  text-overflow: ellipsis;
+  display: block;
+  width: auto;
+  min-width: 140px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.1rem;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Khi hover, vẫn giữ nguyên dòng */
+.matching-word:hover, .matching-meaning:hover {
+  transform: translateY(-2px);
+}
+
+/* Đảm bảo trên màn hình lớn chữ to hơn một chút */
 @media (min-width: 1024px) {
-  .matching-word,
-  .matching-meaning {
-    font-size: 1.4rem !important;
-    padding: 18px 28px !important;
+  .matching-word, .matching-meaning {
+    font-size: 1.3rem;
+    padding: 16px 24px;
   }
 }
+
 /* Giảm khoảng cách giữa tab và nội dung bài tập */
 .exercise-tabs {
   margin-bottom: 12px !important;  /* thay vì mb-6 (24px) */
