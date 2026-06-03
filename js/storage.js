@@ -12,11 +12,9 @@ const Storage = {
     if (!data) return null;
     try { return JSON.parse(data); } catch (e) { return null; }
   },
-
   saveUser(user) {
     localStorage.setItem(STORAGE_KEYS.USER, JSON.stringify(user));
   },
-
   createUser(name) {
     const user = {
       name: name.trim(),
@@ -28,7 +26,6 @@ const Storage = {
     this.saveUser(user);
     return user;
   },
-
   addXP(amount) {
     const user = this.getUser();
     if (!user) return null;
@@ -38,21 +35,17 @@ const Storage = {
     this.saveUser(user);
     return user;
   },
-
   calculateLevel(xp) {
     let level = Math.floor((Math.sqrt(1 + 8 * xp / 100) - 1) / 2) + 1;
     return Math.min(Math.max(level, 1), 50);
   },
-
   xpForNextLevel(level) {
     return Math.floor(100 * level * (level + 1) / 2);
   },
-
   xpForCurrentLevel(level) {
     if (level <= 1) return 0;
     return Math.floor(100 * (level - 1) * level / 2);
   },
-
   getLevelTitle(level) {
     if (level < 5) return '🌱 Beginner';
     if (level < 10) return '📗 Elementary';
@@ -65,17 +58,14 @@ const Storage = {
     if (level < 45) return '👑 Master';
     return '🏆 Legend';
   },
-
   getProgress() {
     const data = localStorage.getItem(STORAGE_KEYS.PROGRESS);
     if (!data) return {};
     try { return JSON.parse(data); } catch (e) { return {}; }
   },
-
   saveProgress(progress) {
     localStorage.setItem(STORAGE_KEYS.PROGRESS, JSON.stringify(progress));
   },
-
   updateLessonProgress(lessonId, data) {
     const progress = this.getProgress();
     if (!progress[lessonId]) {
@@ -91,19 +81,16 @@ const Storage = {
     this.saveProgress(progress);
     return progress[lessonId];
   },
-
   getLessonProgress(lessonId) {
     const progress = this.getProgress();
     return progress[lessonId] || null;
   },
-
   getCompletedCount() {
     const progress = this.getProgress();
     return Object.values(progress).filter(p =>
       p.completedExercises && p.completedExercises.length >= 8
     ).length;
   },
-
   getRecentLessons(limit = 3) {
     const progress = this.getProgress();
     return Object.entries(progress)
@@ -111,17 +98,14 @@ const Storage = {
       .sort((a, b) => b.lastAccess - a.lastAccess)
       .slice(0, limit);
   },
-
   getFavorites() {
     const data = localStorage.getItem(STORAGE_KEYS.FAVORITES);
     if (!data) return [];
     try { return JSON.parse(data); } catch (e) { return []; }
   },
-
   saveFavorites(favorites) {
     localStorage.setItem(STORAGE_KEYS.FAVORITES, JSON.stringify(favorites));
   },
-
   toggleFavorite(lessonId) {
     const favorites = this.getFavorites();
     const idx = favorites.indexOf(lessonId);
@@ -130,43 +114,35 @@ const Storage = {
     this.saveFavorites(favorites);
     return favorites;
   },
-
   isFavorite(lessonId) {
     return this.getFavorites().includes(lessonId);
   },
-
   getScores() {
     const data = localStorage.getItem(STORAGE_KEYS.SCORES);
     if (!data) return {};
     try { return JSON.parse(data); } catch (e) { return {}; }
   },
-
   saveScore(lessonId, exerciseKey, scoreData) {
     const scores = this.getScores();
     if (!scores[lessonId]) scores[lessonId] = {};
     scores[lessonId][exerciseKey] = scoreData;
     localStorage.setItem(STORAGE_KEYS.SCORES, JSON.stringify(scores));
   },
-
   getLessonScores(lessonId) {
     const scores = this.getScores();
     return scores[lessonId] || {};
   },
-
   getTheme() {
     return localStorage.getItem(STORAGE_KEYS.THEME) || 'light';
   },
-
   setTheme(theme) {
     localStorage.setItem(STORAGE_KEYS.THEME, theme);
   },
-
   getAchievements() {
     const user = this.getUser();
     if (!user) return [];
     return user.achievements || [];
   },
-
   unlockAchievement(achievementId) {
     const user = this.getUser();
     if (!user) return false;
@@ -176,7 +152,6 @@ const Storage = {
     this.saveUser(user);
     return true;
   },
-
   hasAchievement(achievementId) {
     return this.getAchievements().includes(achievementId);
   }
@@ -196,15 +171,12 @@ const ACHIEVEMENTS = [
 function checkAchievements() {
   const user = Storage.getUser();
   if (!user) return [];
-
   const progress = Storage.getProgress();
   let totalMastered = 0, completedLessons = 0;
-
   Object.values(progress).forEach(p => {
     if (p.masteredCards) totalMastered += p.masteredCards.length;
     if (p.completedExercises && p.completedExercises.length >= 8) completedLessons++;
   });
-
   const stats = {
     totalMastered,
     completedLessons,
@@ -212,7 +184,6 @@ function checkAchievements() {
     toeicCompleted: 0,
     level: user.level || 1
   };
-
   const newlyUnlocked = [];
   ACHIEVEMENTS.forEach(ach => {
     if (!Storage.hasAchievement(ach.id) && ach.condition(stats)) {
@@ -220,6 +191,5 @@ function checkAchievements() {
       newlyUnlocked.push(ach);
     }
   });
-
   return newlyUnlocked;
 }
