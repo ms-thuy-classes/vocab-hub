@@ -1082,3 +1082,26 @@
   margin-top: 0;
   padding-top: 8px;
 }
+/* ========== MATCHING RESPONSIVE ========== */
+@media (max-width: 768px) {
+  /* Chuyển hai cột thành một cột dọc trên điện thoại */
+  #matching .grid-cols-2 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  /* Ô từ và nghĩa chiếm full chiều rộng, chữ tự động xuống dòng */
+  .matching-word, .matching-meaning {
+    white-space: normal !important;      /* cho phép xuống dòng */
+    word-break: break-word;
+    font-size: 1rem !important;
+    padding: 12px 16px !important;
+    text-align: center;
+  }
+  
+  /* Tiêu đề trang (1/2) vẫn giữa nhưng nhỏ hơn */
+  #matching .mb-4.text-center span {
+    font-size: 0.8rem;
+    padding: 4px 14px;
+  }
+}
