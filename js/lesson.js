@@ -911,17 +911,21 @@ function renderMatching(container) {
     const totalPairs = pageVocab.length;
 
     let html = `
-    <div class="text-center mb-6">
-    <span class="text-lg font-bold">
-        Trang ${page + 1}/${totalPages} - Ghép từ với nghĩa
-    </span>
+<div class="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
+
+  <div class="col-span-2 text-center mb-6">
+      <span class="text-lg font-bold bg-purple-100 px-5 py-2 rounded-full">
+          Trang ${page + 1}/${totalPages} - Ghép từ với nghĩa
+      </span>
+  </div>
+
+  <div id="word-column" class="space-y-2"></div>
+  <div id="meaning-column" class="space-y-2"></div>
+
 </div>
-      <div class="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
-        <div id="word-column" class="space-y-2"></div>
-        <div id="meaning-column" class="space-y-2"></div>
-      </div>
-      <div id="feedback-matching" class="text-center mt-4 text-lg font-bold"></div>
-    `;
+
+<div id="feedback-matching" class="text-center mt-4 text-lg font-bold"></div>
+`;
     container.innerHTML = html;
     const wordCol = document.getElementById('word-column');
     const meaningCol = document.getElementById('meaning-column');
