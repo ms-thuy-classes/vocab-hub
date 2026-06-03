@@ -248,6 +248,48 @@ function showNameModal() {
   if (btn) btn.onclick = save;
   if (input) input.onkeypress = (e) => { if (e.key === 'Enter') save(); };
 }
+// Mở modal để đổi tên (tái sử dụng modal có sẵn)
+function openEditNameModal() {
+  const modal = document.getElementById('nameModal');
+  if (!modal) return;
+  const input = document.getElementById('studentNameInput');
+  const currentUser = Storage.getUser();
+  if (currentUser) input.value = currentUser.name;
+  modal.classList.remove('hidden');
+  input.focus();
+
+  // Ghi đè sự kiện save để cập nhật thay vì tạo mới
+  const saveBtn = document.getElementById('saveNameBtn');
+  const originalSave = saveBtn.onclick;
+  saveBtn.onclick = () => {
+    const newName = input.value.trim();
+    if (!newName) return;
+    const user = Storage.getUser();
+    if (user) {
+      user.name = newName;
+      Storage.saveUser(user);
+    } else {
+      Storage.createUser(newName);
+    }
+    modal.classList.add('hidden');
+    showToast(`👋 Chào ${newName}!`, 'success');
+    renderXPBar(); // cập nhật lại thanh XP
+    // Nếu đang ở trang bài học, bạn có thể reload lại tên trong modal kết quả
+    if (window.location.pathname.includes('lesson.html')) {
+      // sẽ cập nhật khi mở modal results/certificate
+    }
+  };
+
+  // Khôi phục lại sự kiện cũ sau khi đóng modal (tuỳ chọn)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      saveBtn.onclick = originalSave;
+    }
+  }, { once: true });
+}
+
+// Bắt sự kiện nút đổi tên
+document.getElementById('editNameBtn')?.addEventListener('click', openEditNameModal);
 
 function initTheme() {
   const theme = Storage.getTheme();
