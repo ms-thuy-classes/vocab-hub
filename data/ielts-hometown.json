@@ -1,0 +1,199 @@
+{
+  "id": "ielts-hometown",
+  "title": "IELTS Hometown",
+  "description": "Từ vựng IELTS chủ đề Quê hương - Dùng cho Speaking Part 1 & 2",
+  "icon": "🏡",
+  "thumbnail": "hometown.jpg",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "hometown",
+      "wordForm": "noun",
+      "ipa": "/ˈhoʊm.taʊn/",
+      "vietnamese_meaning": "quê hương, thị trấn quê",
+      "example_sentence": "I was born and raised in a small coastal hometown.",
+      "example_translation": "Tôi sinh ra và lớn lên ở một thị trấn quê ven biển nhỏ.",
+      "collocations": ["native hometown", "hometown hero"]
+    },
+    {
+      "id": 2,
+      "word": "bustling",
+      "wordForm": "adjective",
+      "ipa": "/ˈbʌs.lɪŋ/",
+      "vietnamese_meaning": "nhộn nhịp, sôi động",
+      "example_sentence": "My hometown is a bustling city with many shops and restaurants.",
+      "example_translation": "Quê tôi là một thành phố nhộn nhịp với nhiều cửa hàng và nhà hàng.",
+      "collocations": ["bustling city", "bustling market"]
+    },
+    {
+      "id": 3,
+      "word": "peaceful",
+      "wordForm": "adjective",
+      "ipa": "/ˈpiːs.fəl/",
+      "vietnamese_meaning": "yên bình, thanh bình",
+      "example_sentence": "I live in a peaceful village surrounded by rice fields.",
+      "example_translation": "Tôi sống ở một ngôi làng yên bình được bao quanh bởi những cánh đồng lúa.",
+      "collocations": ["peaceful place", "peaceful life"]
+    },
+    {
+      "id": 4,
+      "word": "scenic",
+      "wordForm": "adjective",
+      "ipa": "/ˈsiː.nɪk/",
+      "vietnamese_meaning": "cảnh đẹp, nên thơ",
+      "example_sentence": "The scenic countryside attracts many tourists every year.",
+      "example_translation": "Vùng nông thôn cảnh đẹp thu hút nhiều khách du lịch mỗi năm.",
+      "collocations": ["scenic view", "scenic route"]
+    },
+    {
+      "id": 5,
+      "word": "industrial",
+      "wordForm": "adjective",
+      "ipa": "/ɪnˈdʌs.tri.əl/",
+      "vietnamese_meaning": "thuộc về công nghiệp",
+      "example_sentence": "My hometown is an industrial city with many factories.",
+      "example_translation": "Quê tôi là một thành phố công nghiệp với nhiều nhà máy.",
+      "collocations": ["industrial zone", "industrial area"]
+    },
+    {
+      "id": 6,
+      "word": "cosmopolitan",
+      "wordForm": "adjective",
+      "ipa": "/ˌkɒz.məˈpɒl.ɪ.tən/",
+      "vietnamese_meaning": "mang tính quốc tế, đa văn hóa",
+      "example_sentence": "Ho Chi Minh City is a cosmopolitan metropolis with people from all over the world.",
+      "example_translation": "Thành phố Hồ Chí Minh là một đô thị đa văn hóa với người dân từ khắp nơi trên thế giới.",
+      "collocations": ["cosmopolitan city", "cosmopolitan society"]
+    },
+    {
+      "id": 7,
+      "word": "amenity",
+      "wordForm": "noun",
+      "ipa": "/əˈmiː.nə.ti/",
+      "vietnamese_meaning": "tiện ích, tiện nghi",
+      "example_sentence": "My neighborhood has all the modern amenities like shopping malls and parks.",
+      "example_translation": "Khu phố của tôi có đầy đủ các tiện nghi hiện đại như trung tâm mua sắm và công viên.",
+      "collocations": ["local amenities", "public amenities"]
+    },
+    {
+      "id": 8,
+      "word": "infrastructure",
+      "wordForm": "noun",
+      "ipa": "/ˈɪn.frəˌstrʌk.tʃər/",
+      "vietnamese_meaning": "cơ sở hạ tầng",
+      "example_sentence": "The government is investing in improving the infrastructure of rural areas.",
+      "example_translation": "Chính phủ đang đầu tư cải thiện cơ sở hạ tầng của các vùng nông thôn.",
+      "collocations": ["modern infrastructure", "develop infrastructure"]
+    },
+    {
+      "id": 9,
+      "word": "landmark",
+      "wordForm": "noun",
+      "ipa": "/ˈlænd.mɑːrk/",
+      "vietnamese_meaning": "địa danh, điểm mốc",
+      "example_sentence": "The cathedral is the most famous landmark in my hometown.",
+      "example_translation": "Nhà thờ là địa danh nổi tiếng nhất ở quê tôi.",
+      "collocations": ["famous landmark", "historic landmark"]
+    },
+    {
+      "id": 10,
+      "word": "hospitality",
+      "wordForm": "noun",
+      "ipa": "/ˌhɒs.pɪˈtæl.ə.ti/",
+      "vietnamese_meaning": "lòng hiếu khách",
+      "example_sentence": "Vietnamese people are known for their warm hospitality.",
+      "example_translation": "Người Việt Nam nổi tiếng với lòng hiếu khách nồng nhiệt.",
+      "collocations": ["warm hospitality", "traditional hospitality"]
+    },
+    {
+      "id": 11,
+      "word": "diverse",
+      "wordForm": "adjective",
+      "ipa": "/daɪˈvɜːrs/",
+      "vietnamese_meaning": "đa dạng",
+      "example_sentence": "My hometown has a diverse range of cultures and cuisines.",
+      "example_translation": "Quê tôi có nhiều nền văn hóa và ẩm thực đa dạng.",
+      "collocations": ["diverse culture", "diverse community"]
+    },
+    {
+      "id": 12,
+      "word": "vibrant",
+      "wordForm": "adjective",
+      "ipa": "/ˈvaɪ.brənt/",
+      "vietnamese_meaning": "sôi nổi, đầy sức sống",
+      "example_sentence": "The vibrant nightlife of my city attracts many young people.",
+      "example_translation": "Cuộc sống về đêm sôi nổi của thành phố tôi thu hút nhiều người trẻ.",
+      "collocations": ["vibrant city", "vibrant community"]
+    },
+    {
+      "id": 13,
+      "word": "congested",
+      "wordForm": "adjective",
+      "ipa": "/kənˈdʒes.tɪd/",
+      "vietnamese_meaning": "tắc nghẽn, đông đúc",
+      "example_sentence": "Traffic in my hometown is often congested during rush hour.",
+      "example_translation": "Giao thông ở quê tôi thường xuyên tắc nghẽn vào giờ cao điểm.",
+      "collocations": ["congested traffic", "congested area"]
+    },
+    {
+      "id": 14,
+      "word": "picturesque",
+      "wordForm": "adjective",
+      "ipa": "/ˌpɪk.tʃəˈresk/",
+      "vietnamese_meaning": "đẹp như tranh vẽ",
+      "example_sentence": "We visited a picturesque village nestled in the mountains.",
+      "example_translation": "Chúng tôi đã đến thăm một ngôi làng đẹp như tranh nằm giữa núi.",
+      "collocations": ["picturesque village", "picturesque scene"]
+    },
+    {
+      "id": 15,
+      "word": "metropolis",
+      "wordForm": "noun",
+      "ipa": "/məˈtrɒp.ə.lɪs/",
+      "vietnamese_meaning": "đô thị lớn, siêu thành phố",
+      "example_sentence": "Hanoi is a bustling metropolis with millions of inhabitants.",
+      "example_translation": "Hà Nội là một đô thị lớn nhộn nhịp với hàng triệu cư dân.",
+      "collocations": ["bustling metropolis", "modern metropolis"]
+    },
+    {
+      "id": 16,
+      "word": "outskirts",
+      "wordForm": "noun",
+      "ipa": "/ˈaʊt.skɜːrts/",
+      "vietnamese_meaning": "vùng ngoại ô",
+      "example_sentence": "I live on the outskirts of the city where it is quieter.",
+      "example_translation": "Tôi sống ở vùng ngoại ô thành phố, nơi yên tĩnh hơn.",
+      "collocations": ["on the outskirts", "northern outskirts"]
+    },
+    {
+      "id": 17,
+      "word": "residential",
+      "wordForm": "adjective",
+      "ipa": "/ˌrez.ɪˈden.ʃəl/",
+      "vietnamese_meaning": "thuộc khu dân cư",
+      "example_sentence": "My house is in a quiet residential area far from the city center.",
+      "example_translation": "Nhà tôi ở một khu dân cư yên tĩnh xa trung tâm thành phố.",
+      "collocations": ["residential area", "residential district"]
+    },
+    {
+      "id": 18,
+      "word": "heritage",
+      "wordForm": "noun",
+      "ipa": "/ˈher.ɪ.tɪdʒ/",
+      "vietnamese_meaning": "di sản",
+      "example_sentence": "My hometown is famous for its rich cultural heritage.",
+      "example_translation": "Quê tôi nổi tiếng với di sản văn hóa phong phú.",
+      "collocations": ["cultural heritage", "world heritage"]
+    },
+    {
+      "id": 19,
+      "word": "multi-cultural",
+      "wordForm": "adjective",
+      "ipa": "/ˌmʌl.tiˈkʌl.tʃər.əl/",
+      "vietnamese_meaning": "đa văn hóa",
+      "example_sentence": "London is a multi-cultural city where people from many backgrounds live together.",
+      "example_translation": "London là một thành phố đa văn hóa nơi người dân từ nhiều nền tảng sống cùng nhau.",
+      "collocations": ["multi-cultural society", "multi-cultural community"]
+    }
+  ]
+}
