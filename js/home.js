@@ -1,29 +1,57 @@
 /* ========================================
-   HOME.JS - Logic trang chủ
-   Load articles, render cards, stats, XP
+   HOME.JS - Logic trang chủ (ĐÃ SỬA LỖI)
    ======================================== */
 
-// ---------- Global State ----------
 let allArticles = [];
 let currentFilter = 'all';
 let currentSort = 'default';
 let currentQuery = '';
 
-// ---------- Init ----------
+// ========== DEBUG: Kiểm tra đường dẫn ==========
+function debugPaths() {
+  console.log('🔍 DEBUG INFO:');
+  console.log('  - Current URL:', window.location.href);
+  console.log('  - Origin:', window.location.origin);
+  console.log('  - Base path:', window.location.pathname);
+  console.log('  - Fetch URL sẽ dùng:', new URL('data/articles.json', window.location.href).href);
+}
+
+// ========== INIT ==========
 document.addEventListener('DOMContentLoaded', async () => {
+  debugPaths();
+
   // Kiểm tra user
   const user = Storage.getUser();
   if (!user) {
     showNameModal();
   } else {
-    document.getElementById('nameModal').classList.add('hidden');
+    const nameModal = document.getElementById('nameModal');
+    if (nameModal) nameModal.classList.add('hidden');
   }
 
   // Theme
   initTheme();
 
-  // Load articles
-  await loadArticles();
+  // Load articles - QUAN TRỌNG: await và try/catch
+  const loaded = await loadArticles();
+  if (!loaded) {
+    console.error('❌ Không thể load articles.json!');
+    document.getElementById('lessonsGrid').innerHTML = `
+      <div class="empty-state" style="grid-column: 1/-1;">
+        <div class="empty-icon">⚠️</div>
+        <h3>Không tải được danh sách bài học</h3>
+        <p>Vui lòng kiểm tra:</p>
+        <ul style="text-align:left;display:inline-block;margin-top:1rem;">
+          <li>File <code>data/articles.json</code> có tồn tại không?</li>
+          <li>Tên file có đúng chữ thường không?</li>
+          <li>Mở Console (F12) → Tab Network để xem lỗi</li>
+        </ul>
+      </div>
+    `;
+    return;
+  }
+
+  console.log(`✅ Đã load ${allArticles.length} bài học`);
 
   // Render UI
   renderStats();
@@ -35,22 +63,25 @@ document.addEventListener('DOMContentLoaded', async () => {
   // Init search & filters
   Search.init('searchInput', (query) => {
     currentQuery = query;
+    console.log('🔎 Search:', query);
     renderLessons();
   });
 
   Filters.init('filterChips', (filter, sort) => {
     currentFilter = filter;
     currentSort = sort;
+    console.log('🏷️ Filter:', filter);
     renderLessons();
   });
 
   Filters.initSort('sortSelect', (filter, sort) => {
     currentFilter = filter;
     currentSort = sort;
+    console.log('📊 Sort:', sort);
     renderLessons();
   });
 
-  // Kiểm tra achievements
+  // Check achievements
   setTimeout(() => {
     const newAchievements = checkAchievements();
     newAchievements.forEach(ach => {
@@ -59,21 +90,47 @@ document.addEventListener('DOMContentLoaded', async () => {
   }, 1500);
 });
 
-// ---------- Load Articles ----------
+// ========== LOAD ARTICLES (ĐÃ CẢI TIẾN) ==========
 async function loadArticles() {
-  try {
-    const response = await fetch('data/articles.json');
-    if (!response.ok) throw new Error('Không tải được articles.json');
-    const data = await response.json();
-    allArticles = data.articles || [];
-  } catch (error) {
-    console.error('Lỗi load articles:', error);
-    showToast('❌ Không tải được danh sách bài học', 'error');
-    allArticles = [];
+  // Thử nhiều đường dẫn khác nhau
+  const pathsToTry = [
+    'data/articles.json',
+    './data/articles.json',
+    '/data/articles.json'
+  ];
+
+  for (const path of pathsToTry) {
+    try {
+      console.log(`📥 Đang thử fetch: ${path}`);
+      const response = await fetch(path, {
+        method: 'GET',
+        cache: 'no-cache', // Tránh cache cũ
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      console.log(`  → Status: ${response.status} ${response.statusText}`);
+
+      if (!response.ok) {
+        console.warn(`  ⚠️ Fetch fail với ${path}: ${response.status}`);
+        continue;
+      }
+
+      const data = await response.json();
+      allArticles = data.articles || [];
+      console.log(`  ✅ Thành công! Load được ${allArticles.length} bài từ ${path}`);
+      return true;
+    } catch (error) {
+      console.error(`  ❌ Lỗi khi fetch ${path}:`, error.message);
+    }
   }
+
+  console.error('❌ Không fetch được từ bất kỳ đường dẫn nào!');
+  return false;
 }
 
-// ---------- Render Stats ----------
+// ========== RENDER STATS ==========
 function renderStats() {
   const totalLessons = allArticles.length;
   const totalWords = allArticles.reduce((sum, a) => sum + (a.vocabCount || 0), 0);
@@ -83,7 +140,8 @@ function renderStats() {
   animateCounter('statLessons', totalLessons);
   animateCounter('statWords', totalWords);
   animateCounter('statCompleted', completed);
-  document.getElementById('statProgress').textContent = progress + '%';
+  const progressEl = document.getElementById('statProgress');
+  if (progressEl) progressEl.textContent = progress + '%';
 }
 
 function animateCounter(elementId, target) {
@@ -92,7 +150,7 @@ function animateCounter(elementId, target) {
 
   let current = 0;
   const duration = 1000;
-  const step = target / (duration / 16);
+  const step = Math.max(target / (duration / 16), 1);
 
   const timer = setInterval(() => {
     current += step;
@@ -104,7 +162,7 @@ function animateCounter(elementId, target) {
   }, 16);
 }
 
-// ---------- Render XP Bar ----------
+// ========== RENDER XP BAR ==========
 function renderXPBar() {
   const user = Storage.getUser();
   if (!user) return;
@@ -115,21 +173,31 @@ function renderXPBar() {
   const nextLevelXP = Storage.xpForNextLevel(level);
   const xpInLevel = xp - currentLevelXP;
   const xpNeeded = nextLevelXP - currentLevelXP;
-  const percent = Math.min((xpInLevel / xpNeeded) * 100, 100);
+  const percent = xpNeeded > 0 ? Math.min((xpInLevel / xpNeeded) * 100, 100) : 0;
 
-  document.getElementById('currentLevel').textContent = level;
-  document.getElementById('currentXP').textContent = xp;
-  document.getElementById('nextLevelXP').textContent = nextLevelXP;
-  document.getElementById('xpTitle').textContent = Storage.getLevelTitle(level);
-  document.getElementById('userLevelBadge').textContent = `Lv.${level}`;
-  document.getElementById('userXPBadge').textContent = `${xp} XP`;
+  const els = {
+    currentLevel: document.getElementById('currentLevel'),
+    currentXP: document.getElementById('currentXP'),
+    nextLevelXP: document.getElementById('nextLevelXP'),
+    xpTitle: document.getElementById('xpTitle'),
+    userLevelBadge: document.getElementById('userLevelBadge'),
+    userXPBadge: document.getElementById('userXPBadge'),
+    xpFill: document.getElementById('xpFill')
+  };
+
+  if (els.currentLevel) els.currentLevel.textContent = level;
+  if (els.currentXP) els.currentXP.textContent = xp;
+  if (els.nextLevelXP) els.nextLevelXP.textContent = nextLevelXP;
+  if (els.xpTitle) els.xpTitle.textContent = Storage.getLevelTitle(level);
+  if (els.userLevelBadge) els.userLevelBadge.textContent = `Lv.${level}`;
+  if (els.userXPBadge) els.userXPBadge.textContent = `${xp} XP`;
 
   setTimeout(() => {
-    document.getElementById('xpFill').style.width = percent + '%';
+    if (els.xpFill) els.xpFill.style.width = percent + '%';
   }, 200);
 }
 
-// ---------- Render Continue Learning ----------
+// ========== RENDER CONTINUE LEARNING ==========
 function renderContinueLearning() {
   const section = document.getElementById('continueSection');
   const grid = document.getElementById('continueGrid');
@@ -164,25 +232,30 @@ function renderContinueLearning() {
   }).join('');
 }
 
-// ---------- Render Lessons Grid ----------
+// ========== RENDER LESSONS GRID ==========
 function renderLessons() {
   const grid = document.getElementById('lessonsGrid');
   const emptyState = document.getElementById('emptyState');
   const countEl = document.getElementById('resultsCount');
   if (!grid) return;
 
+  console.log(`📚 Render lessons: filter=${currentFilter}, query="${currentQuery}", sort=${currentSort}`);
+  console.log(`   Tổng bài có: ${allArticles.length}`);
+
   const favorites = Storage.getFavorites();
   const filtered = Filters.applyAll(allArticles, currentFilter, currentSort, currentQuery, favorites);
 
-  countEl.textContent = `${filtered.length} bài học`;
+  console.log(`   Sau khi lọc: ${filtered.length} bài`);
+
+  if (countEl) countEl.textContent = `${filtered.length} bài học`;
 
   if (filtered.length === 0) {
     grid.innerHTML = '';
-    emptyState.classList.remove('hidden');
+    if (emptyState) emptyState.classList.remove('hidden');
     return;
   }
 
-  emptyState.classList.add('hidden');
+  if (emptyState) emptyState.classList.add('hidden');
   grid.innerHTML = filtered.map(article => renderLessonCard(article)).join('');
 
   // Attach favorite button events
@@ -195,7 +268,6 @@ function renderLessons() {
       btn.classList.toggle('is-favorite');
       btn.textContent = btn.classList.contains('is-favorite') ? '❤️' : '🤍';
 
-      // Nếu đang filter favorites, render lại
       if (currentFilter === 'favorites') {
         renderLessons();
       }
@@ -240,7 +312,7 @@ function renderLessonCard(article) {
   `;
 }
 
-// ---------- Render Achievements Mini ----------
+// ========== RENDER ACHIEVEMENTS MINI ==========
 function renderAchievementsMini() {
   const container = document.getElementById('achievementsMini');
   if (!container) return;
@@ -256,15 +328,15 @@ function renderAchievementsMini() {
   ).join('') + (ACHIEVEMENTS.length > 5 ? `<span class="mini-badge" onclick="openAchievementModal()">+${ACHIEVEMENTS.length - 5} nữa</span>` : '');
 }
 
-// ---------- Name Modal ----------
+// ========== NAME MODAL ==========
 function showNameModal() {
   const modal = document.getElementById('nameModal');
+  if (!modal) return;
   modal.classList.remove('hidden');
 
   const input = document.getElementById('studentNameInput');
   const btn = document.getElementById('saveNameBtn');
-
-  input.focus();
+  if (input) input.focus();
 
   const save = () => {
     const name = input.value.trim();
@@ -279,29 +351,34 @@ function showNameModal() {
     renderXPBar();
   };
 
-  btn.onclick = save;
-  input.onkeypress = (e) => {
-    if (e.key === 'Enter') save();
-  };
+  if (btn) btn.onclick = save;
+  if (input) {
+    input.onkeypress = (e) => {
+      if (e.key === 'Enter') save();
+    };
+  }
 }
 
-// ---------- Theme ----------
+// ========== THEME ==========
 function initTheme() {
   const theme = Storage.getTheme();
+  const toggleBtn = document.getElementById('themeToggle');
+  if (!toggleBtn) return;
+
   if (theme === 'dark') {
     document.body.classList.add('dark-mode');
-    document.getElementById('themeToggle').textContent = '☀️';
+    toggleBtn.textContent = '☀️';
   }
 
-  document.getElementById('themeToggle').addEventListener('click', () => {
+  toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     const isDark = document.body.classList.contains('dark-mode');
     Storage.setTheme(isDark ? 'dark' : 'light');
-    document.getElementById('themeToggle').textContent = isDark ? '☀️' : '🌙';
+    toggleBtn.textContent = isDark ? '☀️' : '🌙';
   });
 }
 
-// ---------- Achievement Modal ----------
+// ========== ACHIEVEMENT MODAL ==========
 function openAchievementModal() {
   const modal = document.getElementById('achievementModal');
   const list = document.getElementById('achievementsList');
@@ -322,10 +399,11 @@ function openAchievementModal() {
 }
 
 function closeAchievementModal() {
-  document.getElementById('achievementModal').classList.add('hidden');
+  const modal = document.getElementById('achievementModal');
+  if (modal) modal.classList.add('hidden');
 }
 
-// ---------- Toast ----------
+// ========== TOAST ==========
 function showToast(message, type = 'info') {
   const toast = document.createElement('div');
   toast.className = `toast ${type}`;
