@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     alert('Không tìm thấy bài học!');
     window.location.href = '../index.html';
     return;
+     initInlineNameEditor();
   }
 
   // Load lesson data
