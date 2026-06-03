@@ -518,80 +518,94 @@ function renderMCQ(container, exKey) {
 
 // ---------- Fill in Blank ----------
 // ---------- Fill in Blank (cải tiến: hỗ trợ s/es/ed/ing, viết hoa) ----------
+// ---------- Fill in Blank (hỗ trợ biến thể s/es/ies/ed/ing, đáp án đúng là biến thể) ----------
 function renderFillBlank(container) {
   const total = vocabulary.length;
   let currentQ = 0, score = 0;
-
-  // Tạo câu hỏi cho mỗi từ
-  const questions = getShuffledQuestions(vocabulary).map(v => {
-    const originalWord = v.word;
-    const baseWord = originalWord.toLowerCase();
-    // Tạo tất cả các biến thể có thể có
-    const variants = new Set();
-const baseWordLower = baseWord.toLowerCase();
-variants.add(baseWordLower);
-
-// Xử lý số nhiều / ngôi ba số ít (s, es, ies)
-if (baseWordLower.endsWith('y') && !'aeiou'.includes(baseWordLower[baseWordLower.length-2])) {
-  variants.add(baseWordLower.slice(0, -1) + 'ies');   // y -> ies
-  variants.add(baseWordLower + 's');                 // vẫn thêm 's' đề phòng
-} else if (baseWordLower.endsWith('s') || baseWordLower.endsWith('sh') || baseWordLower.endsWith('ch') || baseWordLower.endsWith('x') || baseWordLower.endsWith('z') || baseWordLower.endsWith('o')) {
-  variants.add(baseWordLower + 'es');
-} else {
-  variants.add(baseWordLower + 's');
-}
-
-// Xử lý quá khứ / phân từ (ed, ing, ied, nhân đôi phụ âm)
-if (baseWordLower.endsWith('e')) {
-  variants.add(baseWordLower + 'd');
-  variants.add(baseWordLower.slice(0, -1) + 'ing');
-} else if (baseWordLower.endsWith('y') && !'aeiou'.includes(baseWordLower[baseWordLower.length-2])) {
-  variants.add(baseWordLower.slice(0, -1) + 'ied');
-  variants.add(baseWordLower + 'ing');
-} else {
-  variants.add(baseWordLower + 'ed');
-  variants.add(baseWordLower + 'ing');
-  // Nhân đôi phụ âm cuối (CVC)
-  const last = baseWordLower[baseWordLower.length-1];
-  const prev = baseWordLower[baseWordLower.length-2];
-  const vowels = 'aeiou';
-  if (baseWordLower.length >= 3 && !vowels.includes(last) && vowels.includes(prev) && !vowels.includes(baseWordLower[baseWordLower.length-3])) {
-    variants.add(baseWordLower + last + 'ed');
-    variants.add(baseWordLower + last + 'ing');
-  }
-}
-    // Thêm dạng viết hoa chữ cái đầu (cho trường hợp ở đầu câu)
-    const capitalized = new Set();
-    variants.forEach(v => {
-      capitalized.add(v.charAt(0).toUpperCase() + v.slice(1));
-    });
-    const allVariants = new Set([...variants, ...capitalized]);
-
-    // Tạo câu với tất cả biến thể bị thay bằng _____
-    let blankSentence = v.example_sentence;
-    // Sắp xếp các biến thể theo độ dài giảm dần để thay thế từ dài trước (tránh overlap)
-    const sortedVariants = Array.from(allVariants).sort((a,b) => b.length - a.length);
-    for (let variant of sortedVariants) {
-      // Tạo regex toàn từ (word boundary) không phân biệt hoa thường
-      const regex = new RegExp(`\\b${escapeRegex(variant)}\\b`, 'gi');
-      blankSentence = blankSentence.replace(regex, '_____');
-    }
-    // Nếu vẫn còn từ gốc chưa được thay (do viết hoa khác), thay thủ công
-    blankSentence = blankSentence.replace(new RegExp(`\\b${escapeRegex(originalWord)}\\b`, 'g'), '_____');
-    blankSentence = blankSentence.replace(new RegExp(`\\b${escapeRegex(originalWord.toLowerCase())}\\b`, 'gi'), '_____');
-    
-    // Tạo các đáp án nhiễu
-    const correct = originalWord;
-    let wrongs = vocabulary.filter(item => item.word !== correct).map(item => item.word);
-    wrongs = shuffleArray(wrongs).slice(0, 3);
-    const opts = shuffleArray([correct, ...wrongs]);
-    return { blankSentence, correct, opts };
-  });
 
   // Helper escape regex
   function escapeRegex(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
+
+  // Tạo tất cả biến thể của một từ (dựa trên quy tắc chính tả)
+  function getAllVariants(word) {
+    const base = word.toLowerCase();
+    const variants = new Set();
+    variants.add(base);
+    // Số nhiều / ngôi ba số ít (s, es, ies)
+    if (base.endsWith('y') && !'aeiou'.includes(base[base.length-2])) {
+      variants.add(base.slice(0, -1) + 'ies');
+      variants.add(base + 's');
+    } else if (base.endsWith('s') || base.endsWith('sh') || base.endsWith('ch') || base.endsWith('x') || base.endsWith('z') || base.endsWith('o')) {
+      variants.add(base + 'es');
+    } else {
+      variants.add(base + 's');
+    }
+    // Quá khứ / phân từ (ed, ing, ied, nhân đôi phụ âm)
+    if (base.endsWith('e')) {
+      variants.add(base + 'd');
+      variants.add(base.slice(0, -1) + 'ing');
+    } else if (base.endsWith('y') && !'aeiou'.includes(base[base.length-2])) {
+      variants.add(base.slice(0, -1) + 'ied');
+      variants.add(base + 'ing');
+    } else {
+      variants.add(base + 'ed');
+      variants.add(base + 'ing');
+      // Nhân đôi phụ âm cuối (CVC)
+      const last = base[base.length-1];
+      const prev = base[base.length-2];
+      const vowels = 'aeiou';
+      if (base.length >= 3 && !vowels.includes(last) && vowels.includes(prev) && !vowels.includes(base[base.length-3])) {
+        variants.add(base + last + 'ed');
+        variants.add(base + last + 'ing');
+      }
+    }
+    // Thêm dạng viết hoa chữ cái đầu (cho trường hợp đầu câu)
+    const result = new Set();
+    variants.forEach(v => {
+      result.add(v);
+      result.add(v.charAt(0).toUpperCase() + v.slice(1));
+    });
+    return result;
+  }
+
+  // Tạo danh sách câu hỏi
+  let questions = [];
+  for (let v of vocabulary) {
+    const originalSentence = v.example_sentence;
+    const originalWord = v.word;
+    const variants = getAllVariants(originalWord);
+    // Tìm biến thể nào thực sự xuất hiện trong câu gốc
+    let correctVariant = null;
+    for (let variant of variants) {
+      const regex = new RegExp(`\\b${escapeRegex(variant)}\\b`, 'i');
+      if (regex.test(originalSentence)) {
+        correctVariant = variant;
+        break;
+      }
+    }
+    // Nếu không tìm thấy (câu không chứa biến thể nào), dùng từ gốc
+    if (!correctVariant) correctVariant = originalWord;
+
+    // Thay thế chính xác biến thể đó bằng _____
+    let blankSentence = originalSentence.replace(
+      new RegExp(`\\b${escapeRegex(correctVariant)}\\b`, 'i'),
+      '_____'
+    );
+
+    // Đáp án đúng chính là biến thể đó
+    const correct = correctVariant;
+
+    // Đáp án nhiễu: chọn 3 từ gốc từ các từ vựng khác (không biến thể)
+    let wrongs = vocabulary.filter(item => item.word !== originalWord).map(item => item.word);
+    wrongs = shuffleArray(wrongs).slice(0, 3);
+    const opts = shuffleArray([correct, ...wrongs]);
+
+    questions.push({ blankSentence, correct, opts });
+  }
+  // Trộn thứ tự câu hỏi
+  questions = shuffleArray(questions);
 
   function renderQuestion() {
     if (currentQ >= total) {
