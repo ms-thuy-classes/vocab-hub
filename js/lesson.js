@@ -51,7 +51,69 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Mascot messages
   initMascot();
+// ---------- Inline Name Editor ----------
+function initInlineNameEditor() {
+  const nameInput = document.getElementById('studentNameInline');
+  const updateBtn = document.getElementById('updateNameInline');
+  const feedbackSpan = document.getElementById('nameFeedback');
 
+  if (!nameInput || !updateBtn) return;
+
+  // Hiển thị tên hiện tại (nếu có)
+  const currentUser = Storage.getUser();
+  if (currentUser && currentUser.name) {
+    nameInput.value = currentUser.name;
+  }
+
+  // Xử lý khi nhấn nút Lưu
+  updateBtn.addEventListener('click', () => {
+    const newName = nameInput.value.trim();
+    if (newName === '') {
+      if (feedbackSpan) {
+        feedbackSpan.textContent = '⚠️ Tên không được để trống';
+        feedbackSpan.style.color = '#ef4444';
+        setTimeout(() => { feedbackSpan.textContent = ''; }, 2000);
+      }
+      return;
+    }
+
+    // Lưu vào Storage
+    let user = Storage.getUser();
+    if (user) {
+      user.name = newName;
+      Storage.saveUser(user);
+    } else {
+      Storage.createUser(newName);
+    }
+
+    // Thông báo thành công
+    if (feedbackSpan) {
+      feedbackSpan.textContent = '✅ Đã lưu tên!';
+      feedbackSpan.style.color = '#10b981';
+      setTimeout(() => { feedbackSpan.textContent = ''; }, 2000);
+    }
+
+    // (Tuỳ chọn) Cập nhật lại thanh XP, level nếu cần
+    if (typeof renderXPBar === 'function') renderXPBar();
+
+    // Hiển thị toast thông báo (nếu có hàm showToast)
+    if (typeof showToast === 'function') {
+      showToast(`👋 Chào ${newName}!`, 'success');
+    }
+  });
+
+  // Cho phép nhấn Enter để lưu
+  nameInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      updateBtn.click();
+    }
+  });
+}
+
+// Gọi hàm này trong DOMContentLoaded
+// (Đảm bảo nó được gọi sau khi Storage đã sẵn sàng)
+// Thêm dòng: initInlineNameEditor();
   // Favorite button
   initFavoriteBtn();
 });
