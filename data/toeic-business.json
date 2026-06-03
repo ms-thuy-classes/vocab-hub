@@ -1,0 +1,199 @@
+{
+  "id": "toeic-business",
+  "title": "TOEIC Business Meeting",
+  "description": "Từ vựng TOEIC chủ đề Cuộc họp kinh doanh",
+  "icon": "💼",
+  "thumbnail": "business.jpg",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "agenda",
+      "wordForm": "noun",
+      "ipa": "/əˈdʒen.də/",
+      "vietnamese_meaning": "chương trình nghị sự",
+      "example_sentence": "Let's review the agenda for today's meeting.",
+      "example_translation": "Hãy xem lại chương trình nghị sự cho cuộc họp hôm nay.",
+      "collocations": ["meeting agenda", "agenda item"]
+    },
+    {
+      "id": 2,
+      "word": "postpone",
+      "wordForm": "verb",
+      "ipa": "/poʊstˈpoʊn/",
+      "vietnamese_meaning": "trì hoãn, hoãn lại",
+      "example_sentence": "We need to postpone the meeting until next week.",
+      "example_translation": "Chúng ta cần hoãn cuộc họp đến tuần sau.",
+      "collocations": ["postpone the meeting", "postpone indefinitely"]
+    },
+    {
+      "id": 3,
+      "word": "negotiate",
+      "wordForm": "verb",
+      "ipa": "/nɪˈɡoʊ.ʃi.eɪt/",
+      "vietnamese_meaning": "thương lượng, đàm phán",
+      "example_sentence": "The two companies are negotiating a new contract.",
+      "example_translation": "Hai công ty đang đàm phán một hợp đồng mới.",
+      "collocations": ["negotiate a deal", "negotiate terms"]
+    },
+    {
+      "id": 4,
+      "word": "proposal",
+      "wordForm": "noun",
+      "ipa": "/prəˈpoʊ.zəl/",
+      "vietnamese_meaning": "đề xuất, bản đề nghị",
+      "example_sentence": "She presented her proposal to the board of directors.",
+      "example_translation": "Cô ấy đã trình bày đề xuất của mình với hội đồng quản trị.",
+      "collocations": ["business proposal", "submit a proposal"]
+    },
+    {
+      "id": 5,
+      "word": "deadline",
+      "wordForm": "noun",
+      "ipa": "/ˈded.laɪn/",
+      "vietnamese_meaning": "hạn chót",
+      "example_sentence": "The deadline for the project is next Friday.",
+      "example_translation": "Hạn chót cho dự án là thứ Sáu tuần tới.",
+      "collocations": ["meet the deadline", "tight deadline"]
+    },
+    {
+      "id": 6,
+      "word": "collaborate",
+      "wordForm": "verb",
+      "ipa": "/kəˈlæb.ə.reɪt/",
+      "vietnamese_meaning": "cộng tác, hợp tác",
+      "example_sentence": "Our teams will collaborate on this project.",
+      "example_translation": "Các nhóm của chúng ta sẽ hợp tác trong dự án này.",
+      "collocations": ["collaborate with", "collaborate on"]
+    },
+    {
+      "id": 7,
+      "word": "efficient",
+      "wordForm": "adjective",
+      "ipa": "/ɪˈfɪʃ.ənt/",
+      "vietnamese_meaning": "hiệu quả",
+      "example_sentence": "We need a more efficient way to manage our time.",
+      "example_translation": "Chúng ta cần một cách hiệu quả hơn để quản lý thời gian.",
+      "collocations": ["efficient method", "highly efficient"]
+    },
+    {
+      "id": 8,
+      "word": "revenue",
+      "wordForm": "noun",
+      "ipa": "/ˈrev.ə.nuː/",
+      "vietnamese_meaning": "doanh thu",
+      "example_sentence": "The company's revenue increased by 20% this year.",
+      "example_translation": "Doanh thu của công ty tăng 20% trong năm nay.",
+      "collocations": ["annual revenue", "generate revenue"]
+    },
+    {
+      "id": 9,
+      "word": "implement",
+      "wordForm": "verb",
+      "ipa": "/ˈɪm.plə.ment/",
+      "vietnamese_meaning": "thực hiện, triển khai",
+      "example_sentence": "We will implement the new strategy next month.",
+      "example_translation": "Chúng ta sẽ triển khai chiến lược mới vào tháng tới.",
+      "collocations": ["implement a plan", "implement changes"]
+    },
+    {
+      "id": 10,
+      "word": "stakeholder",
+      "wordForm": "noun",
+      "ipa": "/ˈsteɪkˌhoʊl.dər/",
+      "vietnamese_meaning": "bên liên quan",
+      "example_sentence": "All stakeholders must approve the new policy.",
+      "example_translation": "Tất cả các bên liên quan phải phê duyệt chính sách mới.",
+      "collocations": ["key stakeholder", "stakeholder meeting"]
+    },
+    {
+      "id": 11,
+      "word": "benchmark",
+      "wordForm": "noun",
+      "ipa": "/ˈbentʃ.mɑːrk/",
+      "vietnamese_meaning": "mốc chuẩn, chuẩn đối chiếu",
+      "example_sentence": "This report sets a new benchmark for the industry.",
+      "example_translation": "Báo cáo này đặt ra một chuẩn mới cho ngành.",
+      "collocations": ["industry benchmark", "benchmark test"]
+    },
+    {
+      "id": 12,
+      "word": "feasible",
+      "wordForm": "adjective",
+      "ipa": "/ˈfiː.zə.bəl/",
+      "vietnamese_meaning": "khả thi",
+      "example_sentence": "Is this plan feasible within our budget?",
+      "example_translation": "Kế hoạch này có khả thi trong ngân sách của chúng ta không?",
+      "collocations": ["feasible plan", "feasible solution"]
+    },
+    {
+      "id": 13,
+      "word": "allocate",
+      "wordForm": "verb",
+      "ipa": "/ˈæl.ə.keɪt/",
+      "vietnamese_meaning": "phân bổ",
+      "example_sentence": "We need to allocate more resources to the marketing team.",
+      "example_translation": "Chúng ta cần phân bổ thêm nguồn lực cho đội tiếp thị.",
+      "collocations": ["allocate resources", "allocate budget"]
+    },
+    {
+      "id": 14,
+      "word": "compliance",
+      "wordForm": "noun",
+      "ipa": "/kəmˈplaɪ.əns/",
+      "vietnamese_meaning": "sự tuân thủ",
+      "example_sentence": "The company ensures full compliance with safety regulations.",
+      "example_translation": "Công ty đảm bảo tuân thủ đầy đủ các quy định an toàn.",
+      "collocations": ["regulatory compliance", "compliance officer"]
+    },
+    {
+      "id": 15,
+      "word": "procurement",
+      "wordForm": "noun",
+      "ipa": "/prəˈkjʊr.mənt/",
+      "vietnamese_meaning": "mua sắm, thu mua",
+      "example_sentence": "The procurement department handles all supplier contracts.",
+      "example_translation": "Phòng thu mua xử lý tất cả các hợp đồng nhà cung cấp.",
+      "collocations": ["procurement process", "procurement department"]
+    },
+    {
+      "id": 16,
+      "word": "merger",
+      "wordForm": "noun",
+      "ipa": "/ˈmɜːr.dʒər/",
+      "vietnamese_meaning": "sáp nhập",
+      "example_sentence": "The merger between the two companies was completed last month.",
+      "example_translation": "Việc sáp nhập giữa hai công ty đã hoàn tất tháng trước.",
+      "collocations": ["merger and acquisition", "complete a merger"]
+    },
+    {
+      "id": 17,
+      "word": "dividend",
+      "wordForm": "noun",
+      "ipa": "/ˈdɪv.ɪ.dend/",
+      "vietnamese_meaning": "cổ tức",
+      "example_sentence": "Shareholders received a generous dividend this quarter.",
+      "example_translation": "Các cổ đông đã nhận được cổ tức hào phóng trong quý này.",
+      "collocations": ["pay dividends", "dividend yield"]
+    },
+    {
+      "id": 18,
+      "word": "liability",
+      "wordForm": "noun",
+      "ipa": "/ˌlaɪ.əˈbɪl.ə.ti/",
+      "vietnamese_meaning": "khoản nợ, trách nhiệm pháp lý",
+      "example_sentence": "The company's liabilities exceeded its assets.",
+      "example_translation": "Các khoản nợ của công ty vượt quá tài sản của nó.",
+      "collocations": ["legal liability", "limit liability"]
+    },
+    {
+      "id": 19,
+      "word": "audit",
+      "wordForm": "noun",
+      "ipa": "/ˈɔː.dɪt/",
+      "vietnamese_meaning": "kiểm toán",
+      "example_sentence": "The annual audit revealed some accounting errors.",
+      "example_translation": "Cuộc kiểm toán hàng năm đã phát hiện một số sai sót kế toán.",
+      "collocations": ["internal audit", "financial audit"]
+    }
+  ]
+}
