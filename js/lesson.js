@@ -1106,7 +1106,7 @@ function renderListening(container) {
     container.innerHTML = `
       <div class="quiz-card text-center">
         <div class="mb-3"><span class="font-bold text-purple-700">Question ${currentQ + 1}/${questions.length}</span></div>
-        <div class="mb-4"><button id="listenBtn" class="audio-play-btn mx-auto">🔊 Listen</button></div>
+        <div class="mb-4"><button id="listenBtn" class="audio-play-btn mx-auto" style="margin-top: 20px;">🔊</button></div>
         <div id="hintArea" class="bg-purple-50 rounded-xl p-4 mb-4 min-h-[70px]"><b>Hints:</b><br><span id="hintText">No hints yet</span></div>
         ${sentenceHtml}
         <div class="flex justify-center gap-3 mt-5 flex-wrap">
