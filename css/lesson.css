@@ -977,9 +977,8 @@
 /* ========== CẢI THIỆN KÍCH THƯỚC NỘI DUNG BÀI TẬP ========== */
 .tab-content {
   width: 100%;
-  padding: 1rem 0;
-  display: flex;
-  justify-content: center;
+  padding: 0;
+  display: block;
 }
 
 .tab-content > * {
@@ -1106,12 +1105,14 @@
   }
 }
 #matching{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    width:100%;
 }
 
 #matching .grid-cols-2{
     width:100%;
     max-width:1000px;
+    margin:0 auto;
+    display:grid !important;
+    grid-template-columns:1fr 1fr !important;
+    gap:20px !important;
 }
