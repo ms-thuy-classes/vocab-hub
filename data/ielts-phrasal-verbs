@@ -1,0 +1,199 @@
+{
+  "id": "ielts-hometown",
+  "title": "IELTS Hometown",
+  "description": "Từ vựng IELTS- Dùng cho Speaking Part 1 & 2",
+  "icon": "✍️",
+  "thumbnail": "https://images.unsplash.com/photo-1499871435582-a1d4ff236842?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "get up",
+      "wordForm": "phrasal verb",
+      "ipa": "/ɡet ʌp/",
+      "vietnamese_meaning": "thức dậy",
+      "example_sentence": "I usually get up at 6 AM every morning to do some exercise.",
+      "example_translation": "Tôi thường thức dậy lúc 6 giờ mỗi sáng để tập thể dục.",
+      "collocations": ["get up early", "struggle to get up"]
+    },
+    {
+      "id": 2,
+      "word": "get on",
+      "wordForm": "phrasal verb",
+      "ipa": "/ɡet ɒn/",
+      "vietnamese_meaning": "lên xe",
+      "example_sentence": "We need to get on the bus before it becomes too crowded.",
+      "example_translation": "Chúng ta cần lên xe buýt trước khi nó trở nên quá đông đúc.",
+      "collocations": ["get on the train", "get on a plane"]
+    },
+    {
+      "id": 3,
+      "word": "get off",
+      "wordForm": "phrasal verb",
+      "ipa": "/ɡet ɒf/",
+      "vietnamese_meaning": "xuống xe",
+      "example_sentence": "Make sure you check your bags before you get off the train.",
+      "example_translation": "Hãy chắc chắn rằng bạn đã kiểm tra hành lý trước khi xuống tàu.",
+      "collocations": ["get off at the next stop", "get off the bus"]
+    },
+    {
+      "id": 4,
+      "word": "turn on",
+      "wordForm": "phrasal verb",
+      "ipa": "/tɜːn ɒn/",
+      "vietnamese_meaning": "bật",
+      "example_sentence": "Could you please turn on the lights? It is getting dark here.",
+      "example_translation": "Bạn có thể vui lòng bật đèn lên được không? Ở đây trời đang tối dần rồi.",
+      "collocations": ["turn on the television", "turn on the computer"]
+    },
+    {
+      "id": 5,
+      "word": "turn off",
+      "wordForm": "phrasal verb",
+      "ipa": "/tɜːn ɒf/",
+      "vietnamese_meaning": "tắt",
+      "example_sentence": "Remember to turn off the air conditioner when you leave the room.",
+      "example_translation": "Hãy nhớ tắt điều hòa khi bạn rời khỏi phòng.",
+      "collocations": ["turn off the engine", "turn off the alarm"]
+    },
+    {
+      "id": 6,
+      "word": "turn down",
+      "wordForm": "phrasal verb",
+      "ipa": "/tɜːn daʊn/",
+      "vietnamese_meaning": "vặn nhỏ âm lượng / từ chối",
+      "example_sentence": "Can you turn down the music a little bit? I am studying for my exam.",
+      "example_translation": "Bạn có thể vặn nhỏ nhạc lại một chút được không? Tôi đang học bài thi.",
+      "collocations": ["turn down an offer", "turn down the volume"]
+    },
+    {
+      "id": 7,
+      "word": "turn up",
+      "wordForm": "phrasal verb",
+      "ipa": "/tɜːn ʌp/",
+      "vietnamese_meaning": "vặn to âm lượng / xuất hiện",
+      "example_sentence": "We waited for him for an hour, but he didn't turn up.",
+      "example_translation": "Chúng tôi đã đợi anh ấy suốt một tiếng đồng hồ, nhưng anh ấy đã không xuất hiện.",
+      "collocations": ["turn up late", "turn up the radio"]
+    },
+    {
+      "id": 8,
+      "word": "go on",
+      "wordForm": "phrasal verb",
+      "ipa": "/ɡəʊ ɒn/",
+      "vietnamese_meaning": "tiếp tục",
+      "example_sentence": "Please go on with your story, I am listening to you.",
+      "example_translation": "Xin hãy tiếp tục câu chuyện của bạn đi, tôi đang lắng nghe đây.",
+      "collocations": ["go on a strike", "go on forever"]
+    },
+    {
+      "id": 9,
+      "word": "go off",
+      "wordForm": "phrasal verb",
+      "ipa": "/ɡəʊ ɒf/",
+      "vietnamese_meaning": "rời đi / reo chuông / nổ",
+      "example_sentence": "My alarm clock didn't go off this morning, so I woke up late.",
+      "example_translation": "Đồng hồ báo thức của tôi không reo sáng nay, nên tôi đã thức dậy muộn.",
+      "collocations": ["the bomb went off", "milk goes off"]
+    },
+    {
+      "id": 10,
+      "word": "put on",
+      "wordForm": "phrasal verb",
+      "ipa": "/pʊt ɒn/",
+      "vietnamese_meaning": "mặc vào, đeo vào",
+      "example_sentence": "You should put on a warm coat because it is very cold outside.",
+      "example_translation": "Bạn nên mặc một chiếc áo khoác ấm vào vì bên ngoài trời rất lạnh.",
+      "collocations": ["put on shoes", "put on weight"]
+    },
+    {
+      "id": 11,
+      "word": "come on",
+      "wordForm": "phrasal verb",
+      "ipa": "/kʌm ɒn/",
+      "vietnamese_meaning": "nhanh lên / cố lên",
+      "example_sentence": "Come on! If we don't hurry, we will miss the opening of the movie.",
+      "example_translation": "Nhanh lên nào! Nếu chúng ta không khẩn trương, chúng ta sẽ lỡ mất đoạn mở đầu bộ phim.",
+      "collocations": ["come on stage", "rain is coming on"]
+    },
+    {
+      "id": 12,
+      "word": "take off",
+      "wordForm": "phrasal verb",
+      "ipa": "/teɪk ɒf/",
+      "vietnamese_meaning": "cất cánh / cởi ra",
+      "example_sentence": "The plane is going to take off in ten minutes.",
+      "example_translation": "Máy bay sẽ cất cánh trong vòng mười phút nữa.",
+      "collocations": ["take off clothes", "business takes off"]
+    },
+    {
+      "id": 13,
+      "word": "come across",
+      "wordForm": "phrasal verb",
+      "ipa": "/kʌm əˈkrɒs/",
+      "vietnamese_meaning": "tình cờ gặp / thấy",
+      "example_sentence": "I came across an old friend while I was walking in the park yesterday.",
+      "example_translation": "Tôi đã tình cờ gặp một người bạn cũ khi đang đi bộ trong công viên ngày hôm qua.",
+      "collocations": ["come across an article", "come across well"]
+    },
+    {
+      "id": 14,
+      "word": "figure out",
+      "wordForm": "phrasal verb",
+      "ipa": "/ˈfɪɡ.ər aʊt/",
+      "vietnamese_meaning": "hiểu rõ, tìm ra giải pháp",
+      "example_sentence": "It took me a long time to figure out how to solve this math problem.",
+      "example_translation": "Tôi đã mất rất nhiều thời gian để hiểu rõ cách giải bài toán này.",
+      "collocations": ["figure out a solution", "hard to figure out"]
+    },
+    {
+      "id": 15,
+      "word": "bring up",
+      "wordForm": "phrasal verb",
+      "ipa": "/brɪŋ ʌp/",
+      "vietnamese_meaning": "đề cập / nuôi nấng",
+      "example_sentence": "Don't bring up his past mistakes during dinner tonight.",
+      "example_translation": "Đừng đề cập đến những sai lầm trong quá khứ của anh ấy trong bữa tối nay.",
+      "collocations": ["bring up children", "bring up a topic"]
+    },
+    {
+      "id": 16,
+      "word": "keep up with",
+      "wordForm": "phrasal verb",
+      "ipa": "/kiːp ʌp wɪð/",
+      "vietnamese_meaning": "theo kịp",
+      "example_sentence": "She walks so fast that I cannot keep up with her.",
+      "example_translation": "Cô ấy đi bộ nhanh đến mức tôi không thể theo kịp cô ấy.",
+      "collocations": ["keep up with technology", "keep up with changes"]
+    },
+    {
+      "id": 17,
+      "word": "turn out",
+      "wordForm": "phrasal verb",
+      "ipa": "/tɜːn aʊt/",
+      "vietnamese_meaning": "hóa ra, thành ra",
+      "example_sentence": "The weather was cloudy in the morning, but it turned out to be a beautiful day.",
+      "example_translation": "Thời tiết buổi sáng thì nhiều mây, nhưng hóa ra lại thành một ngày rất đẹp.",
+      "collocations": ["turn out well", "as it turns out"]
+    },
+    {
+      "id": 18,
+      "word": "put off",
+      "wordForm": "phrasal verb",
+      "ipa": "/pʊt ɒf/",
+      "vietnamese_meaning": "trì hoãn",
+      "example_sentence": "Never put off until tomorrow what you can do today.",
+      "example_translation": "Đừng bao giờ trì hoãn việc hôm nay bạn có thể làm cho đến ngày mai.",
+      "collocations": ["put off a meeting", "put off making a decision"]
+    },
+    {
+      "id": 19,
+      "word": "rely on",
+      "wordForm": "phrasal verb",
+      "ipa": "/rɪˈlaɪ ɒn/",
+      "vietnamese_meaning": "phụ thuộc vào, tin cậy vào",
+      "example_sentence": "You can always rely on your family when you have hard times.",
+      "example_translation": "Bạn luôn có thể tin cậy vào gia đình mình khi gặp những lúc khó khăn.",
+      "collocations": ["heavily rely on", "rely on facts"]
+    }
+  ]
+}
