@@ -964,3 +964,13 @@
   border: 10px solid transparent;
   border-top-color: white;
 }
+/* Đảm bảo modal nằm trên tất cả badge DONE */
+#resultsModal,
+#certificateModal {
+  z-index: 10000 !important;
+}
+
+/* (Tuỳ chọn) Nếu vẫn thấy badge lấn lên nội dung modal, có thể giảm z-index của badge */
+.tab-btn.done-badge::after {
+  z-index: 10 !important; /* hoặc bỏ dòng này nếu không cần */
+}
