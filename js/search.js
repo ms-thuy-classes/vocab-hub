@@ -1,12 +1,10 @@
 const Search = {
   query: '',
   debounceTimer: null,
-
   init(inputId, onSearch) {
     const input = document.getElementById(inputId);
     const clearBtn = document.getElementById('clearSearch');
     if (!input) return;
-
     input.addEventListener('input', (e) => {
       this.query = e.target.value.trim().toLowerCase();
       if (clearBtn) {
@@ -18,7 +16,6 @@ const Search = {
         onSearch(this.query);
       }, 200);
     });
-
     if (clearBtn) {
       clearBtn.addEventListener('click', () => {
         input.value = '';
@@ -29,7 +26,6 @@ const Search = {
       });
     }
   },
-
   filterArticles(articles, query) {
     if (!query) return articles;
     const terms = query.split(/\s+/).filter(t => t.length > 0);
