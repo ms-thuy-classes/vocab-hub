@@ -913,7 +913,7 @@ function renderMatching(container) {
     let html = `
 <div class="grid grid-cols-2 gap-4 max-w-3xl mx-auto">
 
-  <div class="col-span-2 text-center mb-6">
+  <div class="col-span-2 text-center mb-3">
       <span class="text-lg font-bold bg-purple-100 px-5 py-2 rounded-full">
           Trang ${page + 1}/${totalPages} - Ghép từ với nghĩa
       </span>
