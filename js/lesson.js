@@ -528,29 +528,38 @@ function renderFillBlank(container) {
     const baseWord = originalWord.toLowerCase();
     // Tạo tất cả các biến thể có thể có
     const variants = new Set();
-    variants.add(baseWord);
-    // Số nhiều / ngôi ba
-    variants.add(baseWord + 's');
-    variants.add(baseWord + 'es');
-    // Quá khứ / phân từ
-    if (baseWord.endsWith('e')) {
-      variants.add(baseWord + 'd');
-      variants.add(baseWord.slice(0, -1) + 'ing');
-    } else if (baseWord.endsWith('y') && !'aeiou'.includes(baseWord[baseWord.length-2])) {
-      variants.add(baseWord.slice(0, -1) + 'ied');
-      variants.add(baseWord + 'ing');
-    } else {
-      variants.add(baseWord + 'ed');
-      variants.add(baseWord + 'ing');
-      // Nhân đôi phụ âm (quy tắc CVC)
-      const last = baseWord[baseWord.length-1];
-      const prev = baseWord[baseWord.length-2];
-      const vowels = 'aeiou';
-      if (baseWord.length >= 3 && !vowels.includes(last) && vowels.includes(prev) && !vowels.includes(baseWord[baseWord.length-3])) {
-        variants.add(baseWord + last + 'ed');
-        variants.add(baseWord + last + 'ing');
-      }
-    }
+const baseWordLower = baseWord.toLowerCase();
+variants.add(baseWordLower);
+
+// Xử lý số nhiều / ngôi ba số ít (s, es, ies)
+if (baseWordLower.endsWith('y') && !'aeiou'.includes(baseWordLower[baseWordLower.length-2])) {
+  variants.add(baseWordLower.slice(0, -1) + 'ies');   // y -> ies
+  variants.add(baseWordLower + 's');                 // vẫn thêm 's' đề phòng
+} else if (baseWordLower.endsWith('s') || baseWordLower.endsWith('sh') || baseWordLower.endsWith('ch') || baseWordLower.endsWith('x') || baseWordLower.endsWith('z') || baseWordLower.endsWith('o')) {
+  variants.add(baseWordLower + 'es');
+} else {
+  variants.add(baseWordLower + 's');
+}
+
+// Xử lý quá khứ / phân từ (ed, ing, ied, nhân đôi phụ âm)
+if (baseWordLower.endsWith('e')) {
+  variants.add(baseWordLower + 'd');
+  variants.add(baseWordLower.slice(0, -1) + 'ing');
+} else if (baseWordLower.endsWith('y') && !'aeiou'.includes(baseWordLower[baseWordLower.length-2])) {
+  variants.add(baseWordLower.slice(0, -1) + 'ied');
+  variants.add(baseWordLower + 'ing');
+} else {
+  variants.add(baseWordLower + 'ed');
+  variants.add(baseWordLower + 'ing');
+  // Nhân đôi phụ âm cuối (CVC)
+  const last = baseWordLower[baseWordLower.length-1];
+  const prev = baseWordLower[baseWordLower.length-2];
+  const vowels = 'aeiou';
+  if (baseWordLower.length >= 3 && !vowels.includes(last) && vowels.includes(prev) && !vowels.includes(baseWordLower[baseWordLower.length-3])) {
+    variants.add(baseWordLower + last + 'ed');
+    variants.add(baseWordLower + last + 'ing');
+  }
+}
     // Thêm dạng viết hoa chữ cái đầu (cho trường hợp ở đầu câu)
     const capitalized = new Set();
     variants.forEach(v => {
