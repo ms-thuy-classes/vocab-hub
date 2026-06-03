@@ -517,46 +517,71 @@ function renderMCQ(container, exKey) {
 }
 
 // ---------- Fill in Blank ----------
+// ---------- Fill in Blank (cải tiến: hỗ trợ s/es/ed/ing, viết hoa) ----------
 function renderFillBlank(container) {
   const total = vocabulary.length;
   let currentQ = 0, score = 0;
+
+  // Tạo câu hỏi cho mỗi từ
   const questions = getShuffledQuestions(vocabulary).map(v => {
-    const blankSentence = createBlankSentence(v.example_sentence, v.word);
-    const correct = v.word;
+    const originalWord = v.word;
+    const baseWord = originalWord.toLowerCase();
+    // Tạo tất cả các biến thể có thể có
+    const variants = new Set();
+    variants.add(baseWord);
+    // Số nhiều / ngôi ba
+    variants.add(baseWord + 's');
+    variants.add(baseWord + 'es');
+    // Quá khứ / phân từ
+    if (baseWord.endsWith('e')) {
+      variants.add(baseWord + 'd');
+      variants.add(baseWord.slice(0, -1) + 'ing');
+    } else if (baseWord.endsWith('y') && !'aeiou'.includes(baseWord[baseWord.length-2])) {
+      variants.add(baseWord.slice(0, -1) + 'ied');
+      variants.add(baseWord + 'ing');
+    } else {
+      variants.add(baseWord + 'ed');
+      variants.add(baseWord + 'ing');
+      // Nhân đôi phụ âm (quy tắc CVC)
+      const last = baseWord[baseWord.length-1];
+      const prev = baseWord[baseWord.length-2];
+      const vowels = 'aeiou';
+      if (baseWord.length >= 3 && !vowels.includes(last) && vowels.includes(prev) && !vowels.includes(baseWord[baseWord.length-3])) {
+        variants.add(baseWord + last + 'ed');
+        variants.add(baseWord + last + 'ing');
+      }
+    }
+    // Thêm dạng viết hoa chữ cái đầu (cho trường hợp ở đầu câu)
+    const capitalized = new Set();
+    variants.forEach(v => {
+      capitalized.add(v.charAt(0).toUpperCase() + v.slice(1));
+    });
+    const allVariants = new Set([...variants, ...capitalized]);
+
+    // Tạo câu với tất cả biến thể bị thay bằng _____
+    let blankSentence = v.example_sentence;
+    // Sắp xếp các biến thể theo độ dài giảm dần để thay thế từ dài trước (tránh overlap)
+    const sortedVariants = Array.from(allVariants).sort((a,b) => b.length - a.length);
+    for (let variant of sortedVariants) {
+      // Tạo regex toàn từ (word boundary) không phân biệt hoa thường
+      const regex = new RegExp(`\\b${escapeRegex(variant)}\\b`, 'gi');
+      blankSentence = blankSentence.replace(regex, '_____');
+    }
+    // Nếu vẫn còn từ gốc chưa được thay (do viết hoa khác), thay thủ công
+    blankSentence = blankSentence.replace(new RegExp(`\\b${escapeRegex(originalWord)}\\b`, 'g'), '_____');
+    blankSentence = blankSentence.replace(new RegExp(`\\b${escapeRegex(originalWord.toLowerCase())}\\b`, 'gi'), '_____');
+    
+    // Tạo các đáp án nhiễu
+    const correct = originalWord;
     let wrongs = vocabulary.filter(item => item.word !== correct).map(item => item.word);
     wrongs = shuffleArray(wrongs).slice(0, 3);
     const opts = shuffleArray([correct, ...wrongs]);
     return { blankSentence, correct, opts };
   });
 
-  function createBlankSentence(example, vocabWord) {
-    const forms = new Set();
-    const word = vocabWord.toLowerCase().trim();
-    forms.add(word);
-    forms.add(word + 's');
-    forms.add(word + 'es');
-    if (word.endsWith('e')) {
-      forms.add(word + 'd');
-      forms.add(word.slice(0, -1) + 'ing');
-    }
-    if (word.endsWith('y')) {
-      forms.add(word.slice(0, -1) + 'ied');
-      forms.add(word + 'ing');
-    }
-    forms.add(word + 'ed');
-    forms.add(word + 'ing');
-    const last = word[word.length - 1];
-    const vowels = 'aeiou';
-    if (word.length >= 3 && !vowels.includes(last) && vowels.includes(word[word.length - 2]) && !vowels.includes(word[word.length - 3])) {
-      forms.add(word + last + 'ed');
-      forms.add(word + last + 'ing');
-    }
-    let result = example;
-    forms.forEach(form => {
-      const escaped = form.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      result = result.replace(new RegExp(`\\b${escaped}\\b`, 'gi'), '_____');
-    });
-    return result;
+  // Helper escape regex
+  function escapeRegex(str) {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   }
 
   function renderQuestion() {
@@ -614,7 +639,6 @@ function renderFillBlank(container) {
   }
   renderQuestion();
 }
-
 // ---------- Word Scramble ----------
 function renderWordScramble(container) {
   const total = vocabulary.length;
