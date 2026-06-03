@@ -1,3 +1,4 @@
+
 /* ========================================
    LESSON.JS - Logic trang bài học
    Load JSON, flashcard, exercises
@@ -19,47 +20,7 @@ let activeTab = 'vnToEn';
 let totalHintsAllowed = 25;
 let usedHints = 0;
 
-// ---------- Init ----------
-document.addEventListener('DOMContentLoaded', async () => {
-  // Lấy lesson ID từ URL
-  const params = new URLSearchParams(window.location.search);
-  lessonId = params.get('id');
-
-  if (!lessonId) {
-    alert('Không tìm thấy bài học!');
-    window.location.href = '../index.html';
-    return;
-     initInlineNameEditor();
-  }
-
-  // Load lesson data
-  await loadLessonData();
-
-  // Render banner
-  renderBanner();
-
-  // Load progress cũ
-  loadProgress();
-
-  // Init exercises
-  updateFlashcardDisplay();
-  initExercise('vnToEn');
-  updateCompletedCount();
-  updateExerciseTabs();
-
-  // Music
-  initMusic();
-
-  // Mascot messages
-  initMascot();
-
-}
-  // Favorite button
-  initFavoriteBtn();
-});
-// ... (các global variables, giữ nguyên)
-
-// ---------- Định nghĩa hàm initInlineNameEditor (ĐƯA RA NGOÀI) ----------
+// ---------- Định nghĩa hàm initInlineNameEditor (phải trước khi dùng) ----------
 function initInlineNameEditor() {
   const nameInput = document.getElementById('studentNameInline');
   const updateBtn = document.getElementById('updateNameInline');
@@ -109,7 +70,7 @@ function initInlineNameEditor() {
   });
 }
 
-// ---------- Init ----------
+// ---------- Init (CHỈ MỘT LẦN DUY NHẤT) ----------
 document.addEventListener('DOMContentLoaded', async () => {
   const params = new URLSearchParams(window.location.search);
   lessonId = params.get('id');
@@ -118,7 +79,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     alert('Không tìm thấy bài học!');
     window.location.href = '../index.html';
     return;
-    // ❌ KHÔNG có initInlineNameEditor ở đây
   }
 
   await loadLessonData();
@@ -132,11 +92,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   initMascot();
   initFavoriteBtn();
 
-  // ✅ GỌI HÀM Ở ĐÂY (sau khi mọi thứ sẵn sàng)
+  // GỌI HÀM NHẬP TÊN (sau khi mọi thứ sẵn sàng)
   initInlineNameEditor();
 });
 
-// ... (các hàm khác như renderMCQ, showResultsModal, ... giữ nguyên)
+// ---------- Các hàm còn lại giữ nguyên (loadLessonData, renderBanner, ...) ----------
+// ... (phần code cũ từ dòng ~100 trở đi không thay đổi)
 // ---------- Load Lesson Data ----------
 async function loadLessonData() {
   try {
