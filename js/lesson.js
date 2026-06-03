@@ -52,7 +52,14 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Mascot messages
   initMascot();
-// ---------- Inline Name Editor ----------
+
+}
+  // Favorite button
+  initFavoriteBtn();
+});
+// ... (các global variables, giữ nguyên)
+
+// ---------- Định nghĩa hàm initInlineNameEditor (ĐƯA RA NGOÀI) ----------
 function initInlineNameEditor() {
   const nameInput = document.getElementById('studentNameInline');
   const updateBtn = document.getElementById('updateNameInline');
@@ -60,13 +67,11 @@ function initInlineNameEditor() {
 
   if (!nameInput || !updateBtn) return;
 
-  // Hiển thị tên hiện tại (nếu có)
   const currentUser = Storage.getUser();
   if (currentUser && currentUser.name) {
     nameInput.value = currentUser.name;
   }
 
-  // Xử lý khi nhấn nút Lưu
   updateBtn.addEventListener('click', () => {
     const newName = nameInput.value.trim();
     if (newName === '') {
@@ -78,7 +83,6 @@ function initInlineNameEditor() {
       return;
     }
 
-    // Lưu vào Storage
     let user = Storage.getUser();
     if (user) {
       user.name = newName;
@@ -87,23 +91,16 @@ function initInlineNameEditor() {
       Storage.createUser(newName);
     }
 
-    // Thông báo thành công
     if (feedbackSpan) {
       feedbackSpan.textContent = '✅ Đã lưu tên!';
       feedbackSpan.style.color = '#10b981';
       setTimeout(() => { feedbackSpan.textContent = ''; }, 2000);
     }
 
-    // (Tuỳ chọn) Cập nhật lại thanh XP, level nếu cần
     if (typeof renderXPBar === 'function') renderXPBar();
-
-    // Hiển thị toast thông báo (nếu có hàm showToast)
-    if (typeof showToast === 'function') {
-      showToast(`👋 Chào ${newName}!`, 'success');
-    }
+    if (typeof showToast === 'function') showToast(`👋 Chào ${newName}!`, 'success');
   });
 
-  // Cho phép nhấn Enter để lưu
   nameInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
@@ -112,13 +109,34 @@ function initInlineNameEditor() {
   });
 }
 
-// Gọi hàm này trong DOMContentLoaded
-// (Đảm bảo nó được gọi sau khi Storage đã sẵn sàng)
-// Thêm dòng: initInlineNameEditor();
-  // Favorite button
+// ---------- Init ----------
+document.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(window.location.search);
+  lessonId = params.get('id');
+
+  if (!lessonId) {
+    alert('Không tìm thấy bài học!');
+    window.location.href = '../index.html';
+    return;
+    // ❌ KHÔNG có initInlineNameEditor ở đây
+  }
+
+  await loadLessonData();
+  renderBanner();
+  loadProgress();
+  updateFlashcardDisplay();
+  initExercise('vnToEn');
+  updateCompletedCount();
+  updateExerciseTabs();
+  initMusic();
+  initMascot();
   initFavoriteBtn();
+
+  // ✅ GỌI HÀM Ở ĐÂY (sau khi mọi thứ sẵn sàng)
+  initInlineNameEditor();
 });
 
+// ... (các hàm khác như renderMCQ, showResultsModal, ... giữ nguyên)
 // ---------- Load Lesson Data ----------
 async function loadLessonData() {
   try {
