@@ -1001,7 +1001,6 @@ function renderMatching(container) {
  * Trả về object chứa 4 giọng theo yêu cầu.
  */
 async function getNaturalVoices() {
-  // Hàm chờ voices load
   function waitForVoices() {
     return new Promise((resolve) => {
       let voices = speechSynthesis.getVoices();
@@ -1017,9 +1016,7 @@ async function getNaturalVoices() {
 
   const voices = await waitForVoices();
 
-  // Hàm tìm giọng theo các từ khóa ưu tiên
   function findVoice(priorityKeywords, langPrefix) {
-    // Ưu tiên giọng có tên chứa keyword (không phân biệt hoa thường)
     for (let kw of priorityKeywords) {
       const found = voices.find(v =>
         v.lang.startsWith(langPrefix) &&
@@ -1027,11 +1024,9 @@ async function getNaturalVoices() {
       );
       if (found) return found;
     }
-    // Fallback: bất kỳ giọng nào có langPrefix
     return voices.find(v => v.lang.startsWith(langPrefix)) || null;
   }
 
-  // Định nghĩa các giọng mong muốn (theo thứ tự ưu tiên)
   const ukFemale = findVoice(
     ['Google UK English Female', 'Samantha', 'Moira', 'Tessa', 'Serena'],
     'en-GB'
@@ -1049,7 +1044,6 @@ async function getNaturalVoices() {
     'en-US'
   );
 
-  // Trả về object, nếu thiếu giọng nào thì dùng giọng mặc định (giọng đầu tiên có lang phù hợp)
   const defaultUK = voices.find(v => v.lang.startsWith('en-GB')) || voices[0];
   const defaultUS = voices.find(v => v.lang.startsWith('en-US')) || voices[0];
 
@@ -1061,25 +1055,19 @@ async function getNaturalVoices() {
   };
 }
 
-// Mảng các kiểu giọng để xen kẽ
 const VOICE_TYPES = ['ukFemale', 'ukMale', 'usFemale', 'usMale'];
 
-/**
- * Phát câu với giọng được chỉ định
- * @param {string} text - Câu cần đọc
- * @param {SpeechSynthesisVoice} voice - Đối tượng giọng nói
- */
 function speakWithVoice(text, voice) {
   return new Promise((resolve) => {
     if (!voice) {
       resolve();
       return;
     }
-    speechSynthesis.cancel(); // Dừng mọi phát âm đang chạy
+    speechSynthesis.cancel();
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.voice = voice;
     utterance.lang = voice.lang;
-    utterance.rate = 0.85;   // Tốc độ chậm, dễ nghe
+    utterance.rate = 0.85;
     utterance.pitch = 1.0;
     utterance.volume = 1;
     utterance.onend = () => resolve();
@@ -1088,31 +1076,25 @@ function speakWithVoice(text, voice) {
   });
 }
 
-// Hàm renderListening chính (thay thế hoàn toàn)
 function renderListening(container) {
   usedHints = 0;
   const questions = getShuffledQuestions(vocabulary);
   let currentQ = 0;
   let score = 0;
 
-  // Lưu giọng nói đã chọn
   let selectedVoices = null;
 
-  // Hàm chuẩn hóa văn bản (giữ nguyên)
   function normalize(text) {
     return text.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
   }
 
-  // Hàm phát câu với giọng xen kẽ (dựa trên index câu)
   async function speakSentenceWithAlternatingVoice(sentence, questionIndex) {
     if (!selectedVoices) {
       selectedVoices = await getNaturalVoices();
     }
-    // Chọn kiểu giọng theo vòng lặp 4 kiểu
     const voiceType = VOICE_TYPES[questionIndex % VOICE_TYPES.length];
     const voice = selectedVoices[voiceType];
     if (voice) {
-      // (Tuỳ chọn) Hiển thị tooltip nhẹ cho biết giọng đang dùng
       console.log(`🎤 Đang dùng giọng: ${voice.name} (${voice.lang})`);
     }
     await speakWithVoice(sentence, voice);
@@ -1171,17 +1153,28 @@ function renderListening(container) {
       </div>
     `;
 
-    // Nút nghe: phát câu với giọng xen kẽ
+    // Lấy các phần tử sau khi đã render
     const listenBtn = document.getElementById('listenBtn');
+    const hintBtn = document.getElementById('hintBtn');
+    const checkBtn = document.getElementById('checkBtn');
+    const feedbackDiv = document.getElementById('feedback');
+    const nextContainer = document.getElementById('next-btn-container');
+    const nextBtn = document.getElementById('next-btn-listening');
+
+    // Kiểm tra tồn tại (an toàn)
+    if (!checkBtn) {
+      console.error('Không tìm thấy nút Check!');
+      return;
+    }
+
+    // Sự kiện cho nút nghe
     listenBtn.onclick = async () => {
-      // Disable nút tạm thời tránh spam
       listenBtn.disabled = true;
       await speakSentenceWithAlternatingVoice(item.example_sentence, currentQ);
       listenBtn.disabled = false;
     };
 
-    // Nút Hint (giữ nguyên)
-    const hintBtn = document.getElementById('hintBtn');
+    // Sự kiện cho nút Hint
     hintBtn.onclick = () => {
       if (usedHints >= totalHintsAllowed) {
         alert('You have used all 25 hints!');
@@ -1194,12 +1187,7 @@ function renderListening(container) {
       hintBtn.innerHTML = `💡 Hint (${totalHintsAllowed - usedHints} left)`;
     };
 
-    // Nút Check (giữ nguyên cơ chế similarity)
-    const checkBtn = document.getElementById('checkBtn');
-    const feedbackDiv = document.getElementById('feedback');
-    const nextContainer = document.getElementById('next-btn-container');
-    const nextBtn = document.getElementById('next-btn-listening');
-
+    // Sự kiện cho nút Check (quan trọng)
     checkBtn.onclick = () => {
       const userAnswer = normalize(document.getElementById('sentenceAnswer').value);
       const correct = normalize(item.example_sentence);
@@ -1226,6 +1214,7 @@ function renderListening(container) {
         `;
       }
 
+      // Disable các nút sau khi kiểm tra
       checkBtn.disabled = true;
       hintBtn.disabled = true;
       nextContainer.style.display = 'block';
@@ -1236,7 +1225,6 @@ function renderListening(container) {
     };
   }
 
-  // Bắt đầu câu hỏi đầu tiên
   renderQuestion();
 }
 // ---------- Test tổng hợp ----------
