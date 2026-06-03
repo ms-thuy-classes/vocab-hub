@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn English with Ms. Thúy</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3145/3145765.png">
+  <meta property="og:title" content="📚 Learn English with Ms. Thúy">
+  <meta property="og:description" content="Interactive Vocabulary Learning Website">
+  <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/3145/3145765.png">
+  <meta property="og:type" content="website">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">📚</span>
+        <span class="logo-text">Ms. Thúy</span>
+      </a>
+      <nav class="main-nav">
+        <button id="themeToggle" class="theme-toggle" title="Toggle Dark Mode">🌙</button>
+        <div class="user-info">
+          <span class="user-level" id="userLevelBadge">Lv.1</span>
+          <span class="user-xp" id="userXPBadge">0 XP</span>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <h1 class="hero-title">
+        Learn English with <span class="gradient-text">Ms. Thúy</span>
+      </h1>
+      <p class="hero-subtitle">
+        🎓 Nền tảng học từ vựng thông minh cho học sinh Lớp 1-12, IELTS & TOEIC
+      </p>
+
+      <!-- Search -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-input"
+          placeholder="Tìm bài học, chủ đề, tag..."
+          autocomplete="off"
+        />
+        <button id="clearSearch" class="clear-search hidden">✕</button>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📖</div>
+          <div class="stat-value" id="statLessons">0</div>
+          <div class="stat-label">Bài học</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">💡</div>
+          <div class="stat-value" id="statWords">0</div>
+          <div class="stat-label">Từ vựng</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-value" id="statCompleted">0</div>
+          <div class="stat-label">Hoàn thành</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⭐</div>
+          <div class="stat-value" id="statProgress">0%</div>
+          <div class="stat-label">Tiến độ</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== XP BAR ========== -->
+  <section class="xp-section">
+    <div class="container">
+      <div class="xp-card">
+        <div class="xp-header">
+          <div class="xp-info">
+            <span class="xp-label">Level <span id="currentLevel">1</span></span>
+            <span class="xp-progress-text"><span id="currentXP">0</span> / <span id="nextLevelXP">100</span> XP</span>
+          </div>
+          <div class="xp-title" id="xpTitle">🌱 Beginner</div>
+        </div>
+        <div class="xp-bar">
+          <div class="xp-fill" id="xpFill" style="width: 0%"></div>
+        </div>
+        <div class="achievements-mini" id="achievementsMini"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTINUE LEARNING ========== -->
+  <section class="continue-section" id="continueSection" style="display:none;">
+    <div class="container">
+      <h2 class="section-title">🚀 Continue Learning</h2>
+      <div id="continueGrid" class="continue-grid"></div>
+    </div>
+  </section>
+
+  <!-- ========== FILTERS ========== -->
+  <section class="filters-section">
+    <div class="container">
+      <h2 class="section-title">📚 All Lessons</h2>
+      <div class="filter-chips" id="filterChips">
+        <button class="chip active" data-filter="all">🌟 All</button>
+        <button class="chip" data-filter="grade1">Grade 1</button>
+        <button class="chip" data-filter="grade2">Grade 2</button>
+        <button class="chip" data-filter="grade3">Grade 3</button>
+        <button class="chip" data-filter="grade4">Grade 4</button>
+        <button class="chip" data-filter="grade5">Grade 5</button>
+        <button class="chip" data-filter="grade6">Grade 6</button>
+        <button class="chip" data-filter="grade7">Grade 7</button>
+        <button class="chip" data-filter="grade8">Grade 8</button>
+        <button class="chip" data-filter="grade9">Grade 9</button>
+        <button class="chip" data-filter="grade10">Grade 10</button>
+        <button class="chip" data-filter="grade11">Grade 11</button>
+        <button class="chip" data-filter="grade12">Grade 12</button>
+        <button class="chip" data-filter="ielts">🎯 IELTS</button>
+        <button class="chip" data-filter="toeic">💼 TOEIC</button>
+        <button class="chip" data-filter="favorites">❤️ Yêu thích</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LESSONS GRID ========== -->
+  <section class="lessons-section">
+    <div class="container">
+      <div class="lessons-header">
+        <p class="results-count" id="resultsCount">0 bài học</p>
+        <select id="sortSelect" class="sort-select">
+          <option value="default">Mặc định</option>
+          <option value="name-asc">Tên A-Z</option>
+          <option value="name-desc">Tên Z-A</option>
+          <option value="words-asc">Ít từ → Nhiều</option>
+          <option value="words-desc">Nhiều từ → Ít</option>
+        </select>
+      </div>
+      <div class="lessons-grid" id="lessonsGrid">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon">🔍</div>
+        <h3>Không tìm thấy bài
