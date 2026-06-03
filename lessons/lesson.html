@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Bài học • Ms. Thúy</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3145/3145765.png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pastel-blue': '#AEC6CF',
+            'pastel-green': '#B5EAD7',
+            'pastel-coral': '#FFB7B2',
+            'pastel-yellow': '#FDFD96',
+            'pastel-lavender': '#C3B1E1',
+            'pastel-mint': '#C1F0C1',
+            'off-white': '#F8F9FA',
+            'soft-gray': '#E9ECEF'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/lesson.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-200 via-pink-200 to-purple-100 font-sans text-gray-900">
+
+  <!-- Background music -->
+  <audio id="bgMusic" loop>
+    <source src="https://raw.githubusercontent.com/ms-thuy-classes/audio/main/lofidreams-lofi-background-music-326931.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicBtn" class="music-btn">🎵 Play Music</button>
+
+  <!-- Back to home -->
+  <a href="../index.html" class="back-home-btn">🏠 Về trang chủ</a>
+
+  <div class="max-w-5xl mx-auto p-4 min-h-screen">
+
+    <!-- ========== HEADER ========== -->
+    <header class="mb-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-violet-600 via-fuchsia-500 to-pink-500 bg-clip-text text-transparent drop-shadow-sm">
+        📚 Learn with Ms. Thúy
+      </h1>
+      <div class="lesson-banner" id="lessonBanner">
+        <div class="lesson-banner-icon" id="bannerIcon">📖</div>
+        <h2 class="lesson-banner-title" id="bannerTitle">Đang tải...</h2>
+        <p class="lesson-banner-desc" id="bannerDesc"></p>
+        <div class="lesson-banner-meta">
+          <span id="bannerVocabCount">0 từ</span>
+          <span>•</span>
+          <span>8 bài tập</span>
+        </div>
+        <button id="favoriteBtn" class="favorite-btn" title="Yêu thích">🤍</button>
+      </div>
+    </header>
+
+    <!-- ========== FLASHCARD ========== -->
+    <section class="mb-12">
+      <div class="max-w-xl mx-auto mb-4 flex items-center justify-between text-sm font-semibold text-gray-600">
+        <span id="progress-text">1/0</span>
+        <span id="mastered-count">Mastered: 0</span>
+      </div>
+      <div class="max-w-xl mx-auto h-2 bg-soft-gray rounded-full overflow-hidden mb-6">
+        <div id="progress-fill" class="progress-fill h-full w-0"></div>
+      </div>
+
+      <div id="flashcard" class="flip-container" onclick="flipCard()">
+        <div class="flipper">
+          <div class="front">
+            <h2 id="front-word" class="text-4xl font-bold mb-2">Loading...</h2>
+            <span id="front-wordform" class="wordform-badge badge-n">n</span>
+            <p id="front-ipa" class="text-xl text-gray-600 mb-4">/.../</p>
+            <button id="speak-btn" onclick="event.stopPropagation(); speakWord()" class="bg-white hover:bg-gray-100 text-pastel-blue font-bold py-2 px-4 rounded-full shadow-md transition transform hover:scale-105">
+              🔊 Listen
+            </button>
+          </div>
+          <div class="back">
+            <p id="back-meaning" class="text-2xl font-semibold mb-3">...</p>
+            <p id="back-example" class="italic text-lg mb-1">"..."</p>
+            <p id="back-translation" class="text-sm text-gray-600">"..."</p>
+            <p id="back-collocations" class="text-xs text-purple-600 mt-2"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center items-center gap-4 mt-6">
+        <button onclick="prevCard()" class="bg-white hover:bg-pastel-blue hover:text-white text-gray-700 font-bold py-3 px-5 rounded-full shadow-md transition transform hover:scale-105 border border-pastel-blue">←</button>
+        <button id="mastered-btn" onclick="markMastered()" class="bg-pastel-green hover:bg-green-300 text-gray-800 font-bold py-3 px-6 rounded-full shadow-md transition transform hover:scale-105 flex items-center gap-2">
+          <span id="mastered-icon">✔️</span> Mastered
+        </button>
+        <button onclick="nextCard()" class="bg-white hover:bg-pastel-blue hover:text-white text-gray-700 font-bold py-3 px-5 rounded-full shadow-md transition transform hover:scale-105 border border-pastel-blue">→</button>
+      </div>
+    </section>
+
+    <!-- ========== EXERCISES ========== -->
+    <section class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+      <div class="flex flex-wrap items-center justify-between mb-6">
+        <h2 class="text-2xl font-bold text-pastel-blue">📝 Exercises & Test</h2>
+        <div class="flex gap-3 items-center">
+          <div id="exercise-progress" class="text-sm font-semibold bg-pastel-yellow px-3 py-1 rounded-full">
+            📊 Completed: 0/8
+          </div>
+          <button onclick="showResultsModal()" class="bg-pastel-coral hover:bg-red-300 text-white font-bold py-2 px-6 rounded-full shadow-md transition transform hover:scale-105">
+            🖨️ Print Results
+          </button>
+          <button onclick="showCertificateModal()" class="bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-white font-bold py-2 px-6 rounded-full shadow-md transition transform hover:scale-105">
+            🎓 Certificate
+          </button>
+        </div>
+      </div>
+
+      <div class="flex overflow-x-auto overflow-y-visible space-x-2 mb-6 pb-4 exercise-tabs">
+        <button onclick="switchTab('vnToEn')" class="tab-btn active px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="vnToEn">VN → EN</button>
+        <button onclick="switchTab('enToVn')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="enToVn">EN → VN</button>
+        <button onclick="switchTab('fillBlank')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="fillBlank">Fill‑in‑Blank</button>
+        <button onclick="switchTab('wordScramble')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="wordScramble">Word Scramble</button>
+        <button onclick="switchTab('sentenceScramble')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="sentenceScramble">Sentence Scramble</button>
+        <button onclick="switchTab('matching')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="matching">Matching</button>
+        <button onclick="switchTab('listening')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="listening">🎧 Listening</button>
+        <button onclick="switchTab('test')" class="tab-btn px-4 py-2 rounded-full font-semibold transition bg-soft-gray hover:bg-pastel-mint" data-tab="test">⭐ Test tổng hợp</button>
+      </div>
+
+      <div id="vnToEn" class="tab-content active"></div>
+      <div id="enToVn" class="tab-content"></div>
+      <div id="fillBlank" class="tab-content"></div>
+      <div id="wordScramble" class="tab-content"></div>
+      <div id="sentenceScramble" class="tab-content"></div>
+      <div id="matching" class="tab-content"></div>
+      <div id="listening" class="tab-content"></div>
+      <div id="test" class="tab-content"></div>
+    </section>
+  </div>
+
+  <!-- ========== RESULTS MODAL ========== -->
+  <div id="resultsModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-3xl w-full mx-4 max-h-[85vh] overflow-y-auto shadow-2xl p-6 relative">
+      <button onclick="closeResultsModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ========== CERTIFICATE MODAL ========== -->
+  <div id="certificateModal" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50 hidden transition-all duration-300">
+    <div class="bg-white rounded-3xl max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto shadow-2xl p-6 relative certificate-container">
+      <button onclick="closeCertificateModal()" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-3xl noprint">&times;</button>
+      <div id="certificateContent" class="text-center"></div>
+      <div class="text-center mt-4 noprint">
+        <button onclick="window.print()" class="bg-pastel-green hover:bg-green-300 text-gray-800 font-bold py-2 px-8 rounded-full shadow-md transition transform hover:scale-105">
+          🖨️ In chứng chỉ
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mascot -->
+  <img id="mascotImg" class="ms-thuy-mascot" src="https://marketplace.canva.com/SrBBE/MAGvNOSrBBE/1/tl/canva-cartoon-illustration-female-teacher-MAGvNOSrBBE.png" alt="Ms. Thúy">
+  <div id="speechBubble" class="speech-bubble"></div>
+
+  <!-- Scripts -->
+  <script src="../js/storage.js"></script>
+  <script src="../js/lesson.js"></script>
+</body>
+</html>
