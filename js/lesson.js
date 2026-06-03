@@ -994,99 +994,84 @@ function renderMatching(container) {
   renderPage(0);
 }
 
-// ---------- Listening helper ----------
-function calculateSimilarity(str1, str2) {
-  str1 = str1.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
-  str2 = str2.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
-  const words1 = str1.split(' ');
-  const words2 = str2.split(' ');
-  let matchCount = 0;
-  words1.forEach(word => {
-    if (words2.includes(word)) matchCount++;
-  });
-  return matchCount / words2.length;
-}
-
-// ---------- Listening nâng cấp (giọng tự nhiên, xen kẽ) ----------
-async function getNaturalVoices() {
-  function waitForVoices() {
-    return new Promise((resolve) => {
-      let voices = speechSynthesis.getVoices();
-      if (voices.length) {
-        resolve(voices);
-      } else {
-        speechSynthesis.addEventListener('voiceschanged', () => {
-          resolve(speechSynthesis.getVoices());
-        }, { once: true });
-      }
-    });
-  }
-  const voices = await waitForVoices();
-  function findVoice(priorityKeywords, langPrefix) {
-    for (let kw of priorityKeywords) {
-      const found = voices.find(v =>
-        v.lang.startsWith(langPrefix) &&
-        v.name.toLowerCase().includes(kw.toLowerCase())
-      );
-      if (found) return found;
-    }
-    return voices.find(v => v.lang.startsWith(langPrefix)) || null;
-  }
-  const ukFemale = findVoice(['Google UK English Female', 'Samantha', 'Moira', 'Tessa', 'Serena'], 'en-GB');
-  const ukMale = findVoice(['Google UK English Male', 'Daniel', 'Arthur', 'Charlie'], 'en-GB');
-  const usFemale = findVoice(['Google US English', 'Samantha', 'Allison', 'Ava', 'Zira'], 'en-US');
-  const usMale = findVoice(['Google US English', 'Alex', 'Mark', 'David', 'Guy'], 'en-US');
-  const defaultUK = voices.find(v => v.lang.startsWith('en-GB')) || voices[0];
-  const defaultUS = voices.find(v => v.lang.startsWith('en-US')) || voices[0];
-  return {
-    ukFemale: ukFemale || defaultUK,
-    ukMale: ukMale || defaultUK,
-    usFemale: usFemale || defaultUS,
-    usMale: usMale || defaultUS
-  };
-}
-
-const VOICE_TYPES = ['ukFemale', 'ukMale', 'usFemale', 'usMale'];
-
-function speakWithVoice(text, voice) {
-  return new Promise((resolve) => {
-    if (!voice) { resolve(); return; }
-    speechSynthesis.cancel();
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.voice = voice;
-    utterance.lang = voice.lang;
-    utterance.rate = 0.85;
-    utterance.pitch = 1.0;
-    utterance.volume = 1;
-    utterance.onend = () => resolve();
-    utterance.onerror = () => resolve();
-    speechSynthesis.speak(utterance);
-  });
-}
-
+// ---------- Listening (điền từng ô, check từng từ, 4 giọng xen kẽ) ----------
 function renderListening(container) {
   usedHints = 0;
   const questions = getShuffledQuestions(vocabulary);
   let currentQ = 0;
   let score = 0;
+
+  let userAnswers = [];
   let selectedVoices = null;
 
-  function normalize(text) {
-    return text.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
+  // Helper: lấy 4 giọng chất lượng cao (UK female, UK male, US female, US male)
+  async function getNaturalVoices() {
+    if (selectedVoices) return selectedVoices;
+    function waitForVoices() {
+      return new Promise((resolve) => {
+        let voices = speechSynthesis.getVoices();
+        if (voices.length) resolve(voices);
+        else speechSynthesis.addEventListener('voiceschanged', () => resolve(speechSynthesis.getVoices()), { once: true });
+      });
+    }
+    const voices = await waitForVoices();
+    function findVoice(priorityKeywords, langPrefix) {
+      for (let kw of priorityKeywords) {
+        const found = voices.find(v =>
+          v.lang.startsWith(langPrefix) &&
+          v.name.toLowerCase().includes(kw.toLowerCase())
+        );
+        if (found) return found;
+      }
+      return voices.find(v => v.lang.startsWith(langPrefix)) || null;
+    }
+    const ukFemale = findVoice(['Google UK English Female', 'Samantha', 'Moira', 'Tessa', 'Serena'], 'en-GB');
+    const ukMale = findVoice(['Google UK English Male', 'Daniel', 'Arthur', 'Charlie'], 'en-GB');
+    const usFemale = findVoice(['Google US English', 'Samantha', 'Allison', 'Ava', 'Zira'], 'en-US');
+    const usMale = findVoice(['Google US English', 'Alex', 'Mark', 'David', 'Guy'], 'en-US');
+    const defaultUK = voices.find(v => v.lang.startsWith('en-GB')) || voices[0];
+    const defaultUS = voices.find(v => v.lang.startsWith('en-US')) || voices[0];
+    selectedVoices = {
+      ukFemale: ukFemale || defaultUK,
+      ukMale: ukMale || defaultUK,
+      usFemale: usFemale || defaultUS,
+      usMale: usMale || defaultUS
+    };
+    return selectedVoices;
   }
 
-  async function speakSentenceWithAlternatingVoice(sentence, questionIndex) {
-    if (!selectedVoices) selectedVoices = await getNaturalVoices();
-    const voiceType = VOICE_TYPES[questionIndex % VOICE_TYPES.length];
-    const voice = selectedVoices[voiceType];
-    if (voice) console.log(`🎤 Giọng: ${voice.name} (${voice.lang})`);
-    await speakWithVoice(sentence, voice);
+  const VOICE_TYPES = ['ukFemale', 'ukMale', 'usFemale', 'usMale'];
+
+  // Hàm phát câu với giọng xen kẽ theo index câu
+  async function speakWithVoice(sentence, voiceObj) {
+    return new Promise((resolve) => {
+      if (!voiceObj) { resolve(); return; }
+      speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(sentence);
+      utterance.voice = voiceObj;
+      utterance.lang = voiceObj.lang;
+      utterance.rate = 0.85;
+      utterance.pitch = 1.0;
+      utterance.volume = 1;
+      utterance.onend = () => resolve();
+      utterance.onerror = () => resolve();
+      speechSynthesis.speak(utterance);
+    });
+  }
+
+  function tokenizeSentence(sentence) {
+    return sentence.match(/\b[\w']+\b|[.,!?;:]/g) || [];
+  }
+  function isPunctuation(token) {
+    return /^[.,!?;:]$/.test(token);
   }
 
   function renderQuestion() {
     if (currentQ >= questions.length) {
       exerciseScores.listening = {
-        score, total: questions.length, hintsUsed: usedHints,
+        score,
+        total: questions.length,
+        hintsUsed: usedHints,
         grade: (score / questions.length * 10).toFixed(1)
       };
       Storage.saveScore(lessonId, 'listening', exerciseScores.listening);
@@ -1096,20 +1081,40 @@ function renderListening(container) {
     }
 
     const item = questions[currentQ];
-    const words = item.example_sentence.split(' ');
+    const originalSentence = item.example_sentence;
+    const tokens = tokenizeSentence(originalSentence);
+    const wordTokens = tokens.filter(t => !isPunctuation(t));
+    const totalWords = wordTokens.length;
+
+    if (!userAnswers[currentQ]) userAnswers[currentQ] = new Array(totalWords).fill('');
+    let wordStatus = new Array(totalWords).fill(null);
     let hintIndex = 0;
+
+    // Tạo HTML các ô input
+    let sentenceHtml = '<div class="listening-sentence" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px;">';
+    let inputIdx = 0;
+    for (let token of tokens) {
+      if (isPunctuation(token)) {
+        sentenceHtml += `<span class="punctuation" style="font-size: 1.4rem; font-weight: bold; margin: 0 2px;">${token}</span>`;
+      } else {
+        sentenceHtml += `<input type="text" class="word-input" data-idx="${inputIdx}" style="width: 100px; padding: 8px; text-align: center; border-radius: 12px; border: 2px solid #cbd5e1; font-size: 1rem;" autocomplete="off" value="${escapeHtml(userAnswers[currentQ][inputIdx])}">`;
+        inputIdx++;
+      }
+    }
+    sentenceHtml += '</div>';
 
     container.innerHTML = `
       <div class="quiz-card text-center">
         <div class="mb-3"><span class="font-bold text-purple-700">Question ${currentQ + 1}/${questions.length}</span></div>
-        <div class="mb-4"><button id="listenBtn" class="audio-play-btn mx-auto">🔊</button></div>
+        <div class="mb-4"><button id="listenBtn" class="audio-play-btn mx-auto">🔊 Listen</button></div>
         <div id="hintArea" class="bg-purple-50 rounded-xl p-4 mb-4 min-h-[70px]"><b>Hints:</b><br><span id="hintText">No hints yet</span></div>
-        <input id="sentenceAnswer" type="text" autocomplete="off" placeholder="Type the full sentence..." class="listening-input w-full max-w-2xl mx-auto px-4 py-3 rounded-xl text-center">
+        ${sentenceHtml}
         <div class="flex justify-center gap-3 mt-5 flex-wrap">
           <button id="hintBtn" class="bg-yellow-400 hover:bg-yellow-500 text-white px-5 py-3 rounded-full font-bold">💡 Hint (${totalHintsAllowed - usedHints} left)</button>
           <button id="checkBtn" class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold">✅ Check</button>
         </div>
         <div id="feedback" class="mt-5 text-xl font-bold"></div>
+        <div id="resultArea" class="mt-4 p-4 bg-gray-100 rounded-xl hidden"></div>
         <div id="next-btn-container" class="text-center mt-4" style="display:none;"><button class="next-btn" id="next-btn-listening">Next ➡️</button></div>
       </div>
     `;
@@ -1118,42 +1123,137 @@ function renderListening(container) {
     const hintBtn = document.getElementById('hintBtn');
     const checkBtn = document.getElementById('checkBtn');
     const feedbackDiv = document.getElementById('feedback');
+    const resultArea = document.getElementById('resultArea');
     const nextContainer = document.getElementById('next-btn-container');
     const nextBtn = document.getElementById('next-btn-listening');
+    const inputs = document.querySelectorAll('.word-input');
 
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str.replace(/[&<>]/g, function(m) {
+        if (m === '&') return '&amp;';
+        if (m === '<') return '&lt;';
+        if (m === '>') return '&gt;';
+        return m;
+      });
+    }
+
+    // Cập nhật userAnswers khi gõ
+    inputs.forEach((input, idx) => {
+      input.value = userAnswers[currentQ][idx] || '';
+      input.addEventListener('input', (e) => {
+        userAnswers[currentQ][idx] = e.target.value;
+      });
+    });
+
+    // Phím cách chuyển ô
+    function handleKeydown(e, idx) {
+      if (e.code === 'Space' && !e.repeat) {
+        e.preventDefault();
+        if (idx + 1 < inputs.length) inputs[idx + 1].focus();
+      }
+    }
+    inputs.forEach((input, idx) => {
+      input.addEventListener('keydown', (e) => handleKeydown(e, idx));
+    });
+
+    // Nút nghe: sử dụng 4 giọng xen kẽ
     listenBtn.onclick = async () => {
       listenBtn.disabled = true;
-      await speakSentenceWithAlternatingVoice(item.example_sentence, currentQ);
+      const voices = await getNaturalVoices();
+      const voiceType = VOICE_TYPES[currentQ % VOICE_TYPES.length];
+      const voice = voices[voiceType];
+      if (voice) {
+        await speakWithVoice(originalSentence, voice);
+      } else {
+        // fallback
+        const utterance = new SpeechSynthesisUtterance(originalSentence);
+        utterance.rate = 0.9;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+      }
       listenBtn.disabled = false;
     };
 
+    // Hint: điền từ đúng vào ô tiếp theo
+    const correctWords = wordTokens;
     hintBtn.onclick = () => {
-      if (usedHints >= totalHintsAllowed) { alert('You have used all 25 hints!'); return; }
-      if (hintIndex >= words.length) return;
-      usedHints++; hintIndex++;
-      document.getElementById('hintText').textContent = words.slice(0, hintIndex).join(' ');
+      if (usedHints >= totalHintsAllowed) {
+        alert('You have used all 25 hints!');
+        return;
+      }
+      if (hintIndex >= totalWords) return;
+      const targetInput = inputs[hintIndex];
+      if (targetInput) {
+        targetInput.value = correctWords[hintIndex];
+        userAnswers[currentQ][hintIndex] = correctWords[hintIndex];
+        targetInput.dispatchEvent(new Event('input'));
+      }
+      usedHints++;
+      hintIndex++;
+      document.getElementById('hintText').innerHTML = correctWords.slice(0, hintIndex).join(' ');
       hintBtn.innerHTML = `💡 Hint (${totalHintsAllowed - usedHints} left)`;
     };
 
+    // Check: so sánh từng từ, tô màu, hiển thị kết quả
     checkBtn.onclick = () => {
-      const userAnswer = normalize(document.getElementById('sentenceAnswer').value);
-      const correct = normalize(item.example_sentence);
-      const similarity = calculateSimilarity(userAnswer, correct);
-
-      if (similarity >= 0.7) {
+      let correctCount = 0;
+      for (let i = 0; i < inputs.length; i++) {
+        const userWord = (userAnswers[currentQ][i] || '').trim().toLowerCase();
+        const correctWord = correctWords[i].toLowerCase();
+        const isCorrect = (userWord === correctWord);
+        if (isCorrect) correctCount++;
+        wordStatus[i] = isCorrect;
+        // Tô màu ô
+        if (isCorrect) {
+          inputs[i].style.backgroundColor = '#bbf7d0';
+          inputs[i].style.borderColor = '#22c55e';
+        } else {
+          inputs[i].style.backgroundColor = '#fee2e2';
+          inputs[i].style.borderColor = '#ef4444';
+        }
+      }
+      const percent = Math.round((correctCount / totalWords) * 100);
+      const isAccepted = (correctCount / totalWords) >= 0.7;
+      if (isAccepted) {
         score++;
         playSound('success');
-        if (similarity === 1) feedbackDiv.innerHTML = `<span class="text-green-500">✅ Perfect! (100%)</span>`;
-        else feedbackDiv.innerHTML = `<span class="text-green-500">✅ Accepted (${Math.round(similarity * 100)}%)</span><div class="mt-3 text-gray-700">Correct sentence:</div><div class="mt-2 font-semibold text-purple-700">${item.example_sentence}</div>`;
+        feedbackDiv.innerHTML = `<span class="text-green-500">✅ Đúng! (${percent}% từ chính xác)</span>`;
       } else {
         playSound('error');
-        feedbackDiv.innerHTML = `<span class="text-red-500">❌ ${Math.round(similarity * 100)}%</span><div class="mt-3 text-gray-700">Correct sentence:</div><div class="mt-2 font-semibold text-purple-700">${item.example_sentence}</div>`;
+        feedbackDiv.innerHTML = `<span class="text-red-500">❌ Sai (${percent}% đúng). Cần ít nhất 70%.</span>`;
       }
+
+      // Hiển thị câu đúng, highlight từ sai
+      let fullCorrectHtml = '';
+      let wordIdx = 0;
+      for (let token of tokens) {
+        if (isPunctuation(token)) {
+          fullCorrectHtml += `<span class="correct-punct">${token}</span> `;
+        } else {
+          const isWordCorrect = wordStatus[wordIdx];
+          if (isWordCorrect) {
+            fullCorrectHtml += `<span class="correct-word" style="color: #16a34a; font-weight: bold;">${token}</span> `;
+          } else {
+            fullCorrectHtml += `<span class="wrong-word" style="color: #dc2626; font-weight: bold; text-decoration: underline;">${token}</span> `;
+          }
+          wordIdx++;
+        }
+      }
+      resultArea.innerHTML = `
+        <div><strong>Tỉ lệ đúng:</strong> ${percent}% (${correctCount}/${totalWords})</div>
+        <div class="mt-2"><strong>Câu đúng:</strong></div>
+        <div class="text-lg font-semibold mt-1">${fullCorrectHtml}</div>
+      `;
+      resultArea.classList.remove('hidden');
 
       checkBtn.disabled = true;
       hintBtn.disabled = true;
       nextContainer.style.display = 'block';
-      nextBtn.addEventListener('click', () => { currentQ++; renderQuestion(); }, { once: true });
+      nextBtn.addEventListener('click', () => {
+        currentQ++;
+        renderQuestion();
+      }, { once: true });
     };
   }
 
