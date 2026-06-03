@@ -994,35 +994,128 @@ function renderMatching(container) {
   renderPage(0);
 }
 
-// ---------- Listening ----------
-function calculateSimilarity(str1, str2) {
-  str1 = str1.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
-  str2 = str2.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
-  const words1 = str1.split(' ');
-  const words2 = str2.split(' ');
-  let matchCount = 0;
-  words1.forEach(word => {
-    if (words2.includes(word)) matchCount++;
-  });
-  return matchCount / words2.length;
+// ---------- Listening (nâng cấp giọng đọc tự nhiên, xen kẽ 4 giọng) ----------
+
+/**
+ * Lấy danh sách giọng nói có sẵn, ưu tiên các giọng chất lượng cao.
+ * Trả về object chứa 4 giọng theo yêu cầu.
+ */
+async function getNaturalVoices() {
+  // Hàm chờ voices load
+  function waitForVoices() {
+    return new Promise((resolve) => {
+      let voices = speechSynthesis.getVoices();
+      if (voices.length) {
+        resolve(voices);
+      } else {
+        speechSynthesis.addEventListener('voiceschanged', () => {
+          resolve(speechSynthesis.getVoices());
+        }, { once: true });
+      }
+    });
+  }
+
+  const voices = await waitForVoices();
+
+  // Hàm tìm giọng theo các từ khóa ưu tiên
+  function findVoice(priorityKeywords, langPrefix) {
+    // Ưu tiên giọng có tên chứa keyword (không phân biệt hoa thường)
+    for (let kw of priorityKeywords) {
+      const found = voices.find(v =>
+        v.lang.startsWith(langPrefix) &&
+        v.name.toLowerCase().includes(kw.toLowerCase())
+      );
+      if (found) return found;
+    }
+    // Fallback: bất kỳ giọng nào có langPrefix
+    return voices.find(v => v.lang.startsWith(langPrefix)) || null;
+  }
+
+  // Định nghĩa các giọng mong muốn (theo thứ tự ưu tiên)
+  const ukFemale = findVoice(
+    ['Google UK English Female', 'Samantha', 'Moira', 'Tessa', 'Serena'],
+    'en-GB'
+  );
+  const ukMale = findVoice(
+    ['Google UK English Male', 'Daniel', 'Arthur', 'Charlie'],
+    'en-GB'
+  );
+  const usFemale = findVoice(
+    ['Google US English', 'Samantha', 'Allison', 'Ava', 'Zira'],
+    'en-US'
+  );
+  const usMale = findVoice(
+    ['Google US English', 'Alex', 'Mark', 'David', 'Guy'],
+    'en-US'
+  );
+
+  // Trả về object, nếu thiếu giọng nào thì dùng giọng mặc định (giọng đầu tiên có lang phù hợp)
+  const defaultUK = voices.find(v => v.lang.startsWith('en-GB')) || voices[0];
+  const defaultUS = voices.find(v => v.lang.startsWith('en-US')) || voices[0];
+
+  return {
+    ukFemale: ukFemale || defaultUK,
+    ukMale: ukMale || defaultUK,
+    usFemale: usFemale || defaultUS,
+    usMale: usMale || defaultUS
+  };
 }
 
+// Mảng các kiểu giọng để xen kẽ
+const VOICE_TYPES = ['ukFemale', 'ukMale', 'usFemale', 'usMale'];
+
+/**
+ * Phát câu với giọng được chỉ định
+ * @param {string} text - Câu cần đọc
+ * @param {SpeechSynthesisVoice} voice - Đối tượng giọng nói
+ */
+function speakWithVoice(text, voice) {
+  return new Promise((resolve) => {
+    if (!voice) {
+      resolve();
+      return;
+    }
+    speechSynthesis.cancel(); // Dừng mọi phát âm đang chạy
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.voice = voice;
+    utterance.lang = voice.lang;
+    utterance.rate = 0.85;   // Tốc độ chậm, dễ nghe
+    utterance.pitch = 1.0;
+    utterance.volume = 1;
+    utterance.onend = () => resolve();
+    utterance.onerror = () => resolve();
+    speechSynthesis.speak(utterance);
+  });
+}
+
+// Hàm renderListening chính (thay thế hoàn toàn)
 function renderListening(container) {
   usedHints = 0;
   const questions = getShuffledQuestions(vocabulary);
   let currentQ = 0;
   let score = 0;
 
+  // Lưu giọng nói đã chọn
+  let selectedVoices = null;
+
+  // Hàm chuẩn hóa văn bản (giữ nguyên)
   function normalize(text) {
     return text.toLowerCase().replace(/[.,!?]/g, '').replace(/\s+/g, ' ').trim();
   }
 
-  function speakSentence(text) {
-    speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = 'en-US';
-    utter.rate = 0.9;
-    speechSynthesis.speak(utter);
+  // Hàm phát câu với giọng xen kẽ (dựa trên index câu)
+  async function speakSentenceWithAlternatingVoice(sentence, questionIndex) {
+    if (!selectedVoices) {
+      selectedVoices = await getNaturalVoices();
+    }
+    // Chọn kiểu giọng theo vòng lặp 4 kiểu
+    const voiceType = VOICE_TYPES[questionIndex % VOICE_TYPES.length];
+    const voice = selectedVoices[voiceType];
+    if (voice) {
+      // (Tuỳ chọn) Hiển thị tooltip nhẹ cho biết giọng đang dùng
+      console.log(`🎤 Đang dùng giọng: ${voice.name} (${voice.lang})`);
+    }
+    await speakWithVoice(sentence, voice);
   }
 
   function renderQuestion() {
@@ -1078,9 +1171,18 @@ function renderListening(container) {
       </div>
     `;
 
-    document.getElementById('listenBtn').onclick = () => speakSentence(item.example_sentence);
+    // Nút nghe: phát câu với giọng xen kẽ
+    const listenBtn = document.getElementById('listenBtn');
+    listenBtn.onclick = async () => {
+      // Disable nút tạm thời tránh spam
+      listenBtn.disabled = true;
+      await speakSentenceWithAlternatingVoice(item.example_sentence, currentQ);
+      listenBtn.disabled = false;
+    };
 
-    document.getElementById('hintBtn').onclick = () => {
+    // Nút Hint (giữ nguyên)
+    const hintBtn = document.getElementById('hintBtn');
+    hintBtn.onclick = () => {
       if (usedHints >= totalHintsAllowed) {
         alert('You have used all 25 hints!');
         return;
@@ -1089,22 +1191,27 @@ function renderListening(container) {
       usedHints++;
       hintIndex++;
       document.getElementById('hintText').textContent = words.slice(0, hintIndex).join(' ');
-      document.getElementById('hintBtn').innerHTML = `💡 Hint (${totalHintsAllowed - usedHints} left)`;
+      hintBtn.innerHTML = `💡 Hint (${totalHintsAllowed - usedHints} left)`;
     };
 
-    document.getElementById('checkBtn').onclick = () => {
+    // Nút Check (giữ nguyên cơ chế similarity)
+    const checkBtn = document.getElementById('checkBtn');
+    const feedbackDiv = document.getElementById('feedback');
+    const nextContainer = document.getElementById('next-btn-container');
+    const nextBtn = document.getElementById('next-btn-listening');
+
+    checkBtn.onclick = () => {
       const userAnswer = normalize(document.getElementById('sentenceAnswer').value);
       const correct = normalize(item.example_sentence);
-      const feedback = document.getElementById('feedback');
       const similarity = calculateSimilarity(userAnswer, correct);
 
       if (similarity >= 0.7) {
         score++;
         playSound('success');
         if (similarity === 1) {
-          feedback.innerHTML = `<span class="text-green-500">✅ Perfect! (100%)</span>`;
+          feedbackDiv.innerHTML = `<span class="text-green-500">✅ Perfect! (100%)</span>`;
         } else {
-          feedback.innerHTML = `
+          feedbackDiv.innerHTML = `
             <span class="text-green-500">✅ Accepted (${Math.round(similarity * 100)}%)</span>
             <div class="mt-3 text-gray-700">Correct sentence:</div>
             <div class="mt-2 font-semibold text-purple-700">${item.example_sentence}</div>
@@ -1112,25 +1219,26 @@ function renderListening(container) {
         }
       } else {
         playSound('error');
-        feedback.innerHTML = `
+        feedbackDiv.innerHTML = `
           <span class="text-red-500">❌ ${Math.round(similarity * 100)}%</span>
           <div class="mt-3 text-gray-700">Correct sentence:</div>
           <div class="mt-2 font-semibold text-purple-700">${item.example_sentence}</div>
         `;
       }
 
-      document.getElementById('checkBtn').disabled = true;
-      document.getElementById('hintBtn').disabled = true;
-      document.getElementById('next-btn-container').style.display = 'block';
-      document.getElementById('next-btn-listening').addEventListener('click', () => {
+      checkBtn.disabled = true;
+      hintBtn.disabled = true;
+      nextContainer.style.display = 'block';
+      nextBtn.addEventListener('click', () => {
         currentQ++;
         renderQuestion();
-      });
+      }, { once: true });
     };
   }
+
+  // Bắt đầu câu hỏi đầu tiên
   renderQuestion();
 }
-
 // ---------- Test tổng hợp ----------
 function renderTest(container) {
   const total = vocabulary.length;
