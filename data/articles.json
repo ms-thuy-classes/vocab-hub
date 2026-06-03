@@ -1,0 +1,56 @@
+{
+  "articles": [
+    {
+      "id": "ielts-hometown",
+      "title": "IELTS Hometown",
+      "description": "Từ vựng IELTS chủ đề Quê hương - Dùng cho Speaking Part 1 & 2",
+      "category": "ielts",
+      "level": "IELTS",
+      "icon": "🏡",
+      "vocabCount": 19,
+      "exerciseCount": 8,
+      "thumbnail": "hometown.jpg",
+      "file": "ielts-hometown.json",
+      "tags": ["ielts", "speaking", "hometown", "part1"]
+    },
+    {
+      "id": "toeic-business",
+      "title": "TOEIC Business Meeting",
+      "description": "Từ vựng TOEIC chủ đề Cuộc họp kinh doanh",
+      "category": "toeic",
+      "level": "TOEIC",
+      "icon": "💼",
+      "vocabCount": 19,
+      "exerciseCount": 8,
+      "thumbnail": "business.jpg",
+      "file": "toeic-business.json",
+      "tags": ["toeic", "business", "meeting", "work"]
+    },
+    {
+      "id": "grade6-unit1",
+      "title": "Grade 6 - Unit 1: My New School",
+      "description": "Từ vựng Tiếng Anh lớp 6 - Trường học mới của tôi",
+      "category": "grade6",
+      "level": "Grade 6",
+      "icon": "🏫",
+      "vocabCount": 19,
+      "exerciseCount": 8,
+      "thumbnail": "school.jpg",
+      "file": "grade6.json",
+      "tags": ["grade6", "school", "unit1", "basic"]
+    },
+    {
+      "id": "grade7-unit1",
+      "title": "Grade 7 - Unit 1: My Hobbies",
+      "description": "Từ vựng Tiếng Anh lớp 7 - Sở thích của tôi",
+      "category": "grade7",
+      "level": "Grade 7",
+      "icon": "🎨",
+      "vocabCount": 19,
+      "exerciseCount": 8,
+      "thumbnail": "hobbies.jpg",
+      "file": "grade7.json",
+      "tags": ["grade7", "hobbies", "unit1"]
+    }
+  ]
+}
