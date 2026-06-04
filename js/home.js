@@ -136,7 +136,13 @@ function renderContinueLearning() {
     if (!article) return;
     const progress = item.completedExercises ? item.completedExercises.length : 0;
     const percent = Math.round((progress / 8) * 100);
-    html += '<a href="lessons/lesson.html?id=' + article.id + '" class="continue-card">';
+const page = article.layout || 'lesson';
+
+html += '<a href="lessons/' +
+        page +
+        '.html?id=' +
+        article.id +
+        '" class="continue-card">';
     html += '<div class="continue-icon">' + (article.icon || '📖') + '</div>';
     html += '<div class="continue-info">';
     html += '<div class="continue-title">' + article.title + '</div>';
