@@ -199,7 +199,14 @@ function renderLessonCard(article) {
   if (completedCount > 0) {
     progressBar = '<div class="lesson-progress-bar"><div class="lesson-progress-fill" style="width:' + percent + '%"></div></div>';
   }
-  let html = '<a href="lessons/lesson.html?id=' + article.id + '" class="lesson-card">';
+  const page = article.layout || 'lesson';
+
+let html =
+  '<a href="lessons/' +
+  page +
+  '.html?id=' +
+  article.id +
+  '" class="lesson-card">';
   html += '<button class="lesson-favorite ' + (isFav ? 'is-favorite' : '') + '" data-id="' + article.id + '">';
   html += (isFav ? '❤️' : '🤍');
   html += '</button>';
