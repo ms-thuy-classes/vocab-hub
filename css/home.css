@@ -583,3 +583,49 @@
   margin-bottom: 0.5rem;
   color: #374151;
 }
+/* ===== DARK MODE ===== */
+
+body.dark-mode {
+  background: #111827;
+  color: #f9fafb;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode span,
+body.dark-mode div,
+body.dark-mode label {
+  color: #f9fafb;
+}
+
+body.dark-mode .section-title,
+body.dark-mode .hero-subtitle,
+body.dark-mode .results-count,
+body.dark-mode .stat-label {
+  color: #e5e7eb;
+}
+body.dark-mode .lesson-card,
+body.dark-mode .stat-card,
+body.dark-mode .xp-card,
+body.dark-mode .continue-card {
+  background: #1f2937;
+  color: white;
+}
+body.dark-mode .search-input {
+  background: #374151;
+  color: white;
+}
+
+body.dark-mode .search-input::placeholder {
+  color: #9ca3af;
+}
+body.dark-mode .sort-select {
+  background: #374151;
+  color: white;
+  border-color: #4b5563;
+}
