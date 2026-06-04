@@ -4,7 +4,7 @@ let currentSort = 'default';
 let currentQuery = '';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  console.log('Khoi dong trang chu...');
+  console.log('Khởi động trang chủ...');
   const user = Storage.getUser();
   if (!user) {
     showNameModal();
@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', async () => {
   initTheme();
   const loaded = await loadArticles();
   if (!loaded) {
-    console.error('Khong load duoc articles.json');
+    console.error('Không load được articles.json');
     const grid = document.getElementById('lessonsGrid');
     if (grid) {
-      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">⚠️</div><h3>Khong tai duoc bai hoc</h3><p>Kiem tra file data/articles.json</p></div>';
+      grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1;"><div class="empty-icon">⚠️</div><h3>Không tải được bài học</h3><p>Kiểm tra file data/articles.json</p></div>';
     }
     return;
   }
-  console.log('Da load ' + allArticles.length + ' bai hoc');
+  console.log('Đã load ' + allArticles.length + ' bài học (chỉ lesson)');
   renderStats();
   renderXPBar();
   renderContinueLearning();
@@ -44,20 +44,31 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
+// Lọc chỉ giữ các bài có layout = "lesson" (hoặc không có layout – mặc định coi là lesson)
+function filterValidArticles(articles) {
+  if (!articles) return [];
+  return articles.filter(article => {
+    // Chỉ chấp nhận bài có layout là "lesson" hoặc không có layout (coi như lesson)
+    const layout = article.layout;
+    return !layout || layout === 'lesson';
+  });
+}
+
 async function loadArticles() {
   const paths = ['data/articles.json', './data/articles.json'];
   for (const path of paths) {
     try {
-      console.log('Thu fetch: ' + path);
+      console.log('Thử fetch: ' + path);
       const response = await fetch(path, { cache: 'no-cache' });
       console.log('Status: ' + response.status);
       if (!response.ok) continue;
       const data = await response.json();
-      allArticles = data.articles || [];
-      console.log('Load duoc ' + allArticles.length + ' bai');
+      // Lọc chỉ giữ bài lesson
+      allArticles = filterValidArticles(data.articles || []);
+      console.log('Load được ' + allArticles.length + ' bài (đã lọc)');
       return true;
     } catch (error) {
-      console.error('Loi: ' + error.message);
+      console.error('Lỗi: ' + error.message);
     }
   }
   return false;
@@ -130,13 +141,14 @@ function renderContinueLearning() {
     return;
   }
   section.style.display = 'block';
-  let html = ''; // chỉ khai báo 1 lần ở đây
+  let html = '';
   recent.forEach(item => {
     const article = allArticles.find(a => a.id === item.id);
     if (!article) return;
     const progress = item.completedExercises ? item.completedExercises.length : 0;
     const percent = Math.round((progress / 8) * 100);
-    html += '<a href="' + article.page + '?id=' + article.id + '" class="lesson-card">';
+    const page = article.page || 'lessons/lesson.html'; // fallback
+    html += '<a href="' + page + '?id=' + article.id + '" class="lesson-card">';
     html += '<div class="continue-icon">' + (article.icon || '📖') + '</div>';
     html += '<div class="continue-info">';
     html += '<div class="continue-title">' + article.title + '</div>';
@@ -146,6 +158,7 @@ function renderContinueLearning() {
   });
   grid.innerHTML = html;
 }
+
 function renderLessons() {
   const grid = document.getElementById('lessonsGrid');
   const emptyState = document.getElementById('emptyState');
@@ -153,7 +166,7 @@ function renderLessons() {
   if (!grid) return;
   const favorites = Storage.getFavorites();
   const filtered = Filters.applyAll(allArticles, currentFilter, currentSort, currentQuery, favorites);
-  if (countEl) countEl.textContent = filtered.length + ' bai hoc';
+  if (countEl) countEl.textContent = filtered.length + ' bài học';
   if (filtered.length === 0) {
     grid.innerHTML = '';
     if (emptyState) emptyState.classList.remove('hidden');
@@ -195,10 +208,10 @@ function renderLessonCard(article) {
     progressBar = '<div class="lesson-progress-bar"><div class="lesson-progress-fill" style="width:' + percent + '%"></div></div>';
   }
 
-  // Khai báo biến html trước khi dùng
+  // Luôn dùng page của article, fallback nếu thiếu
+  const page = article.page || 'lessons/lesson.html';
   let html = '';
-
-  html += '<a href="' + article.page + '?id=' + article.id + '" class="continue-card">';
+  html += '<a href="' + page + '?id=' + article.id + '" class="continue-card">';
   html += '<button class="lesson-favorite ' + (isFav ? 'is-favorite' : '') + '" data-id="' + article.id + '">';
   html += (isFav ? '❤️' : '🤍');
   html += '</button>';
@@ -217,12 +230,13 @@ function renderLessonCard(article) {
 
   return html;
 }
+
 function renderAchievementsMini() {
   const container = document.getElementById('achievementsMini');
   if (!container) return;
   const unlocked = ACHIEVEMENTS.filter(a => Storage.hasAchievement(a.id)).slice(0, 5);
   if (unlocked.length === 0) {
-    container.innerHTML = '<span style="color:#6b7280;font-size:0.85rem;">Chua co thanh tuu 🌱</span>';
+    container.innerHTML = '<span style="color:#6b7280;font-size:0.85rem;">Chưa có thành tựu 🌱</span>';
     return;
   }
   let html = '';
@@ -247,7 +261,7 @@ function showNameModal() {
     }
     Storage.createUser(name);
     modal.classList.add('hidden');
-    showToast('Xin chao ' + name + '!', 'success');
+    showToast('Xin chào ' + name + '!', 'success');
     renderXPBar();
   };
   if (btn) btn.onclick = save;
