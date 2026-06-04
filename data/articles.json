@@ -61,19 +61,6 @@
       "tags": ["grade6", "school", "unit1", "basic"]
     },
     {
-  "id": "toeic-listening-01",
-  "title": "TOEIC Listening Test 1",
-  "description": "Office Conversation & Meeting",
-  "category": "toeic",
-  "level": "TOEIC",
-  "icon": "🎧",
-  "thumbnail": "office.jpg",
-  "duration": "03:45",
-  "layout": "listening",
-  "page": "listening/listening.html",
-  "file": "listening/toeic-listening-01.json"
-},
-    {
       "id": "grade7-unit1",
       "title": "Grade 7 - Unit 1: My Hobbies",
       "description": "Từ vựng Tiếng Anh lớp 7 - Sở thích của tôi",
