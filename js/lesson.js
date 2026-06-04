@@ -642,7 +642,7 @@ function renderFillBlank(container) {
     const originalWord = v.word;
     const variants = getAllVariants(originalWord);
     // Tìm biến thể nào thực sự xuất hiện trong câu gốc
-    let correctVariant = null;
+   
  const matchedVariants = [...variants]
   .filter(variant => {
     const regex = new RegExp(
@@ -656,7 +656,7 @@ function renderFillBlank(container) {
 const correctVariant =
   matchedVariants[0] || originalWord;
     // Nếu không tìm thấy (câu không chứa biến thể nào), dùng từ gốc
-    if (!correctVariant) correctVariant = originalWord;
+
 
     // Thay thế chính xác biến thể đó bằng _____
     let blankSentence = originalSentence.replace(
