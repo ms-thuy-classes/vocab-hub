@@ -10,8 +10,7 @@
       "vocabCount": 19,
       "exerciseCount": 8,
       "thumbnail": "hometown.jpg",
-      "layout": "lesson",
-      "page": "lessons/lesson.html",
+        
       "file": "ielts-hometown.json",
       "tags": ["ielts", "speaking", "hometown", "part1"]
     },
@@ -25,8 +24,7 @@
       "vocabCount": 19,
       "exerciseCount": 8,
       "thumbnail": "✍️",
-        "layout": "lesson",
-       "page": "lessons/lesson.html",
+         
       "file": "ielts-phrasal-verbs.json",
       "tags": ["ielts", "speaking", "hometown", "part1"]
     },
@@ -40,8 +38,7 @@
       "vocabCount": 18,
       "exerciseCount": 8,
       "thumbnail": "business.jpg",
-       "layout": "lesson",
-      "page": "lessons/lesson.html",
+        
       "file": "toeic-business.json",
       "tags": ["toeic", "business", "meeting", "work"]
     },
@@ -55,8 +52,7 @@
       "vocabCount": 2,
       "exerciseCount": 8,
       "thumbnail": "school.jpg",
-       "layout": "lesson",
-      "page": "lessons/lesson.html",
+        
       "file": "grade6.json",
       "tags": ["grade6", "school", "unit1", "basic"]
     },
@@ -70,8 +66,7 @@
       "vocabCount": 2,
       "exerciseCount": 8,
       "thumbnail": "hobbies.jpg",
-       "layout": "lesson",
-      "page": "lessons/lesson.html",
+        
       "file": "grade7.json",
       "tags": ["grade7", "hobbies", "unit1"]
     }
