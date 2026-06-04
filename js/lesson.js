@@ -533,6 +533,32 @@ function renderFillBlank(container) {
     const base = word.toLowerCase();
     const variants = new Set();
     variants.add(base);
+     const irregularVerbs = {
+  come: ['came'],
+  go: ['went', 'gone'],
+  see: ['saw', 'seen'],
+  eat: ['ate', 'eaten'],
+  take: ['took', 'taken'],
+  give: ['gave', 'given'],
+  make: ['made'],
+  find: ['found'],
+  think: ['thought'],
+  buy: ['bought'],
+  bring: ['brought'],
+  teach: ['taught'],
+  speak: ['spoke', 'spoken'],
+  write: ['wrote', 'written'],
+  break: ['broke', 'broken'],
+  run: ['ran'],
+  begin: ['began', 'begun'],
+  drink: ['drank', 'drunk'],
+  sing: ['sang', 'sung'],
+  swim: ['swam', 'swum']
+};
+
+if (irregularVerbs[base]) {
+  irregularVerbs[base].forEach(v => variants.add(v));
+}
     // Số nhiều / ngôi ba số ít (s, es, ies)
     if (base.endsWith('y') && !'aeiou'.includes(base[base.length-2])) {
       variants.add(base.slice(0, -1) + 'ies');
@@ -552,6 +578,7 @@ function renderFillBlank(container) {
     } else {
       variants.add(base + 'ed');
       variants.add(base + 'ing');
+       
       // Nhân đôi phụ âm cuối (CVC)
       const last = base[base.length-1];
       const prev = base[base.length-2];
