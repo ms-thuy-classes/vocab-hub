@@ -529,73 +529,111 @@ function renderFillBlank(container) {
   }
 
   // Tạo tất cả biến thể của một từ (dựa trên quy tắc chính tả)
-  function getAllVariants(word) {
-    const base = word.toLowerCase();
-    const variants = new Set();
-    variants.add(base);
-     const irregularVerbs = {
-  come: ['came'],
-  go: ['went', 'gone'],
-  see: ['saw', 'seen'],
-  eat: ['ate', 'eaten'],
-  take: ['took', 'taken'],
-  give: ['gave', 'given'],
-  make: ['made'],
-  find: ['found'],
-  think: ['thought'],
-  buy: ['bought'],
-  bring: ['brought'],
-  teach: ['taught'],
-  speak: ['spoke', 'spoken'],
-  write: ['wrote', 'written'],
-  break: ['broke', 'broken'],
-  run: ['ran'],
-  begin: ['began', 'begun'],
-  drink: ['drank', 'drunk'],
-  sing: ['sang', 'sung'],
-  swim: ['swam', 'swum']
-};
+ function getAllVariants(word) {
 
-if (irregularVerbs[base]) {
-  irregularVerbs[base].forEach(v => variants.add(v));
-}
-    // Số nhiều / ngôi ba số ít (s, es, ies)
-    if (base.endsWith('y') && !'aeiou'.includes(base[base.length-2])) {
-      variants.add(base.slice(0, -1) + 'ies');
-      variants.add(base + 's');
-    } else if (base.endsWith('s') || base.endsWith('sh') || base.endsWith('ch') || base.endsWith('x') || base.endsWith('z') || base.endsWith('o')) {
-      variants.add(base + 'es');
-    } else {
-      variants.add(base + 's');
+  const base = word.toLowerCase().trim();
+  const variants = new Set();
+
+  const irregularVerbs = {
+    come: ['came'],
+    go: ['went', 'gone'],
+    see: ['saw', 'seen'],
+    eat: ['ate', 'eaten'],
+    take: ['took', 'taken'],
+    give: ['gave', 'given'],
+    make: ['made'],
+    find: ['found'],
+    think: ['thought'],
+    buy: ['bought'],
+    bring: ['brought'],
+    teach: ['taught'],
+    speak: ['spoke', 'spoken'],
+    write: ['wrote', 'written'],
+    break: ['broke', 'broken'],
+    run: ['ran'],
+    begin: ['began', 'begun'],
+    drink: ['drank', 'drunk'],
+    sing: ['sang', 'sung'],
+    swim: ['swam', 'swum']
+  };
+
+  function buildVerbForms(verb) {
+
+    const forms = new Set();
+    forms.add(verb);
+
+    if (irregularVerbs[verb]) {
+      irregularVerbs[verb].forEach(v => forms.add(v));
     }
-    // Quá khứ / phân từ (ed, ing, ied, nhân đôi phụ âm)
-    if (base.endsWith('e')) {
-      variants.add(base + 'd');
-      variants.add(base.slice(0, -1) + 'ing');
-    } else if (base.endsWith('y') && !'aeiou'.includes(base[base.length-2])) {
-      variants.add(base.slice(0, -1) + 'ied');
-      variants.add(base + 'ing');
+
+    if (verb.endsWith('y') &&
+        verb.length > 1 &&
+        !"aeiou".includes(verb[verb.length - 2])) {
+
+      forms.add(verb.slice(0, -1) + 'ies');
+      forms.add(verb.slice(0, -1) + 'ied');
+      forms.add(verb + 'ing');
+
+    } else if (verb.endsWith('e')) {
+
+      forms.add(verb + 'd');
+      forms.add(verb.slice(0, -1) + 'ing');
+      forms.add(verb + 's');
+
     } else {
-      variants.add(base + 'ed');
-      variants.add(base + 'ing');
-       
-      // Nhân đôi phụ âm cuối (CVC)
-      const last = base[base.length-1];
-      const prev = base[base.length-2];
+
+      forms.add(verb + 's');
+      forms.add(verb + 'ed');
+      forms.add(verb + 'ing');
+
       const vowels = 'aeiou';
-      if (base.length >= 3 && !vowels.includes(last) && vowels.includes(prev) && !vowels.includes(base[base.length-3])) {
-        variants.add(base + last + 'ed');
-        variants.add(base + last + 'ing');
+      const last = verb[verb.length - 1];
+      const prev = verb[verb.length - 2];
+
+      if (
+        verb.length >= 3 &&
+        !vowels.includes(last) &&
+        vowels.includes(prev)
+      ) {
+        forms.add(verb + last + 'ed');
+        forms.add(verb + last + 'ing');
       }
     }
-    // Thêm dạng viết hoa chữ cái đầu (cho trường hợp đầu câu)
-    const result = new Set();
-    variants.forEach(v => {
-      result.add(v);
-      result.add(v.charAt(0).toUpperCase() + v.slice(1));
-    });
-    return result;
+
+    return [...forms];
   }
+
+  // ===== PHRASAL VERB =====
+
+  if (base.includes(' ')) {
+
+    const parts = base.split(' ');
+    const verb = parts[0];
+    const particle = parts.slice(1).join(' ');
+
+    buildVerbForms(verb).forEach(form => {
+      variants.add(`${form} ${particle}`);
+    });
+
+  } else {
+
+    buildVerbForms(base).forEach(v => {
+      variants.add(v);
+    });
+
+  }
+
+  // viết hoa đầu câu
+
+  const result = new Set();
+
+  variants.forEach(v => {
+    result.add(v);
+    result.add(v.charAt(0).toUpperCase() + v.slice(1));
+  });
+
+  return result;
+}
 
   // Tạo danh sách câu hỏi
   let questions = [];
@@ -605,13 +643,18 @@ if (irregularVerbs[base]) {
     const variants = getAllVariants(originalWord);
     // Tìm biến thể nào thực sự xuất hiện trong câu gốc
     let correctVariant = null;
-    for (let variant of variants) {
-      const regex = new RegExp(`\\b${escapeRegex(variant)}\\b`, 'i');
-      if (regex.test(originalSentence)) {
-        correctVariant = variant;
-        break;
-      }
-    }
+ const matchedVariants = [...variants]
+  .filter(variant => {
+    const regex = new RegExp(
+      `\\b${escapeRegex(variant)}\\b`,
+      'i'
+    );
+    return regex.test(originalSentence);
+  })
+  .sort((a, b) => b.length - a.length);
+
+const correctVariant =
+  matchedVariants[0] || originalWord;
     // Nếu không tìm thấy (câu không chứa biến thể nào), dùng từ gốc
     if (!correctVariant) correctVariant = originalWord;
 
