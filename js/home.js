@@ -194,41 +194,40 @@ function renderLessons() {
 function renderLessonCard(article) {
   const isFav = Storage.isFavorite(article.id);
   const progress = Storage.getLessonProgress(article.id);
-  const completedCount = progress && progress.completedExercises ? progress.completedExercises.length : 0;
+  const completedCount = progress?.completedExercises?.length || 0;
   const percent = Math.round((completedCount / 8) * 100);
+  const tags = (article.tags || []).slice(0, 3).map(tag => `<span class="lesson-tag">#${tag}</span>`).join('');
 
-  let tagsHtml = '';
-  const tags = (article.tags || []).slice(0, 3);
-  tags.forEach(tag => {
-    tagsHtml += '<span class="lesson-tag">#' + tag + '</span>';
+  return `
+    <a href="lessons/lesson.html?id=${article.id}" class="lesson-card">
+      <button class="lesson-favorite ${isFav ? 'is-favorite' : ''}" data-id="${article.id}">
+        ${isFav ? '❤️' : '🤍'}
+      </button>
+      <div class="lesson-thumbnail">${article.icon || '📖'}</div>
+      <div class="lesson-card-body">
+        <span class="lesson-level-badge">${article.level}</span>
+        <h3 class="lesson-title">${escapeHtml(article.title)}</h3>
+        <p class="lesson-description">${escapeHtml(article.description || '')}</p>
+        <div class="lesson-meta">
+          <span class="lesson-meta-item">💡 ${article.vocabCount || 0} từ</span>
+          <span class="lesson-meta-item">📝 ${article.exerciseCount || 8} bài tập</span>
+        </div>
+        <div class="lesson-tags">${tags}</div>
+        ${completedCount > 0 ? `<div class="lesson-progress-bar"><div class="lesson-progress-fill" style="width:${percent}%"></div></div>` : ''}
+      </div>
+    </a>
+  `;
+}
+
+// Thêm hàm nhỏ để tránh lỗi XSS
+function escapeHtml(str) {
+  if (!str) return '';
+  return str.replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
   });
-
-  let progressBar = '';
-  if (completedCount > 0) {
-    progressBar = '<div class="lesson-progress-bar"><div class="lesson-progress-fill" style="width:' + percent + '%"></div></div>';
-  }
-
-  // Luôn dùng page của article, fallback nếu thiếu
-  const page = article.page || 'lessons/lesson.html';
-  let html = '';
-  html += '<a href="' + page + '?id=' + article.id + '" class="continue-card">';
-  html += '<button class="lesson-favorite ' + (isFav ? 'is-favorite' : '') + '" data-id="' + article.id + '">';
-  html += (isFav ? '❤️' : '🤍');
-  html += '</button>';
-  html += '<div class="lesson-thumbnail">' + (article.icon || '📖') + '</div>';
-  html += '<div class="lesson-card-body">';
-  html += '<span class="lesson-level-badge">' + article.level + '</span>';
-  html += '<h3 class="lesson-title">' + article.title + '</h3>';
-  html += '<p class="lesson-description">' + (article.description || '') + '</p>';
-  html += '<div class="lesson-meta">';
-  html += '<span class="lesson-meta-item">💡 ' + (article.vocabCount || 0) + ' từ</span>';
-  html += '<span class="lesson-meta-item">📝 ' + (article.exerciseCount || 8) + ' bài tập</span>';
-  html += '</div>';
-  html += '<div class="lesson-tags">' + tagsHtml + '</div>';
-  html += progressBar;
-  html += '</div></a>';
-
-  return html;
 }
 
 function renderAchievementsMini() {
