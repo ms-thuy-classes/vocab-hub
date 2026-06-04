@@ -77,10 +77,10 @@
   },
   {
     "id": 8,
-    "word": "a bustling",
+    "word": "bustling",
     "wordForm": "adjective",
-    "ipa": "/ə ˈbʌs.lɪŋ/",
-    "vietnamese_meaning": "một sự nhộn nhịp/hối hả",
+    "ipa": "/ˈbʌs.lɪŋ/",
+    "vietnamese_meaning": "nhộn nhịp/hối hả",
     "example_sentence": "The city center is always a bustling area with heavy traffic and crowded markets.",
     "example_translation": "Trung tâm thành phố luôn là một khu vực nhộn nhịp với giao thông dày đặc và các khu chợ đông đúc.",
     "collocations": ["a bustling street", "a bustling port"]
