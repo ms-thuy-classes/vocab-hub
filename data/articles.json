@@ -11,6 +11,7 @@
       "exerciseCount": 8,
       "thumbnail": "hometown.jpg",
       "layout": "lesson",
+      "page": "lessons/lesson.html",
       "file": "ielts-hometown.json",
       "tags": ["ielts", "speaking", "hometown", "part1"]
     },
@@ -25,6 +26,7 @@
       "exerciseCount": 8,
       "thumbnail": "✍️",
         "layout": "lesson",
+       "page": "lessons/lesson.html",
       "file": "ielts-phrasal-verbs.json",
       "tags": ["ielts", "speaking", "hometown", "part1"]
     },
@@ -39,6 +41,7 @@
       "exerciseCount": 8,
       "thumbnail": "business.jpg",
        "layout": "lesson",
+      "page": "lessons/lesson.html",
       "file": "toeic-business.json",
       "tags": ["toeic", "business", "meeting", "work"]
     },
@@ -53,6 +56,7 @@
       "exerciseCount": 8,
       "thumbnail": "school.jpg",
        "layout": "lesson",
+      "page": "lessons/lesson.html",
       "file": "grade6.json",
       "tags": ["grade6", "school", "unit1", "basic"]
     },
@@ -66,6 +70,7 @@
   "thumbnail": "office.jpg",
   "duration": "03:45",
   "layout": "listening",
+  "page": "listening/listening.html",
   "file": "listening/toeic-listening-01.json"
 },
     {
@@ -79,6 +84,7 @@
       "exerciseCount": 8,
       "thumbnail": "hobbies.jpg",
        "layout": "lesson",
+      "page": "lessons/lesson.html",
       "file": "grade7.json",
       "tags": ["grade7", "hobbies", "unit1"]
     }
