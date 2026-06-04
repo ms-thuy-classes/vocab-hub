@@ -629,3 +629,24 @@ body.dark-mode .sort-select {
   color: white;
   border-color: #4b5563;
 }
+.lesson-card,
+.continue-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--surface, #fff);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.25s;
+}
+
+.lesson-card .lesson-thumbnail,
+.continue-card .lesson-thumbnail {
+  font-size: 3rem;
+  margin-bottom: 12px;
+  order: -1;  /* luôn đưa icon lên trên cùng */
+}
