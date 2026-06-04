@@ -66,7 +66,7 @@
   "thumbnail": "office.jpg",
   "duration": "03:45",
   "layout": "listening",
-  "file": "data/listening/toeic-listening-01.json"
+  "file": "listening/toeic-listening-01.json"
 },
     {
       "id": "grade7-unit1",
