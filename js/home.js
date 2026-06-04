@@ -136,13 +136,12 @@ function renderContinueLearning() {
     if (!article) return;
     const progress = item.completedExercises ? item.completedExercises.length : 0;
     const percent = Math.round((progress / 8) * 100);
-const page = article.layout || 'lesson';
-
-html += '<a href="lessons/' +
-        page +
-        '.html?id=' +
-        article.id +
-        '" class="continue-card">';
+let html =
+  '<a href="' +
+  article.page +
+  '?id=' +
+  article.id +
+  '" class="lesson-card">';
     html += '<div class="continue-icon">' + (article.icon || '📖') + '</div>';
     html += '<div class="continue-info">';
     html += '<div class="continue-title">' + article.title + '</div>';
@@ -199,14 +198,11 @@ function renderLessonCard(article) {
   if (completedCount > 0) {
     progressBar = '<div class="lesson-progress-bar"><div class="lesson-progress-fill" style="width:' + percent + '%"></div></div>';
   }
-  const page = article.layout || 'lesson';
-
-let html =
-  '<a href="lessons/' +
-  page +
-  '.html?id=' +
-  article.id +
-  '" class="lesson-card">';
+ html += '<a href="' +
+        article.page +
+        '?id=' +
+        article.id +
+        '" class="continue-card">';
   html += '<button class="lesson-favorite ' + (isFav ? 'is-favorite' : '') + '" data-id="' + article.id + '">';
   html += (isFav ? '❤️' : '🤍');
   html += '</button>';
