@@ -7,10 +7,9 @@
       "category": "ielts",
       "level": "IELTS",
       "icon": "🏡",
-      "vocabCount": 19,
+      "vocabCount": 15,
       "exerciseCount": 8,
-      "thumbnail": "hometown.jpg",
-        
+      "thumbnail": "hometown.jpg",    
       "file": "ielts-hometown.json",
       "tags": ["ielts", "speaking", "hometown", "part1"]
     },
