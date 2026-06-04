@@ -130,28 +130,22 @@ function renderContinueLearning() {
     return;
   }
   section.style.display = 'block';
-  let html = '';
+  let html = ''; // chỉ khai báo 1 lần ở đây
   recent.forEach(item => {
     const article = allArticles.find(a => a.id === item.id);
     if (!article) return;
     const progress = item.completedExercises ? item.completedExercises.length : 0;
     const percent = Math.round((progress / 8) * 100);
-let html =
-  '<a href="' +
-  article.page +
-  '?id=' +
-  article.id +
-  '" class="lesson-card">';
+    html += '<a href="' + article.page + '?id=' + article.id + '" class="lesson-card">';
     html += '<div class="continue-icon">' + (article.icon || '📖') + '</div>';
     html += '<div class="continue-info">';
     html += '<div class="continue-title">' + article.title + '</div>';
-    html += '<div style="font-size:0.8rem;color:#6b7280;">' + progress + '/8 bai tap</div>';
+    html += '<div style="font-size:0.8rem;color:#6b7280;">' + progress + '/8 bài tập</div>';
     html += '<div class="continue-progress"><div class="continue-progress-fill" style="width:' + percent + '%"></div></div>';
     html += '</div></a>';
   });
   grid.innerHTML = html;
 }
-
 function renderLessons() {
   const grid = document.getElementById('lessonsGrid');
   const emptyState = document.getElementById('emptyState');
@@ -189,20 +183,22 @@ function renderLessonCard(article) {
   const progress = Storage.getLessonProgress(article.id);
   const completedCount = progress && progress.completedExercises ? progress.completedExercises.length : 0;
   const percent = Math.round((completedCount / 8) * 100);
+
   let tagsHtml = '';
   const tags = (article.tags || []).slice(0, 3);
   tags.forEach(tag => {
     tagsHtml += '<span class="lesson-tag">#' + tag + '</span>';
   });
+
   let progressBar = '';
   if (completedCount > 0) {
     progressBar = '<div class="lesson-progress-bar"><div class="lesson-progress-fill" style="width:' + percent + '%"></div></div>';
   }
- html += '<a href="' +
-        article.page +
-        '?id=' +
-        article.id +
-        '" class="continue-card">';
+
+  // Khai báo biến html trước khi dùng
+  let html = '';
+
+  html += '<a href="' + article.page + '?id=' + article.id + '" class="continue-card">';
   html += '<button class="lesson-favorite ' + (isFav ? 'is-favorite' : '') + '" data-id="' + article.id + '">';
   html += (isFav ? '❤️' : '🤍');
   html += '</button>';
@@ -212,15 +208,15 @@ function renderLessonCard(article) {
   html += '<h3 class="lesson-title">' + article.title + '</h3>';
   html += '<p class="lesson-description">' + (article.description || '') + '</p>';
   html += '<div class="lesson-meta">';
-  html += '<span class="lesson-meta-item">💡 ' + (article.vocabCount || 0) + ' tu</span>';
-  html += '<span class="lesson-meta-item">📝 ' + (article.exerciseCount || 8) + ' bai tap</span>';
+  html += '<span class="lesson-meta-item">💡 ' + (article.vocabCount || 0) + ' từ</span>';
+  html += '<span class="lesson-meta-item">📝 ' + (article.exerciseCount || 8) + ' bài tập</span>';
   html += '</div>';
   html += '<div class="lesson-tags">' + tagsHtml + '</div>';
   html += progressBar;
   html += '</div></a>';
+
   return html;
 }
-
 function renderAchievementsMini() {
   const container = document.getElementById('achievementsMini');
   if (!container) return;
