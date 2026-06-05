@@ -155,7 +155,7 @@
       "example_translation": "Con số giảm đột ngột.",
       "collocations": ["rise sharply", "decline sharply"]
     },
-      "id": 16,
+      {"id": 16,
   "word": "dramatically",
   "wordForm": "adverb",
   "ipa": "/drəˈmætɪkli/",
