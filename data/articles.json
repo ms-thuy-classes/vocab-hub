@@ -1,5 +1,18 @@
 {
   "articles": [
+     {
+      "id": "grade12-can-ban",
+      "title": "Grade12 -Căn bản, thì hiện tại đơn",
+      "description": "Từ vựng, ngữ pháp căn bản",
+      "category": "grade12",
+      "level": "grade12",
+      "icon": "️️🎨",
+      "vocabCount": 30,
+      "exerciseCount": 8,
+      "thumbnail": "sports.jpg",    
+      "file": "grade12-can-ban.json",
+      "tags": ["grade12", "can-ban"]
+    },
     {
       "id": "ielts-speaking-sports",
       "title": "IELTS Speaking: Sports",
