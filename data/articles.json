@@ -13,6 +13,19 @@
       "file": "ielts-hometown.json",
       "tags": ["ielts", "speaking", "hometown", "part1"]
     },
+    {
+  "id": "ielts-writing-task1-trends",
+  "title": "IELTS Writing Task 1 Trends",
+  "description": "Từ vựng IELTS Writing Task 1 về xu hướng, dao động, đỉnh đáy và sự ổn định",
+  "category": "ielts",
+  "level": "IELTS",
+  "icon": "📈",
+  "vocabCount": 34,
+  "exerciseCount": 8,
+  "thumbnail": "writing-task1-trends.jpg",
+  "file": "ielts-writing-task1-trends.json",
+  "tags": [ "ielts", "writing","task1", "trends"]
+}
      {
       "id": "ielts-phrasal-verbs",
       "title": "IELTS Phrasal Verbs",
