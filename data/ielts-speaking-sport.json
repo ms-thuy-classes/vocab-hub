@@ -1,1 +1,130 @@
-
+{
+  "id": "ielts-speaking-sport",
+  "title": "IELTS Speaking: Sports",
+  "description": "Từ vựng IELTS- Dùng cho Speaking Part 1 & 2",
+  "icon": "️⚽",
+  "thumbnail": "️⚽",
+  "vocabulary": [
+  {
+    "id": 1,
+    "word": "do exercise",
+    "wordForm": "verb phrase",
+    "ipa": "/duː ˈek.sə.saɪz/",
+    "vietnamese_meaning": "tập thể dục",
+    "example_sentence": "Doctors recommend that people should do exercise for at least 30 minutes a day.",
+    "example_translation": "Các bác sĩ khuyên mọi người nên tập thể dục ít nhất 30 phút mỗi ngày.",
+    "collocations": ["do regular exercise", "do outdoor exercise"]
+  },
+  {
+    "id": 2,
+    "word": "workout",
+    "wordForm": "noun/verb",
+    "ipa": "/ˈwɜːk.aʊt/",
+    "vietnamese_meaning": "tập thể hình, buổi tập thể dục",
+    "example_sentence": "After a hard workout at home, I always feel energized and ready for the day.",
+    "example_translation": "Sau một buổi tập thể dục hết sức tại nhà, tôi luôn cảm thấy tràn đầy năng lượng và sẵn sàng cho ngày mới.",
+    "collocations": ["daily workout", "intense workout"]
+  },
+  {
+    "id": 3,
+    "word": "hit the gym",
+    "wordForm": "idiom/phrase",
+    "ipa": "/hɪt ðə dʒɪm/",
+    "vietnamese_meaning": "đi đến phòng tập gym",
+    "example_sentence": "I usually hit the gym with my friends three times a week after work.",
+    "example_translation": "Tôi thường đi đến phòng tập gym với bạn bè ba lần một tuần sau giờ làm việc.",
+    "collocations": ["ready to hit the gym"]
+  },
+  {
+    "id": 4,
+    "word": "keep fit",
+    "wordForm": "verb phrase",
+    "ipa": "/kiːp fɪt/",
+    "vietnamese_meaning": "giữ dáng, giữ cơ thể khỏe mạnh",
+    "example_sentence": "Eating a balanced diet and swimming regularly help her keep fit.",
+    "example_translation": "Ăn uống cân bằng và đi bơi đều đặn giúp cô ấy giữ được vóc dáng cân đối.",
+    "collocations": ["try to keep fit", "stay healthy and keep fit"]
+  },
+  {
+    "id": 5,
+    "word": "build up strength",
+    "wordForm": "verb phrase",
+    "ipa": "/bɪld ʌp streŋθ/",
+    "vietnamese_meaning": "tăng cường sức khỏe, thể lực",
+    "example_sentence": "Lifting weights is a great way to build up strength and muscle.",
+    "example_translation": "Nâng tạ là một cách tuyệt vời để tăng cường thể lực và cơ bắp.",
+    "collocations": ["build up physical strength"]
+  },
+  {
+    "id": 6,
+    "word": "relieve stress",
+    "wordForm": "verb phrase",
+    "ipa": "/rɪˈliːv stres/",
+    "vietnamese_meaning": "xả stress, giảm căng thẳng",
+    "example_sentence": "Listening to music or jogging in the park helps me relieve stress after study hours.",
+    "example_translation": "Nghe nhạc hoặc chạy bộ trong công viên giúp tôi giải tỏa căng thẳng sau những giờ học.",
+    "collocations": ["effectively relieve stress", "relieve anxiety and stress"]
+  },
+  {
+    "id": 7,
+    "word": "develop teamwork skills",
+    "wordForm": "verb phrase",
+    "ipa": "/dɪˈvel.əp ˈtiːm.wɜːk skɪlz/",
+    "vietnamese_meaning": "phát triển kỹ năng làm việc nhóm",
+    "example_sentence": "Playing team sports like football or basketball is a good way to develop teamwork skills.",
+    "example_translation": "Chơi các môn thể thao đồng đội như bóng đá hay bóng rổ là một cách tốt để phát triển kỹ năng làm việc nhóm.",
+    "collocations": ["develop essential teamwork skills"]
+  },
+  {
+    "id": 8,
+    "word": "maintain good health",
+    "wordForm": "verb phrase",
+    "ipa": "/meɪnˈteɪn ɡʊd helθ/",
+    "vietnamese_meaning": "duy trì sức khỏe tốt",
+    "example_sentence": "Getting enough sleep is crucial to maintain good health and focus.",
+    "example_translation": "Ngủ đủ giấc là điều vô cùng quan trọng để duy trì sức khỏe tốt và sự tập trung.",
+    "collocations": ["maintain good physical health"]
+  },
+  {
+    "id": 9,
+    "word": "take up",
+    "wordForm": "phrasal verb",
+    "ipa": "/teɪk ʌp/",
+    "vietnamese_meaning": "bắt đầu một thói quen/sở thích mới",
+    "example_sentence": "I'm planning to take up yoga next month to improve my flexibility.",
+    "example_translation": "Tôi đang lên kế hoạch bắt đầu tập yoga vào tháng tới để cải thiện sự dẻo dai của mình.",
+    "collocations": ["take up a new hobby", "take up a sport"]
+  },
+  {
+    "id": 10,
+    "word": "be into",
+    "wordForm": "phrase",
+    "ipa": "/bi ˈɪn.tuː/",
+    "vietnamese_meaning": "thích, đam mê (bằng với like/love/enjoy + V-ing)",
+    "example_sentence": "My brother is really into cycling, he spends every weekend riding around the lake.",
+    "example_translation": "Anh trai tôi rất đam mê đạp xe, anh ấy dành cả cuối tuần để đạp quanh hồ.",
+    "collocations": ["be deeply into something"]
+  },
+  {
+    "id": 11,
+    "word": "take part in",
+    "wordForm": "verb phrase",
+    "ipa": "/teɪk pɑːt ɪn/",
+    "vietnamese_meaning": "tham gia vào",
+    "example_sentence": "Many students decided to take part in the school marathon this year.",
+    "example_translation": "Nhiều học sinh đã quyết định tham gia vào cuộc đua marathon của trường năm nay.",
+    "collocations": ["actively take part in"]
+  },
+  {
+    "id": 12,
+    "word": "burn calories",
+    "wordForm": "verb phrase",
+    "ipa": "/bɜːn ˈkæl.ər.iz/",
+    "vietnamese_meaning": "đốt cháy calo",
+    "example_sentence": "Running on the treadmill can help you burn calories very quickly.",
+    "example_translation": "Chạy bộ trên máy chạy thể dục có thể giúp bạn đốt cháy calo rất nhanh chóng.",
+    "collocations": ["burn a lot of calories", "burn excess calories"]
+  }
+]
+}
+    
