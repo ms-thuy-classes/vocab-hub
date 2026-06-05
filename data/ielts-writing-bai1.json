@@ -5,163 +5,164 @@
   "icon": "📈",
   "thumbnail": "writing-task1-trends.jpg",
   "vocabulary": [
-    {
-      "id": 1,
-      "word": "rise",
-      "wordForm": "verb/noun",
-      "ipa": "/raɪz/",
-      "vietnamese_meaning": "tăng",
-      "example_sentence": "Income of Global Growth rose by $120 million.",
-      "example_translation": "Thu nhập của Global Growth tăng thêm 120 triệu đô la.",
-      "collocations": ["rise sharply", "rise significantly", "rise steadily"]
-    },
-    {
-      "id": 2,
-      "word": "increase",
-      "wordForm": "verb/noun",
-      "ipa": "/ɪnˈkriːs/",
-      "vietnamese_meaning": "tăng",
-      "example_sentence": "Income of Global Growth increased by $120 million.",
-      "example_translation": "Thu nhập của Global Growth tăng thêm 120 triệu đô la.",
-      "collocations": ["increase rapidly", "increase considerably", "increase dramatically"]
-    },
-    {
-      "id": 3,
-      "word": "decline",
-      "wordForm": "verb/noun",
-      "ipa": "/dɪˈklaɪn/",
-      "vietnamese_meaning": "giảm",
-      "example_sentence": "Income of Global Growth declined to $12 million.",
-      "example_translation": "Thu nhập của Global Growth giảm xuống còn 12 triệu đô la.",
-      "collocations": ["decline sharply", "decline steadily", "decline significantly"]
-    },
-    {
-      "id": 4,
-      "word": "decrease",
-      "wordForm": "verb/noun",
-      "ipa": "/dɪˈkriːs/",
-      "vietnamese_meaning": "giảm",
-      "example_sentence": "The figure decreased to 20%.",
-      "example_translation": "Con số giảm xuống còn 20%.",
-      "collocations": ["decrease rapidly", "decrease gradually", "decrease considerably"]
-    },
-    {
-      "id": 5,
-      "word": "drop",
-      "wordForm": "verb/noun",
-      "ipa": "/drɒp/",
-      "vietnamese_meaning": "giảm",
-      "example_sentence": "Sales dropped to 50 units.",
-      "example_translation": "Doanh số giảm xuống còn 50 đơn vị.",
-      "collocations": ["drop sharply", "drop dramatically", "drop suddenly"]
-    },
-    {
-      "id": 6,
-      "word": "fall",
-      "wordForm": "verb/noun",
-      "ipa": "/fɔːl/",
-      "vietnamese_meaning": "giảm",
-      "example_sentence": "The figure fell to 20%.",
-      "example_translation": "Con số giảm xuống còn 20%.",
-      "collocations": ["fall sharply", "fall steeply", "fall dramatically"]
-    },
-    {
-      "id": 7,
-      "word": "go up",
-      "wordForm": "phrase",
-      "ipa": "/ɡəʊ ʌp/",
-      "vietnamese_meaning": "tăng",
-      "example_sentence": "Income went up to $120 million.",
-      "example_translation": "Thu nhập tăng lên 120 triệu đô la.",
-      "collocations": ["go up rapidly", "go up steadily"]
-    },
-    {
-      "id": 8,
-      "word": "go down",
-      "wordForm": "phrase",
-      "ipa": "/ɡəʊ daʊn/",
-      "vietnamese_meaning": "giảm",
-      "example_sentence": "Sales went down to 30 units.",
-      "example_translation": "Doanh số giảm xuống còn 30 đơn vị.",
-      "collocations": ["go down sharply", "go down significantly"]
-    },
-    {
-      "id": 9,
-      "word": "slowly",
-      "wordForm": "adverb",
-      "ipa": "/ˈsləʊli/",
-      "vietnamese_meaning": "chậm",
-      "example_sentence": "Income slowly went up to $120 million.",
-      "example_translation": "Thu nhập tăng chậm lên 120 triệu đô la.",
-      "collocations": ["increase slowly", "grow slowly"]
-    },
-    {
-      "id": 10,
-      "word": "slightly",
-      "wordForm": "adverb",
-      "ipa": "/ˈslaɪtli/",
-      "vietnamese_meaning": "nhẹ",
-      "example_sentence": "Sales slightly increased.",
-      "example_translation": "Doanh số tăng nhẹ.",
-      "collocations": ["increase slightly", "decline slightly"]
-    },
-    {
-      "id": 11,
-      "word": "considerably",
-      "wordForm": "adverb",
-      "ipa": "/kənˈsɪdərəbli/",
-      "vietnamese_meaning": "đáng kể",
-      "example_sentence": "The figure increased considerably.",
-      "example_translation": "Con số tăng đáng kể.",
-      "collocations": ["rise considerably", "fall considerably"]
-    },
-    {
-      "id": 12,
-      "word": "significantly",
-      "wordForm": "adverb",
-      "ipa": "/sɪɡˈnɪfɪkəntli/",
-      "vietnamese_meaning": "đáng kể",
-      "example_sentence": "Income significantly rose to $120 million.",
-      "example_translation": "Thu nhập tăng đáng kể lên 120 triệu đô la.",
-      "collocations": ["increase significantly", "decline significantly"]
-    },
-    {
-      "id": 13,
-      "word": "rapidly",
-      "wordForm": "adverb",
-      "ipa": "/ˈræpɪdli/",
-      "vietnamese_meaning": "nhanh",
-      "example_sentence": "Sales increased rapidly.",
-      "example_translation": "Doanh số tăng nhanh.",
-      "collocations": ["rise rapidly", "grow rapidly"]
-    },
-    {
-      "id": 14,
-      "word": "steeply",
-      "wordForm": "adverb",
-      "ipa": "/ˈstiːpli/",
-      "vietnamese_meaning": "mạnh, dốc",
-      "example_sentence": "Income steeply rose to $150 million.",
-      "example_translation": "Thu nhập tăng mạnh lên 150 triệu đô la.",
-      "collocations": ["rise steeply", "fall steeply"]
-    },
-    {
-      "id": 15,
-      "word": "sharply",
-      "wordForm": "adverb",
-      "ipa": "/ˈʃɑːpli/",
-      "vietnamese_meaning": "đột ngột",
-      "example_sentence": "The figure sharply declined.",
-      "example_translation": "Con số giảm đột ngột.",
-      "collocations": ["rise sharply", "decline sharply"]
-    },
-      {"id": 16,
+{
+    "id": 1,
+    "word": "rise",
+    "wordForm": "verb/noun",
+    "ipa": "/raɪz/",
+    "vietnamese_meaning": "tăng",
+    "example_sentence": "Income of Global Growth rose by $120 million. As a result, the company earned much more money than before.",
+    "example_translation": "Thu nhập của Global Growth tăng thêm 120 triệu đô la. Kết quả là công ty kiếm được nhiều tiền hơn trước.",
+    "collocations": ["rise sharply", "rise significantly", "rise steadily"]
+  },
+  {
+    "id": 2,
+    "word": "increase",
+    "wordForm": "verb/noun",
+    "ipa": "/ɪnˈkriːs/",
+    "vietnamese_meaning": "tăng",
+    "example_sentence": "Income of Global Growth increased by $120 million. This organization made a considerable profit that year.",
+    "example_translation": "Thu nhập của Global Growth tăng thêm 120 triệu đô la. Tổ chức này đạt được lợi nhuận đáng kể trong năm đó.",
+    "collocations": ["increase rapidly", "increase considerably", "increase dramatically"]
+  },
+  {
+    "id": 3,
+    "word": "decline",
+    "wordForm": "verb/noun",
+    "ipa": "/dɪˈklaɪn/",
+    "vietnamese_meaning": "giảm",
+    "example_sentence": "Income of Global Growth declined to $12 million. The company struggled to maintain its previous performance.",
+    "example_translation": "Thu nhập của Global Growth giảm xuống còn 12 triệu đô la. Công ty gặp khó khăn trong việc duy trì kết quả trước đó.",
+    "collocations": ["decline sharply", "decline steadily", "decline significantly"]
+  },
+  {
+    "id": 4,
+    "word": "decrease",
+    "wordForm": "verb/noun",
+    "ipa": "/dɪˈkriːs/",
+    "vietnamese_meaning": "giảm",
+    "example_sentence": "The figure decreased to 20%. Fewer people were interested in the service.",
+    "example_translation": "Con số giảm xuống còn 20%. Có ít người quan tâm đến dịch vụ hơn.",
+    "collocations": ["decrease rapidly", "decrease gradually", "decrease considerably"]
+  },
+  {
+    "id": 5,
+    "word": "drop",
+    "wordForm": "verb/noun",
+    "ipa": "/drɒp/",
+    "vietnamese_meaning": "giảm",
+    "example_sentence": "Sales dropped to 50 units. The product became less popular among customers.",
+    "example_translation": "Doanh số giảm xuống còn 50 đơn vị. Sản phẩm trở nên ít phổ biến hơn với khách hàng.",
+    "collocations": ["drop sharply", "drop dramatically", "drop suddenly"]
+  },
+  {
+    "id": 6,
+    "word": "fall",
+    "wordForm": "verb/noun",
+    "ipa": "/fɔːl/",
+    "vietnamese_meaning": "giảm",
+    "example_sentence": "The figure fell to 20%. This was the lowest level recorded during the period.",
+    "example_translation": "Con số giảm xuống còn 20%. Đây là mức thấp nhất được ghi nhận trong giai đoạn đó.",
+    "collocations": ["fall sharply", "fall steeply", "fall dramatically"]
+  },
+  {
+    "id": 7,
+    "word": "go up",
+    "wordForm": "phrase",
+    "ipa": "/ɡəʊ ʌp/",
+    "vietnamese_meaning": "tăng",
+    "example_sentence": "Income went up to $120 million. The business experienced strong growth.",
+    "example_translation": "Thu nhập tăng lên 120 triệu đô la. Doanh nghiệp trải qua giai đoạn tăng trưởng mạnh.",
+    "collocations": ["go up rapidly", "go up steadily"]
+  },
+  {
+    "id": 8,
+    "word": "go down",
+    "wordForm": "phrase",
+    "ipa": "/ɡəʊ daʊn/",
+    "vietnamese_meaning": "giảm",
+    "example_sentence": "Sales went down to 30 units. Demand for the product weakened significantly.",
+    "example_translation": "Doanh số giảm xuống còn 30 đơn vị. Nhu cầu đối với sản phẩm suy yếu đáng kể.",
+    "collocations": ["go down sharply", "go down significantly"]
+  },
+  {
+    "id": 9,
+    "word": "slowly",
+    "wordForm": "adverb",
+    "ipa": "/ˈsləʊli/",
+    "vietnamese_meaning": "chậm",
+    "example_sentence": "Income slowly went up to $120 million. The growth happened over a long period of time.",
+    "example_translation": "Thu nhập tăng chậm lên 120 triệu đô la. Sự tăng trưởng diễn ra trong thời gian dài.",
+    "collocations": ["increase slowly", "grow slowly"]
+  },
+  {
+    "id": 10,
+    "word": "slightly",
+    "wordForm": "adverb",
+    "ipa": "/ˈslaɪtli/",
+    "vietnamese_meaning": "nhẹ",
+    "example_sentence": "Sales slightly increased. The change was very small.",
+    "example_translation": "Doanh số tăng nhẹ. Sự thay đổi là rất nhỏ.",
+    "collocations": ["increase slightly", "decline slightly"]
+  },
+  {
+    "id": 11,
+    "word": "considerably",
+    "wordForm": "adverb",
+    "ipa": "/kənˈsɪdərəbli/",
+    "vietnamese_meaning": "đáng kể",
+    "example_sentence": "The figure increased considerably. The growth was easy to notice.",
+    "example_translation": "Con số tăng đáng kể. Sự tăng trưởng rất dễ nhận thấy.",
+    "collocations": ["rise considerably", "fall considerably"]
+  },
+  {
+    "id": 12,
+    "word": "significantly",
+    "wordForm": "adverb",
+    "ipa": "/sɪɡˈnɪfɪkəntli/",
+    "vietnamese_meaning": "đáng kể",
+    "example_sentence": "Income significantly rose to $120 million. The increase was substantial.",
+    "example_translation": "Thu nhập tăng đáng kể lên 120 triệu đô la. Mức tăng là rất lớn.",
+    "collocations": ["increase significantly", "decline significantly"]
+  },
+{
+  "id": 13,
+  "word": "rapidly",
+  "wordForm": "adverb",
+  "ipa": "/ˈræpɪdli/",
+  "vietnamese_meaning": "nhanh",
+  "example_sentence": "Sales increased rapidly. The growth happened within a short period.",
+  "example_translation": "Doanh số tăng nhanh. Sự tăng trưởng diễn ra trong một khoảng thời gian ngắn.",
+  "collocations": ["rise rapidly", "grow rapidly"]
+},
+{
+  "id": 14,
+  "word": "steeply",
+  "wordForm": "adverb",
+  "ipa": "/ˈstiːpli/",
+  "vietnamese_meaning": "mạnh, dốc",
+  "example_sentence": "Income steeply rose to $150 million. The line on the graph climbed sharply.",
+  "example_translation": "Thu nhập tăng mạnh lên 150 triệu đô la. Đường biểu đồ đi lên rất dốc.",
+  "collocations": ["rise steeply", "fall steeply"]
+},
+{
+  "id": 15,
+  "word": "sharply",
+  "wordForm": "adverb",
+  "ipa": "/ˈʃɑːpli/",
+  "vietnamese_meaning": "đột ngột",
+  "example_sentence": "The figure sharply declined. The decrease was sudden and dramatic.",
+  "example_translation": "Con số giảm đột ngột. Mức giảm xảy ra bất ngờ và rất mạnh.",
+  "collocations": ["rise sharply", "decline sharply"]
+},
+{
+  "id": 16,
   "word": "dramatically",
   "wordForm": "adverb",
   "ipa": "/drəˈmætɪkli/",
   "vietnamese_meaning": "rất mạnh",
-  "example_sentence": "Sales dramatically increased after 2020.",
-  "example_translation": "Doanh số tăng rất mạnh sau năm 2020.",
+  "example_sentence": "Sales dramatically increased after 2020. The change was extremely large.",
+  "example_translation": "Doanh số tăng rất mạnh sau năm 2020. Sự thay đổi là cực kỳ lớn.",
   "collocations": ["increase dramatically", "decline dramatically"]
 },
 {
@@ -170,8 +171,8 @@
   "wordForm": "adverb",
   "ipa": "/ˈɡrædʒuəli/",
   "vietnamese_meaning": "từ từ",
-  "example_sentence": "The population gradually increased over the period.",
-  "example_translation": "Dân số tăng dần trong suốt giai đoạn.",
+  "example_sentence": "The population gradually increased over the period. The growth happened step by step.",
+  "example_translation": "Dân số tăng dần trong suốt giai đoạn. Sự tăng trưởng diễn ra từng bước một.",
   "collocations": ["increase gradually", "decrease gradually"]
 },
 {
@@ -180,8 +181,8 @@
   "wordForm": "verb",
   "ipa": "/ˈflʌktʃueɪt/",
   "vietnamese_meaning": "dao động",
-  "example_sentence": "Income fluctuated between $120 million and $170 million.",
-  "example_translation": "Thu nhập dao động từ 120 đến 170 triệu đô la.",
+  "example_sentence": "Income fluctuated between $120 million and $170 million. It did not follow a clear upward or downward trend.",
+  "example_translation": "Thu nhập dao động từ 120 đến 170 triệu đô la. Nó không theo một xu hướng tăng hay giảm rõ ràng.",
   "collocations": ["fluctuate between", "fluctuate around"]
 },
 {
@@ -190,8 +191,8 @@
   "wordForm": "noun",
   "ipa": "/ˌflʌktʃuˈeɪʃn/",
   "vietnamese_meaning": "sự dao động",
-  "example_sentence": "There was a fluctuation around $140 million.",
-  "example_translation": "Có sự dao động quanh mức 140 triệu đô la.",
+  "example_sentence": "There was a fluctuation around $140 million. The figure changed several times during the period.",
+  "example_translation": "Có sự dao động quanh mức 140 triệu đô la. Con số thay đổi nhiều lần trong giai đoạn đó.",
   "collocations": ["slight fluctuation", "significant fluctuation"]
 },
 {
@@ -200,8 +201,8 @@
   "wordForm": "verb/noun",
   "ipa": "/piːk/",
   "vietnamese_meaning": "đạt đỉnh",
-  "example_sentence": "Income peaked at $190 million.",
-  "example_translation": "Thu nhập đạt đỉnh ở mức 190 triệu đô la.",
+  "example_sentence": "Income peaked at $190 million. This was the highest point shown on the chart.",
+  "example_translation": "Thu nhập đạt đỉnh ở mức 190 triệu đô la. Đây là điểm cao nhất trên biểu đồ.",
   "collocations": ["peak at", "reach a peak"]
 },
 {
@@ -210,8 +211,8 @@
   "wordForm": "verb",
   "ipa": "/ˈbɒtəm/",
   "vietnamese_meaning": "đạt đáy",
-  "example_sentence": "Income bottomed at $40 million.",
-  "example_translation": "Thu nhập chạm đáy ở mức 40 triệu đô la.",
+  "example_sentence": "Income bottomed at $40 million. This represented the lowest value in the period.",
+  "example_translation": "Thu nhập chạm đáy ở mức 40 triệu đô la. Đây là giá trị thấp nhất trong giai đoạn đó.",
   "collocations": ["bottom at", "bottom out"]
 },
 {
@@ -220,8 +221,8 @@
   "wordForm": "phrase",
   "ipa": "/riːtʃ ə haɪ əv/",
   "vietnamese_meaning": "đạt mức cao nhất",
-  "example_sentence": "Income reached a high of $120 million.",
-  "example_translation": "Thu nhập đạt mức cao nhất là 120 triệu đô la.",
+  "example_sentence": "Income reached a high of $120 million. No higher figure was recorded afterwards.",
+  "example_translation": "Thu nhập đạt mức cao nhất là 120 triệu đô la. Sau đó không có con số nào cao hơn được ghi nhận.",
   "collocations": ["reach a high of", "record a high of"]
 },
 {
@@ -230,8 +231,8 @@
   "wordForm": "phrase",
   "ipa": "/hɪt ə ləʊ əv/",
   "vietnamese_meaning": "chạm mức thấp nhất",
-  "example_sentence": "Income hit a low of $80 million.",
-  "example_translation": "Thu nhập chạm mức thấp nhất là 80 triệu đô la.",
+  "example_sentence": "Income hit a low of $80 million. It then began to recover gradually.",
+  "example_translation": "Thu nhập chạm mức thấp nhất là 80 triệu đô la. Sau đó nó bắt đầu phục hồi dần.",
   "collocations": ["hit a low of", "reach a low of"]
 },
 {
@@ -240,8 +241,8 @@
   "wordForm": "phrase",
   "ipa": "/rɪˈmeɪn ʌnˈtʃeɪndʒd/",
   "vietnamese_meaning": "giữ nguyên",
-  "example_sentence": "The number remained unchanged at 1,000.",
-  "example_translation": "Con số giữ nguyên ở mức 1.000.",
+  "example_sentence": "The number remained unchanged at 1,000. It stayed exactly the same throughout the period.",
+  "example_translation": "Con số giữ nguyên ở mức 1.000. Nó hoàn toàn không thay đổi trong suốt giai đoạn.",
   "collocations": ["remain unchanged at", "largely remain unchanged"]
 },
 {
@@ -250,8 +251,8 @@
   "wordForm": "phrase",
   "ipa": "/rɪˈmeɪn ˈsteɪbl/",
   "vietnamese_meaning": "giữ ổn định",
-  "example_sentence": "The figure remained stable at $80 million.",
-  "example_translation": "Con số giữ ổn định ở mức 80 triệu đô la.",
+  "example_sentence": "The figure remained stable at $80 million. There were only minor variations.",
+  "example_translation": "Con số giữ ổn định ở mức 80 triệu đô la. Chỉ có những biến động rất nhỏ.",
   "collocations": ["remain stable at", "relatively stable"]
 },
 {
@@ -260,8 +261,8 @@
   "wordForm": "phrase",
   "ipa": "/rɪˈmeɪn ˈkɒnstənt/",
   "vietnamese_meaning": "không đổi",
-  "example_sentence": "Sales remained constant at 500 units.",
-  "example_translation": "Doanh số giữ nguyên ở mức 500 đơn vị.",
+  "example_sentence": "Sales remained constant at 500 units. The figure did not change at all.",
+  "example_translation": "Doanh số giữ nguyên ở mức 500 đơn vị. Con số này hoàn toàn không thay đổi.",
   "collocations": ["remain constant at", "stay constant"]
 },
 {
@@ -270,8 +271,8 @@
   "wordForm": "verb",
   "ipa": "/ˈsteɪbəlaɪz/",
   "vietnamese_meaning": "ổn định",
-  "example_sentence": "The number stabilized at 1,000 students.",
-  "example_translation": "Số lượng học sinh ổn định ở mức 1.000.",
+  "example_sentence": "The number stabilized at 1,000 students. After several changes, it became steady.",
+  "example_translation": "Số lượng học sinh ổn định ở mức 1.000. Sau nhiều lần thay đổi, nó trở nên ổn định.",
   "collocations": ["stabilize at", "stabilize after"]
 },
 {
@@ -280,8 +281,8 @@
   "wordForm": "verb",
   "ipa": "/ˈsteɪbəlaɪz/",
   "vietnamese_meaning": "ổn định (Anh-Anh)",
-  "example_sentence": "The population stabilised at 5 million.",
-  "example_translation": "Dân số ổn định ở mức 5 triệu.",
+  "example_sentence": "The population stabilised at 5 million. It stopped changing significantly.",
+  "example_translation": "Dân số ổn định ở mức 5 triệu. Nó không còn thay đổi đáng kể nữa.",
   "collocations": ["stabilise at", "stabilise after"]
 },
 {
@@ -290,8 +291,8 @@
   "wordForm": "verb",
   "ipa": "/ˈwɪtnəs/",
   "vietnamese_meaning": "chứng kiến, ghi nhận",
-  "example_sentence": "The chart witnessed no change in sales.",
-  "example_translation": "Biểu đồ cho thấy không có sự thay đổi về doanh số.",
+  "example_sentence": "The chart witnessed no change in sales. The figure stayed at the same level.",
+  "example_translation": "Biểu đồ cho thấy không có sự thay đổi về doanh số. Con số giữ nguyên ở cùng một mức.",
   "collocations": ["witness no change", "witness an increase"]
 },
 {
@@ -300,8 +301,8 @@
   "wordForm": "verb",
   "ipa": "/siː/",
   "vietnamese_meaning": "chứng kiến, cho thấy",
-  "example_sentence": "The period saw a stability in sales.",
-  "example_translation": "Giai đoạn này chứng kiến sự ổn định trong doanh số.",
+  "example_sentence": "The period saw a stability in sales. There was little movement during these years.",
+  "example_translation": "Giai đoạn này chứng kiến sự ổn định trong doanh số. Có rất ít biến động trong những năm này.",
   "collocations": ["see a rise", "see a decline"]
 },
 {
@@ -310,8 +311,8 @@
   "wordForm": "noun phrase",
   "ipa": "/nəʊ tʃeɪndʒ/",
   "vietnamese_meaning": "không có sự thay đổi",
-  "example_sentence": "The chart showed no change in population figures.",
-  "example_translation": "Biểu đồ cho thấy không có sự thay đổi về dân số.",
+  "example_sentence": "The chart showed no change in population figures. The population remained the same throughout the period.",
+  "example_translation": "Biểu đồ cho thấy không có sự thay đổi về dân số. Dân số giữ nguyên trong suốt giai đoạn.",
   "collocations": ["show no change", "witness no change"]
 },
 {
@@ -320,8 +321,8 @@
   "wordForm": "noun",
   "ipa": "/stəˈbɪləti/",
   "vietnamese_meaning": "sự ổn định",
-  "example_sentence": "The market experienced a period of stability.",
-  "example_translation": "Thị trường trải qua một giai đoạn ổn định.",
+  "example_sentence": "The market experienced a period of stability. Prices remained relatively constant.",
+  "example_translation": "Thị trường trải qua một giai đoạn ổn định. Giá cả tương đối không đổi.",
   "collocations": ["economic stability", "period of stability"]
 },
 {
@@ -330,8 +331,8 @@
   "wordForm": "noun",
   "ipa": "/rɪˈdʌkʃn/",
   "vietnamese_meaning": "sự giảm",
-  "example_sentence": "The company recorded a reduction of $110 million.",
-  "example_translation": "Công ty ghi nhận mức giảm 110 triệu đô la.",
+  "example_sentence": "The company recorded a reduction of $110 million. Its revenue became much lower than before.",
+  "example_translation": "Công ty ghi nhận mức giảm 110 triệu đô la. Doanh thu của nó thấp hơn nhiều so với trước đây.",
   "collocations": ["reduction of", "significant reduction"]
 },
 {
@@ -340,8 +341,8 @@
   "wordForm": "verb",
   "ipa": "/rɪˈkɔːd/",
   "vietnamese_meaning": "ghi nhận",
-  "example_sentence": "The company recorded an increase of 20%.",
-  "example_translation": "Công ty ghi nhận mức tăng 20%.",
+  "example_sentence": "The company recorded an increase of 20%. This was one of the best results in its history.",
+  "example_translation": "Công ty ghi nhận mức tăng 20%. Đây là một trong những kết quả tốt nhất trong lịch sử của công ty.",
   "collocations": ["record an increase", "record a reduction"]
 }
   ]
