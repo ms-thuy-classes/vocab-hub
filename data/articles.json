@@ -1,6 +1,19 @@
 {
   "articles": [
     {
+      "id": "ielts-speaking-sports",
+      "title": "IELTS Speaking: Sports",
+      "description": "Từ vựng IELTS Dùng cho Speaking Part 1 & 2",
+      "category": "ielts",
+      "level": "IELTS",
+      "icon": "️⚽",
+      "vocabCount": 12,
+      "exerciseCount": 8,
+      "thumbnail": "sports.jpg",    
+      "file": "ielts-speaking-sports.json",
+      "tags": ["ielts", "speaking", "part1"]
+    },
+    {
       "id": "ielts-hometown",
       "title": "IELTS Hometown",
       "description": "Từ vựng IELTS chủ đề Quê hương - Dùng cho Speaking Part 1 & 2",
