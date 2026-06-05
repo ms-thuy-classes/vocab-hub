@@ -1,0 +1,309 @@
+{
+  "id": "grade12-can-ban",
+  "title": "Grade 12 Căn bản, thì hiện tại đơn",
+  "description": "Từ vựng Tiếng Anh - Thì hiện tại đơn",
+  "icon": "🎨",
+  "thumbnail": "hobbies.jpg",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "wake up",
+      "wordForm": "verb",
+      "ipa": "/weɪk ʌp/",
+      "vietnamese_meaning": "thức dậy",
+      "example_sentence": "I wake up at 6 a.m. every day.",
+      "example_translation": "Tôi thức dậy lúc 6 giờ sáng mỗi ngày.",
+      "collocations": ["wake up early", "wake up late"]
+    },
+    {
+      "id": 2,
+      "word": "get up",
+      "wordForm": "verb",
+      "ipa": "/ɡet ʌp/",
+      "vietnamese_meaning": "ra khỏi giường",
+      "example_sentence": "She gets up at 6:30 every morning.",
+      "example_translation": "Cô ấy ra khỏi giường lúc 6 giờ 30 mỗi sáng.",
+      "collocations": ["get up early", "get up quickly"]
+    },
+    {
+      "id": 3,
+      "word": "brush teeth",
+      "wordForm": "verb",
+      "ipa": "/brʌʃ tiːθ/",
+      "vietnamese_meaning": "đánh răng",
+      "example_sentence": "He brushes his teeth twice a day.",
+      "example_translation": "Anh ấy đánh răng hai lần một ngày.",
+      "collocations": ["brush teeth regularly", "brush teeth before bed"]
+    },
+    {
+      "id": 4,
+      "word": "wash face",
+      "wordForm": "verb",
+      "ipa": "/wɒʃ feɪs/",
+      "vietnamese_meaning": "rửa mặt",
+      "example_sentence": "I wash my face every morning.",
+      "example_translation": "Tôi rửa mặt mỗi sáng.",
+      "collocations": ["wash face carefully", "wash face daily"]
+    },
+    {
+      "id": 5,
+      "word": "have breakfast",
+      "wordForm": "verb",
+      "ipa": "/hæv ˈbrekfəst/",
+      "vietnamese_meaning": "ăn sáng",
+      "example_sentence": "We have breakfast at 7 a.m.",
+      "example_translation": "Chúng tôi ăn sáng lúc 7 giờ.",
+      "collocations": ["have breakfast early", "have a healthy breakfast"]
+    },
+    {
+      "id": 6,
+      "word": "go to school",
+      "wordForm": "verb",
+      "ipa": "/ɡəʊ tə skuːl/",
+      "vietnamese_meaning": "đi học",
+      "example_sentence": "They go to school by bike.",
+      "example_translation": "Họ đi học bằng xe đạp.",
+      "collocations": ["go to school daily", "go to school on foot"]
+    },
+    {
+      "id": 7,
+      "word": "study",
+      "wordForm": "verb",
+      "ipa": "/ˈstʌdi/",
+      "vietnamese_meaning": "học",
+      "example_sentence": "She studies English after school.",
+      "example_translation": "Cô ấy học tiếng Anh sau giờ học.",
+      "collocations": ["study hard", "study English"]
+    },
+    {
+      "id": 8,
+      "word": "do homework",
+      "wordForm": "verb",
+      "ipa": "/duː ˈhəʊmwɜːk/",
+      "vietnamese_meaning": "làm bài tập",
+      "example_sentence": "I do my homework every evening.",
+      "example_translation": "Tôi làm bài tập mỗi tối.",
+      "collocations": ["do homework carefully", "finish homework"]
+    },
+    {
+      "id": 9,
+      "word": "play games",
+      "wordForm": "verb",
+      "ipa": "/pleɪ ɡeɪmz/",
+      "vietnamese_meaning": "chơi game",
+      "example_sentence": "My brother plays games on weekends.",
+      "example_translation": "Anh trai tôi chơi game vào cuối tuần.",
+      "collocations": ["play games online", "play games with friends"]
+    },
+    {
+      "id": 10,
+      "word": "read books",
+      "wordForm": "verb",
+      "ipa": "/riːd bʊks/",
+      "vietnamese_meaning": "đọc sách",
+      "example_sentence": "She reads books before bed.",
+      "example_translation": "Cô ấy đọc sách trước khi ngủ.",
+      "collocations": ["read books regularly", "read story books"]
+    },
+    {
+      "id": 11,
+      "word": "watch TV",
+      "wordForm": "verb",
+      "ipa": "/wɒtʃ tiː viː/",
+      "vietnamese_meaning": "xem TV",
+      "example_sentence": "My family watches TV in the evening.",
+      "example_translation": "Gia đình tôi xem TV vào buổi tối.",
+      "collocations": ["watch TV together", "watch TV at night"]
+    },
+    {
+      "id": 12,
+      "word": "go home",
+      "wordForm": "verb",
+      "ipa": "/ɡəʊ həʊm/",
+      "vietnamese_meaning": "về nhà",
+      "example_sentence": "I go home at 5 p.m.",
+      "example_translation": "Tôi về nhà lúc 5 giờ chiều.",
+      "collocations": ["go home early", "go home after work"]
+    },
+    {
+      "id": 13,
+      "word": "take a shower",
+      "wordForm": "verb",
+      "ipa": "/teɪk ə ˈʃaʊə/",
+      "vietnamese_meaning": "tắm",
+      "example_sentence": "He takes a shower every morning.",
+      "example_translation": "Anh ấy tắm mỗi sáng.",
+      "collocations": ["take a shower quickly", "take a hot shower"]
+    },
+    {
+      "id": 14,
+      "word": "have lunch",
+      "wordForm": "verb",
+      "ipa": "/hæv lʌntʃ/",
+      "vietnamese_meaning": "ăn trưa",
+      "example_sentence": "We have lunch at noon.",
+      "example_translation": "Chúng tôi ăn trưa vào buổi trưa.",
+      "collocations": ["have lunch together", "have a big lunch"]
+    },
+    {
+      "id": 15,
+      "word": "have dinner",
+      "wordForm": "verb",
+      "ipa": "/hæv ˈdɪnə/",
+      "vietnamese_meaning": "ăn tối",
+      "example_sentence": "My family has dinner at 7 p.m.",
+      "example_translation": "Gia đình tôi ăn tối lúc 7 giờ.",
+      "collocations": ["have dinner together", "have dinner at home"]
+    },
+    {
+      "id": 16,
+      "word": "sleep",
+      "wordForm": "verb",
+      "ipa": "/sliːp/",
+      "vietnamese_meaning": "ngủ",
+      "example_sentence": "The baby sleeps for ten hours.",
+      "example_translation": "Em bé ngủ mười tiếng.",
+      "collocations": ["sleep well", "sleep early"]
+    },
+    {
+      "id": 17,
+      "word": "exercise",
+      "wordForm": "verb",
+      "ipa": "/ˈeksəsaɪz/",
+      "vietnamese_meaning": "tập thể dục",
+      "example_sentence": "I exercise every morning.",
+      "example_translation": "Tôi tập thể dục mỗi sáng.",
+      "collocations": ["exercise regularly", "exercise outdoors"]
+    },
+    {
+      "id": 18,
+      "word": "walk",
+      "wordForm": "verb",
+      "ipa": "/wɔːk/",
+      "vietnamese_meaning": "đi bộ",
+      "example_sentence": "She walks to school every day.",
+      "example_translation": "Cô ấy đi bộ đến trường mỗi ngày.",
+      "collocations": ["walk slowly", "walk in the park"]
+    },
+    {
+      "id": 19,
+      "word": "drink water",
+      "wordForm": "verb",
+      "ipa": "/drɪŋk ˈwɔːtə/",
+      "vietnamese_meaning": "uống nước",
+      "example_sentence": "I drink water after exercise.",
+      "example_translation": "Tôi uống nước sau khi tập thể dục.",
+      "collocations": ["drink water regularly", "drink enough water"]
+    },
+    {
+      "id": 20,
+      "word": "eat fruit",
+      "wordForm": "verb",
+      "ipa": "/iːt fruːt/",
+      "vietnamese_meaning": "ăn trái cây",
+      "example_sentence": "She eats fruit every day.",
+      "example_translation": "Cô ấy ăn trái cây mỗi ngày.",
+      "collocations": ["eat fresh fruit", "eat fruit daily"]
+    },
+    {
+      "id": 21,
+      "word": "sun",
+      "wordForm": "noun",
+      "ipa": "/sʌn/",
+      "vietnamese_meaning": "mặt trời",
+      "example_sentence": "The sun shines brightly in summer.",
+      "example_translation": "Mặt trời chiếu sáng rực rỡ vào mùa hè.",
+      "collocations": ["bright sun", "hot sun"]
+    },
+    {
+      "id": 22,
+      "word": "moon",
+      "wordForm": "noun",
+      "ipa": "/muːn/",
+      "vietnamese_meaning": "mặt trăng",
+      "example_sentence": "The moon looks beautiful tonight.",
+      "example_translation": "Mặt trăng trông rất đẹp tối nay.",
+      "collocations": ["full moon", "bright moon"]
+    },
+    {
+      "id": 23,
+      "word": "earth",
+      "wordForm": "noun",
+      "ipa": "/ɜːθ/",
+      "vietnamese_meaning": "trái đất",
+      "example_sentence": "The Earth moves around the Sun.",
+      "example_translation": "Trái Đất quay quanh Mặt Trời.",
+      "collocations": ["planet Earth", "protect the Earth"]
+    },
+    {
+      "id": 24,
+      "word": "rise",
+      "wordForm": "verb",
+      "ipa": "/raɪz/",
+      "vietnamese_meaning": "mọc",
+      "example_sentence": "The sun rises in the east.",
+      "example_translation": "Mặt trời mọc ở hướng đông.",
+      "collocations": ["sun rises", "rise slowly"]
+    },
+    {
+      "id": 25,
+      "word": "set",
+      "wordForm": "verb",
+      "ipa": "/set/",
+      "vietnamese_meaning": "lặn",
+      "example_sentence": "The sun sets in the west.",
+      "example_translation": "Mặt trời lặn ở hướng tây.",
+      "collocations": ["sun sets", "set behind mountains"]
+    },
+    {
+      "id": 26,
+      "word": "hot",
+      "wordForm": "adjective",
+      "ipa": "/hɒt/",
+      "vietnamese_meaning": "nóng",
+      "example_sentence": "The weather is hot today.",
+      "example_translation": "Hôm nay thời tiết nóng.",
+      "collocations": ["very hot", "hot weather"]
+    },
+    {
+      "id": 27,
+      "word": "cold",
+      "wordForm": "adjective",
+      "ipa": "/kəʊld/",
+      "vietnamese_meaning": "lạnh",
+      "example_sentence": "The water feels cold in winter.",
+      "example_translation": "Nước cảm thấy lạnh vào mùa đông.",
+      "collocations": ["very cold", "cold weather"]
+    },
+    {
+      "id": 28,
+      "word": "day",
+      "wordForm": "noun",
+      "ipa": "/deɪ/",
+      "vietnamese_meaning": "ngày",
+      "example_sentence": "A day has twenty-four hours.",
+      "example_translation": "Một ngày có hai mươi bốn giờ.",
+      "collocations": ["every day", "sunny day"]
+    },
+    {
+      "id": 29,
+      "word": "night",
+      "wordForm": "noun",
+      "ipa": "/naɪt/",
+      "vietnamese_meaning": "đêm",
+      "example_sentence": "The stars appear at night.",
+      "example_translation": "Những ngôi sao xuất hiện vào ban đêm.",
+      "collocations": ["at night", "quiet night"]
+    },
+    {
+      "id": 30,
+      "word": "habit",
+      "wordForm": "noun",
+      "ipa": "/ˈhæbɪt/",
+      "vietnamese_meaning": "thói quen",
+      "example_sentence": "Reading books is a good habit.",
+      "example_translation": "Đọc sách là một thói quen tốt.",
+      "collocations": ["good habit", "daily habit"]
+    }
+  ]
+}
