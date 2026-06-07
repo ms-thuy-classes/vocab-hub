@@ -1,5 +1,18 @@
 {
   "articles": [
+    {
+      "id": "toeic-test2-ets2025-p1",
+      "title": "TOEIC ETS 2025 test 2 P1",
+      "description": "Từ vựng TOEIC chủ đề Cuộc họp kinh doanh",
+      "category": "toeic",
+      "level": "TOEIC",
+      "icon": "💼",
+      "vocabCount": 25,
+      "exerciseCount": 8,
+      "thumbnail": "toeic-test2-ets2025-p1.jpg",
+      "file": "toeic-test2-ets2025-p1.json",
+      "tags": ["toeic", "business", "meeting", "work"]
+    },
      {
       "id": "grade12-can-ban",
       "title": "Grade12 -Căn bản, thì hiện tại đơn",
