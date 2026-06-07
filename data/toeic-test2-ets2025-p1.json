@@ -1,0 +1,261 @@
+```json
+{
+  "id": "toeic-test2-ets2025-p1",
+  "title": "TOEIC TEST 2 ETS 2025 P1",
+  "description": "Từ vựng TOEIC",
+  "icon": "📸",
+  "thumbnail": "toeic-test2-ets2025-p1.jpg",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "examine",
+      "wordForm": "verb",
+      "ipa": "/ɪɡˈzæm.ɪn/",
+      "vietnamese_meaning": "kiểm tra, xem xét",
+      "example_sentence": "The customer is examining a camera before buying it.",
+      "example_translation": "Khách hàng đang kiểm tra một chiếc máy ảnh trước khi mua.",
+      "collocations": ["examine a camera", "carefully examine"]
+    },
+    {
+      "id": 2,
+      "word": "camera",
+      "wordForm": "noun",
+      "ipa": "/ˈkæm.rə/",
+      "vietnamese_meaning": "máy ảnh",
+      "example_sentence": "They're examining a camera in the electronics store.",
+      "example_translation": "Họ đang kiểm tra một chiếc máy ảnh trong cửa hàng điện tử.",
+      "collocations": ["digital camera", "camera lens"]
+    },
+    {
+      "id": 3,
+      "word": "clipboard",
+      "wordForm": "noun",
+      "ipa": "/ˈklɪp.bɔːrd/",
+      "vietnamese_meaning": "bảng kê có kẹp giấy",
+      "example_sentence": "The employee is writing notes on a clipboard.",
+      "example_translation": "Nhân viên đang ghi chú trên một bảng kẹp giấy.",
+      "collocations": ["write notes on a clipboard", "hold a clipboard"]
+    },
+    {
+      "id": 4,
+      "word": "shelf",
+      "wordForm": "noun",
+      "ipa": "/ʃelf/",
+      "vietnamese_meaning": "kệ, giá",
+      "example_sentence": "Many products are displayed on the shelves.",
+      "example_translation": "Nhiều sản phẩm được trưng bày trên các kệ.",
+      "collocations": ["store shelf", "bookshelf"]
+    },
+    {
+      "id": 5,
+      "word": "counter",
+      "wordForm": "noun",
+      "ipa": "/ˈkaʊn.tər/",
+      "vietnamese_meaning": "quầy",
+      "example_sentence": "Several boxes are placed on a counter.",
+      "example_translation": "Một số chiếc hộp được đặt trên quầy.",
+      "collocations": ["on a counter", "service counter"]
+    },
+    {
+      "id": 6,
+      "word": "display",
+      "wordForm": "noun",
+      "ipa": "/dɪˈspleɪ/",
+      "vietnamese_meaning": "quầy trưng bày",
+      "example_sentence": "Customers are gathered around a display.",
+      "example_translation": "Khách hàng đang tụ tập quanh một quầy trưng bày.",
+      "collocations": ["product display", "gather around a display"]
+    },
+    {
+      "id": 7,
+      "word": "opposite",
+      "wordForm": "preposition",
+      "ipa": "/ˈɒp.ə.zɪt/",
+      "vietnamese_meaning": "đối diện",
+      "example_sentence": "They are sitting on opposite sides of a table.",
+      "example_translation": "Họ đang ngồi ở hai phía đối diện của một cái bàn.",
+      "collocations": ["opposite sides", "directly opposite"]
+    },
+    {
+      "id": 8,
+      "word": "wrap",
+      "wordForm": "verb",
+      "ipa": "/ræp/",
+      "vietnamese_meaning": "gói",
+      "example_sentence": "The worker is wrapping a box for delivery.",
+      "example_translation": "Người công nhân đang gói một chiếc hộp để giao hàng.",
+      "collocations": ["wrap a box", "wrap a package"]
+    },
+    {
+      "id": 9,
+      "word": "plastic",
+      "wordForm": "noun",
+      "ipa": "/ˈplæs.tɪk/",
+      "vietnamese_meaning": "nhựa",
+      "example_sentence": "The package is wrapped in plastic.",
+      "example_translation": "Gói hàng được bọc bằng nhựa.",
+      "collocations": ["wrapped in plastic", "plastic bag"]
+    },
+    {
+      "id": 10,
+      "word": "stationery",
+      "wordForm": "noun",
+      "ipa": "/ˈsteɪ.ʃən.eri/",
+      "vietnamese_meaning": "văn phòng phẩm",
+      "example_sentence": "The staff are unpacking stationery supplies.",
+      "example_translation": "Nhân viên đang mở các đồ dùng văn phòng phẩm.",
+      "collocations": ["unpack stationery", "office stationery"]
+    },
+    {
+      "id": 11,
+      "word": "behind",
+      "wordForm": "preposition",
+      "ipa": "/bɪˈhaɪnd/",
+      "vietnamese_meaning": "phía sau",
+      "example_sentence": "Several people are standing behind a vehicle.",
+      "example_translation": "Một số người đang đứng phía sau một chiếc xe.",
+      "collocations": ["behind a vehicle", "stand behind"]
+    },
+    {
+      "id": 12,
+      "word": "vehicle",
+      "wordForm": "noun",
+      "ipa": "/ˈviː.ə.kəl/",
+      "vietnamese_meaning": "phương tiện, xe",
+      "example_sentence": "A vehicle is parked near the building.",
+      "example_translation": "Một chiếc xe đang đỗ gần tòa nhà.",
+      "collocations": ["motor vehicle", "behind a vehicle"]
+    },
+    {
+      "id": 13,
+      "word": "search through",
+      "wordForm": "phrasal verb",
+      "ipa": "/sɜːrtʃ θruː/",
+      "vietnamese_meaning": "lục, tìm trong",
+      "example_sentence": "She is searching through a suitcase for her passport.",
+      "example_translation": "Cô ấy đang lục một chiếc va li để tìm hộ chiếu.",
+      "collocations": ["search through a suitcase", "search through documents"]
+    },
+    {
+      "id": 14,
+      "word": "pick up",
+      "wordForm": "phrasal verb",
+      "ipa": "/pɪk ʌp/",
+      "vietnamese_meaning": "nhặt lên, cầm lên",
+      "example_sentence": "The man is picking up a piece of furniture.",
+      "example_translation": "Người đàn ông đang nhấc một món đồ nội thất lên.",
+      "collocations": ["pick up a piece of furniture", "pick up a box"]
+    },
+    {
+      "id": 15,
+      "word": "overlook",
+      "wordForm": "verb",
+      "ipa": "/ˌəʊ.vəˈlʊk/",
+      "vietnamese_meaning": "nhìn ra",
+      "example_sentence": "The windows overlook a busy street.",
+      "example_translation": "Các cửa sổ nhìn ra một con phố đông đúc.",
+      "collocations": ["overlook a street", "overlook the park"]
+    },
+    {
+      "id": 16,
+      "word": "intersection",
+      "wordForm": "noun",
+      "ipa": "/ˌɪn.təˈsek.ʃən/",
+      "vietnamese_meaning": "ngã tư",
+      "example_sentence": "Drivers must stop at an intersection.",
+      "example_translation": "Người lái xe phải dừng lại ở ngã tư.",
+      "collocations": ["stop at an intersection", "busy intersection"]
+    },
+    {
+      "id": 17,
+      "word": "grow",
+      "wordForm": "verb",
+      "ipa": "/ɡroʊ/",
+      "vietnamese_meaning": "mọc, phát triển",
+      "example_sentence": "Several trees grow by a building.",
+      "example_translation": "Một số cây mọc cạnh một tòa nhà.",
+      "collocations": ["grow by a building", "grow quickly"]
+    },
+    {
+      "id": 18,
+      "word": "framed picture",
+      "wordForm": "noun phrase",
+      "ipa": "/freɪmd ˈpɪk.tʃər/",
+      "vietnamese_meaning": "bức tranh có khung",
+      "example_sentence": "A framed picture is mounted above the sofa.",
+      "example_translation": "Một bức tranh có khung được treo phía trên ghế sofa.",
+      "collocations": ["framed picture", "large framed picture"]
+    },
+    {
+      "id": 19,
+      "word": "mount",
+      "wordForm": "verb",
+      "ipa": "/maʊnt/",
+      "vietnamese_meaning": "treo, gắn lên",
+      "example_sentence": "They mounted the artwork on the wall.",
+      "example_translation": "Họ đã treo tác phẩm nghệ thuật lên tường.",
+      "collocations": ["mount on the wall", "mount a sign"]
+    },
+    {
+      "id": 20,
+      "word": "scatter",
+      "wordForm": "verb",
+      "ipa": "/ˈskæt.ər/",
+      "vietnamese_meaning": "rải rác",
+      "example_sentence": "Books are scattered on a rug.",
+      "example_translation": "Những quyển sách được rải rác trên một tấm thảm.",
+      "collocations": ["scatter books", "be scattered"]
+    },
+    {
+      "id": 21,
+      "word": "be scattered on",
+      "wordForm": "phrase",
+      "ipa": "/biː ˈskæt.ərd ɒn/",
+      "vietnamese_meaning": "được rải rác trên",
+      "example_sentence": "Books are scattered on a rug.",
+      "example_translation": "Những quyển sách được rải rác trên một tấm thảm.",
+      "collocations": ["be scattered on a rug", "be scattered across"]
+    },
+    {
+      "id": 22,
+      "word": "be mounted on the wall",
+      "wordForm": "phrase",
+      "ipa": "/biː ˈmaʊn.tɪd ɒn ðə wɔːl/",
+      "vietnamese_meaning": "được treo trên tường",
+      "example_sentence": "A framed picture is mounted on the wall.",
+      "example_translation": "Một bức tranh có khung được treo trên tường.",
+      "collocations": ["be mounted on the wall", "be securely mounted"]
+    },
+    {
+      "id": 23,
+      "word": "be wrapped in plastic",
+      "wordForm": "phrase",
+      "ipa": "/biː ræpt ɪn ˈplæs.tɪk/",
+      "vietnamese_meaning": "được bọc bằng nhựa",
+      "example_sentence": "A box is wrapped in plastic.",
+      "example_translation": "Một chiếc hộp được bọc bằng nhựa.",
+      "collocations": ["be wrapped in plastic", "be tightly wrapped"]
+    },
+    {
+      "id": 24,
+      "word": "stand behind a vehicle",
+      "wordForm": "phrase",
+      "ipa": "/stænd bɪˈhaɪnd ə ˈviː.ə.kəl/",
+      "vietnamese_meaning": "đứng phía sau một chiếc xe",
+      "example_sentence": "Some people are standing behind a vehicle.",
+      "example_translation": "Một số người đang đứng phía sau một chiếc xe.",
+      "collocations": ["stand behind a vehicle", "stand behind a truck"]
+    },
+    {
+      "id": 25,
+      "word": "grow by a building",
+      "wordForm": "phrase",
+      "ipa": "/ɡroʊ baɪ ə ˈbɪl.dɪŋ/",
+      "vietnamese_meaning": "mọc cạnh một tòa nhà",
+      "example_sentence": "Trees are growing by a building.",
+      "example_translation": "Những cái cây đang mọc cạnh một tòa nhà.",
+      "collocations": ["grow by a building", "grow near a building"]
+    }
+  ]
+}
+```
