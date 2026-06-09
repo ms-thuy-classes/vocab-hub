@@ -1,0 +1,309 @@
+{
+  "id": "toeic-test3-ets2025",
+  "title": "TOEIC TEST 3 ETS 2025",
+  "description": "Từ vựng TOEIC",
+  "icon": "💼",
+  "thumbnail": "toeic-test3-ets2025.jpg",
+  "vocabulary": [
+    {
+      "id": 1,
+      "word": "assist",
+      "wordForm": "verb",
+      "ipa": "/əˈsɪst/",
+      "vietnamese_meaning": "giúp đỡ, hỗ trợ",
+      "example_sentence": "Mr. Johnston is taking online classes that will assist him in getting promoted.",
+      "example_translation": "Ông Johnston đang tham gia các lớp học trực tuyến điều mà sẽ hỗ trợ ông ấy được thăng chức.",
+      "collocations": ["assist someone in doing something", "assist with"]
+    },
+    {
+      "id": 2,
+      "word": "personally",
+      "wordForm": "adverb",
+      "ipa": "/ˈpɜːrsənəli/",
+      "vietnamese_meaning": "đích thân, trực tiếp",
+      "example_sentence": "Attendees to the event can have their book personally signed by the author.",
+      "example_translation": "Những người tham dự sự kiện có thể có sách của họ được đích thân tác giả ký tặng.",
+      "collocations": ["personally signed", "personally involved"]
+    },
+    {
+      "id": 3,
+      "word": "thoughtful",
+      "wordForm": "adjective",
+      "ipa": "/ˈθɔːtfl/",
+      "vietnamese_meaning": "sâu sắc, thấu đáo, chu đáo",
+      "example_sentence": "Readers of Ms. Alcorn's column on money management appreciate her thoughtful financial advice.",
+      "example_translation": "Độc giả chuyên mục quản lý tiền bạc của bà Alcorn đánh giá cao lời khuyên tài chính sâu sắc của bà.",
+      "collocations": ["thoughtful advice", "thoughtful consideration"]
+    },
+    {
+      "id": 4,
+      "word": "detailed",
+      "wordForm": "adjective",
+      "ipa": "/ˈdiːteɪld/",
+      "vietnamese_meaning": "chi tiết, có đầy đủ chi tiết",
+      "example_sentence": "Prospective students are invited to learn more about the university's programs by viewing its detailed course schedule.",
+      "example_translation": "Sinh viên tương lai được mời tìm hiểu thêm về các chương trình của trường đại học bằng cách xem lịch trình khóa học chi tiết.",
+      "collocations": ["detailed schedule", "detailed analysis", "detailed report"]
+    },
+    {
+      "id": 5,
+      "word": "supervision",
+      "wordForm": "noun",
+      "ipa": "/ˌsuːpərˈvɪʒn/",
+      "vietnamese_meaning": "sự giám sát",
+      "example_sentence": "At Hartway Terrace, all dishes are prepared under the supervision of master chef Yoo-Jeong Jin.",
+      "example_translation": "Tại Hartway Terrace, tất cả các món ăn được chuẩn bị dưới sự giám sát của bếp trưởng Yoo-Jeong Jin.",
+      "collocations": ["under the supervision of", "direct supervision"]
+    },
+    {
+      "id": 6,
+      "word": "imperative",
+      "wordForm": "adjective",
+      "ipa": "/ɪmˈperətɪv/",
+      "vietnamese_meaning": "bắt buộc, cấp bách, thiết yếu",
+      "example_sentence": "It is imperative that passengers be shown the safety briefing prior to the flight.",
+      "example_translation": "Điều cấp bách/bắt buộc là hành khách phải được xem hướng dẫn an toàn trước chuyến bay.",
+      "collocations": ["it is imperative that", "absolutely imperative"]
+    },
+    {
+      "id": 7,
+      "word": "consideration",
+      "wordForm": "noun",
+      "ipa": "/kənˌsɪdəˈreɪʃn/",
+      "vietnamese_meaning": "sự cân nhắc, xem xét",
+      "example_sentence": "Contract negotiations with Murphy Supplies should be conducted with consideration for the lack of alternative suppliers.",
+      "example_translation": "Các cuộc đàm phán hợp đồng với Murphy Supplies nên được tiến hành với sự cân nhắc về việc thiếu nhà cung cấp thay thế.",
+      "collocations": ["with consideration for", "take into consideration"]
+    },
+    {
+      "id": 8,
+      "word": "commend",
+      "wordForm": "verb",
+      "ipa": "/kəˈmend/",
+      "vietnamese_meaning": "khen ngợi, tuyên dương",
+      "example_sentence": "Peggy Amos was commended by the director for creating the library's popular lecture series.",
+      "example_translation": "Peggy Amos đã được giám đốc khen ngợi vì tạo ra chuỗi bài giảng phổ biến của thư viện.",
+      "collocations": ["commend someone for something", "highly commend"]
+    },
+    {
+      "id": 9,
+      "word": "annually",
+      "wordForm": "adverb",
+      "ipa": "/ˈænjuəli/",
+      "vietnamese_meaning": "hàng năm",
+      "example_sentence": "Residential furnaces and boilers should undergo inspection annually for safety reasons.",
+      "example_translation": "Lò sưởi và nồi hơi gia đình nên trải qua kiểm tra hàng năm vì lý do an toàn.",
+      "collocations": ["undergo inspection annually", "meet annually"]
+    },
+    {
+      "id": 10,
+      "word": "confidentiality",
+      "wordForm": "noun",
+      "ipa": "/ˌkɒnfɪˌdenʃiˈæləti/",
+      "vietnamese_meaning": "tính bảo mật, sự bảo mật",
+      "example_sentence": "To maintain client confidentiality, the destruction of old files must be carried out carefully.",
+      "example_translation": "Để duy trì tính bảo mật của khách hàng, việc tiêu hủy các hồ sơ cũ phải được thực hiện cẩn thận.",
+      "collocations": ["maintain client confidentiality", "breach of confidentiality"]
+    },
+    {
+      "id": 11,
+      "word": "version",
+      "wordForm": "noun",
+      "ipa": "/ˈvɜːrʒn/",
+      "vietnamese_meaning": "phiên bản",
+      "example_sentence": "The new version of the Home Health smartphone application features a list of exercise tips for beginners.",
+      "example_translation": "Phiên bản mới của ứng dụng điện thoại thông minh Home Health có danh sách các mẹo tập thể dục cho người mới bắt đầu.",
+      "collocations": ["new version", "latest version", "updated version"]
+    },
+    {
+      "id": 12,
+      "word": "hers",
+      "wordForm": "pronoun",
+      "ipa": "/hɜːrz/",
+      "vietnamese_meaning": "cái/những người của cô ấy (đại từ sở hữu)",
+      "example_sentence": "Ms. Webster's retirement party was attended by many coworkers and even several former students of hers.",
+      "example_translation": "Tiệc nghỉ hưu của bà Webster có sự tham dự của nhiều đồng nghiệp và thậm chí vài cựu sinh viên của bà.",
+      "collocations": ["a friend of hers", "former students of hers"]
+    },
+    {
+      "id": 13,
+      "word": "anticipation",
+      "wordForm": "noun",
+      "ipa": "/ænˌtɪsɪˈpeɪʃn/",
+      "vietnamese_meaning": "sự lường trước, sự đoán trước, mong đợi",
+      "example_sentence": "Several canopies were set up at the outdoor concert site at Radner Park in anticipation of the rain.",
+      "example_translation": "Một số mái vòm đã được dựng lên tại địa điểm hòa nhạc ngoài trời ở Công viên Radner để đề phòng/đón trước cơn mưa.",
+      "collocations": ["in anticipation of", "with anticipation"]
+    },
+    {
+      "id": 14,
+      "word": "rewarded",
+      "wordForm": "verb",
+      "ipa": "/rɪˈwɔːrdɪd/",
+      "vietnamese_meaning": "được khen thưởng, được ban thưởng",
+      "example_sentence": "Employees who are rewarded for exceeding their output goals are more likely to maintain a high level of productivity.",
+      "example_translation": "Những nhân viên được khen thưởng vì vượt mục tiêu sản lượng có nhiều khả năng duy trì mức năng suất cao.",
+      "collocations": ["be rewarded for", "highly rewarded"]
+    },
+    {
+      "id": 15,
+      "word": "sensitive",
+      "wordForm": "adjective",
+      "ipa": "/ˈsensətɪv/",
+      "vietnamese_meaning": "nhạy cảm, dễ bị ảnh hưởng/hỏng hóc",
+      "example_sentence": "The user manual warns customers to keep the phone away from radiators because its components are sensitive to heat.",
+      "example_translation": "Sách hướng dẫn sử dụng cảnh báo khách hàng nên để điện thoại tránh xa bộ tản nhiệt vì các linh kiện của nó nhạy cảm với nhiệt.",
+      "collocations": ["sensitive to heat", "highly sensitive", "sensitive data"]
+    },
+    {
+      "id": 16,
+      "word": "already",
+      "wordForm": "adverb",
+      "ipa": "/ɔːlˈredi/",
+      "vietnamese_meaning": "đã... rồi",
+      "example_sentence": "The prescription must be collected tomorrow because the pharmacy has already closed for the day.",
+      "example_translation": "Đơn thuốc phải được lấy vào ngày mai vì hiệu thuốc đã đóng cửa trong ngày rồi.",
+      "collocations": ["has already closed", "already exist"]
+    },
+    {
+      "id": 17,
+      "word": "growing",
+      "wordForm": "verb",
+      "ipa": "/ˈɡroʊɪŋ/",
+      "vietnamese_meaning": "đang tăng trưởng, đang phát triển",
+      "example_sentence": "The volume of disposable items is growing despite concerns about the impact on the environment.",
+      "example_translation": "Khối lượng các mặt hàng dùng một lần đang tăng lên bất chấp những lo ngại về tác động đối với môi trường.",
+      "collocations": ["is growing despite", "growing demand", "growing market"]
+    },
+    {
+      "id": 18,
+      "word": "generous",
+      "wordForm": "adjective",
+      "ipa": "/ˈdʒenərəs/",
+      "vietnamese_meaning": "hào phóng, rộng lượng, thịnh tình",
+      "example_sentence": "The opening of the community center was only possible through the public's generous support.",
+      "example_translation": "Việc khai trương trung tâm cộng đồng chỉ có thể thực hiện được nhờ sự hỗ trợ hào phóng của công chúng.",
+      "collocations": ["generous support", "generous donation"]
+    },
+    {
+      "id": 19,
+      "word": "maintain",
+      "wordForm": "verb",
+      "ipa": "/meɪnˈteɪn/",
+      "vietnamese_meaning": "duy trì, giữ vững",
+      "example_sentence": "The new yoga mat manufactured by Elita, Inc., maintains its shape even after many years of use.",
+      "example_translation": "Thảm yoga mới do Elita, Inc. sản xuất vẫn duy trì được hình dáng của nó ngay cả sau nhiều năm sử dụng.",
+      "collocations": ["maintain its shape", "maintain a relationship", "maintain quality"]
+    },
+    {
+      "id": 20,
+      "word": "warranty",
+      "wordForm": "noun",
+      "ipa": "/ˈwɔːrənti/",
+      "vietnamese_meaning": "sự bảo hành, giấy bảo hành",
+      "example_sentence": "The manufacturer offers a standard warranty on the dryer for three years.",
+      "example_translation": "Nhà sản xuất cung cấp một chế độ bảo hành tiêu chuẩn cho máy sấy trong vòng ba năm.",
+      "collocations": ["warranty on the dryer", "under warranty", "extended warranty"]
+    },
+    {
+      "id": 21,
+      "word": "combination",
+      "wordForm": "noun",
+      "ipa": "/ˌkɒmbɪˈneɪʃn/",
+      "vietnamese_meaning": "sự kết hợp, sự phối hợp",
+      "example_sentence": "Mr. Otis has the right combination of people skills and career experience to succeed in the role.",
+      "example_translation": "Ông Otis có sự kết hợp đúng đắn giữa kỹ năng giao tiếp và kinh nghiệm nghề nghiệp để thành công trong vai trò này.",
+      "collocations": ["right combination of", "in combination with"]
+    },
+    {
+      "id": 22,
+      "word": "how",
+      "wordForm": "conjunction",
+      "ipa": "/haʊ/",
+      "vietnamese_meaning": "như thế nào, cách thức mà",
+      "example_sentence": "The focus of the board members is how investors react to the news of the CEO's retirement.",
+      "example_translation": "Trọng tâm của các thành viên hội đồng quản trị là các nhà đầu tư phản ứng như thế nào trước tin vị Giám đốc điều hành nghỉ hưu.",
+      "collocations": ["focus is how", "how to react"]
+    },
+    {
+      "id": 23,
+      "word": "widely",
+      "wordForm": "adverb",
+      "ipa": "/ˈwaɪdli/",
+      "vietnamese_meaning": "một cách rộng rãi, rộng khắp",
+      "example_sentence": "The program coordinator asked staff to circulate the volunteer recruitment post widely using their personal social media accounts.",
+      "example_translation": "Điều phối viên chương trình yêu cầu nhân viên lưu hành rộng rãi bài đăng tuyển tình nguyện viên bằng tài khoản mạng xã hội cá nhân của họ.",
+      "collocations": ["circulate widely", "widely accepted", "widely used"]
+    },
+    {
+      "id": 24,
+      "word": "perfectly",
+      "wordForm": "adverb",
+      "ipa": "/ˈpɜːrfɪktli/",
+      "vietnamese_meaning": "một cách hoàn hảo, hoàn toàn",
+      "example_sentence": "For the safety of everyone in the building, the area around the fire exit must remain perfectly clear at all times.",
+      "example_translation": "Vì sự an toàn của mọi người trong tòa nhà, khu vực xung quanh lối thoát hiểm phải luôn hoàn toàn thông thoáng vào mọi lúc.",
+      "collocations": ["remain perfectly clear", "perfectly fine", "perfectly safe"]
+    },
+    {
+      "id": 25,
+      "word": "was constructed",
+      "wordForm": "verb",
+      "ipa": "/wəz kənˈstrʌktɪd/",
+      "vietnamese_meaning": "đã được xây dựng",
+      "example_sentence": "The architect's drawings for the structure differ greatly from the building that was constructed.",
+      "example_translation": "Bản vẽ của kiến trúc sư cho công trình khác biệt rất lớn so với tòa nhà đã được xây dựng thực tế.",
+      "collocations": ["was constructed in", "newly constructed"]
+    },
+    {
+      "id": 26,
+      "word": "conduct",
+      "wordForm": "verb",
+      "ipa": "/kənˈdʌkt/",
+      "vietnamese_meaning": "tiến hành, thực hiện",
+      "example_sentence": "Benjamin has chosen new videoconferencing software for the training he will conduct remotely.",
+      "example_translation": "Benjamin đã chọn phần mềm họp trực tuyến mới cho buổi đào tạo mà anh ấy sẽ tiến hành từ xa.",
+      "collocations": ["conduct training", "conduct a survey", "conduct research"]
+    },
+    {
+      "id": 27,
+      "word": "once",
+      "wordForm": "conjunction",
+      "ipa": "/wʌns/",
+      "vietnamese_meaning": "một khi, ngay khi",
+      "example_sentence": "Once audience members arrive at the theater, an usher will direct them to the correct seats.",
+      "example_translation": "Một khi các khán giả đến rạp hát, người chỉ chỗ sẽ hướng dẫn họ đến đúng ghế ngồi.",
+      "collocations": ["once arrive", "once completed"]
+    },
+    {
+      "id": 28,
+      "word": "eliminated",
+      "wordForm": "verb",
+      "ipa": "/ɪˈlɪmɪneɪtɪd/",
+      "vietnamese_meaning": "bị loại, bị loại bỏ",
+      "example_sentence": "Performers eliminated from the competition are encouraged to stay and watch the remainder of the show.",
+      "example_translation": "Những người biểu diễn bị loại khỏi cuộc thi được khuyến khích ở lại và xem phần còn lại của chương trình.",
+      "collocations": ["performers eliminated from", "be eliminated"]
+    },
+    {
+      "id": 29,
+      "word": "now that",
+      "wordForm": "conjunction",
+      "ipa": "/naʊ ðæt/",
+      "vietnamese_meaning": "vì rằng, bởi vì giờ đây",
+      "example_sentence": "Many commuters are enjoying shorter driving times now that the expansion of Highway 5 is completed.",
+      "example_translation": "Nhiều người tham gia giao thông đang tận hưởng thời gian lái xe ngắn hơn vì giờ đây việc mở rộng Đường cao tốc số 5 đã hoàn thành.",
+      "collocations": ["now that it is completed", "now that because"]
+    },
+    {
+      "id": 30,
+      "word": "terminate",
+      "wordForm": "verb",
+      "ipa": "/ˈtɜːrmɪneɪt/",
+      "vietnamese_meaning": "chấm dứt, hủy bỏ, kết thúc hợp đồng",
+      "example_sentence": "At the Rockford Apartment Complex, tenants may have to pay a fee if they terminate their lease agreement without sufficient notice.",
+      "example_translation": "Tại Tổ hợp chung cư Rockford, người thuê nhà có thể phải trả một khoản phí nếu họ chấm dứt hợp đồng thuê mà không thông báo trước đủ thời gian.",
+      "collocations": ["terminate lease agreement", "terminate a contract", "terminate employment"]
+    }
+  ]
+}
