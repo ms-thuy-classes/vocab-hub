@@ -659,10 +659,30 @@ const correctVariant =
 
 
     // Thay thế chính xác biến thể đó bằng _____
-    let blankSentence = originalSentence.replace(
-      new RegExp(`\\b${escapeRegex(correctVariant)}\\b`, 'i'),
-      '_____'
+ let blankSentence = originalSentence;
+
+if (
+    originalWord.includes(" to") &&
+    correctVariant.includes("ed")
+) {
+
+    // devote -> devoted herself to
+    blankSentence = blankSentence.replace(
+        /\b(\w+ed)\b(.*?)\bto\b/i,
+        "_____ $2 _____"
     );
+
+} else {
+
+    blankSentence = blankSentence.replace(
+        new RegExp(
+            `\\b${escapeRegex(correctVariant)}\\b`,
+            "i"
+        ),
+        "_____"
+    );
+
+}
 
     // Đáp án đúng chính là biến thể đó
     const correct = correctVariant;
