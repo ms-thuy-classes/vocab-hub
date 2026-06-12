@@ -435,13 +435,95 @@
       "example_translation": "Anh ấy có tham vọng và muốn trở thành nhà lãnh đạo.",
       "collocations": ["ambitious plan", "ambitious person"]
     }, 
-    {"id": 44, "word": "devote something to (doing) something", "wordForm": "structure", "ipa": /
-dɪvˈə͡ʊt sˈʌmθɪŋ tˈuː (dˈuːɪŋ) sˈʌmθɪŋ/ , "vietnamese_meaning": "cống hiến cái gì/việc gì", "example_sentence": "He devoted his life to charity.", "example_translation": "Ông ấy cống hiến cuộc đời cho từ thiện.", "collocations": ["devote time/effort to"]},
-    {"id": 45, "word": "attend school/college", "wordForm": "structure", "ipa": //əˈtend skuːl () ˈkɒlɪʤ// , "vietnamese_meaning": "đi học đại học/cao đẳng", "example_sentence": "She attended college in Hanoi.", "example_translation": "Cô ấy đã học đại học ở Hà Nội.", "collocations": ["attend university"]},
-    {"id": 46, "word": "admired for something", "wordForm": "structure", "ipa": /ədˈmaɪəd fɔː ˈsʌmθɪŋ/, "vietnamese_meaning": "được ngưỡng mộ vì điều gì", "example_sentence": "He is admired for his work.", "example_translation": "Ông ấy được ngưỡng mộ vì công việc của mình.", "collocations": ["admired for bravery"]},
-    {"id": 47, "word": "drop out", "wordForm": "structure", "ipa": "/drɒp aʊt/", "vietnamese_meaning": "bỏ học", "example_sentence": "He dropped out of school early.", "example_translation": "Anh ấy đã bỏ học sớm.", "collocations": ["drop out of class"]},
-    {"id": 48, "word": "diagnosed with something", "wordForm": "structure", "ipa": /ˈdaɪəgnəʊzd wɪð ˈsʌmθɪŋ/, "vietnamese_meaning": "được chẩn đoán mắc bệnh gì", "example_sentence": "He was diagnosed with cancer.", "example_translation": "Ông ấy được chẩn đoán mắc bệnh ung thư.", "collocations": ["diagnosed with a disease"]},
-    {"id": 49, "word": "pass away", "wordForm": "structure", "ipa": "/pɑːs əˈweɪ/", "vietnamese_meaning": "qua đời", "example_sentence": "He passed away peacefully.", "example_translation": "Ông ấy đã qua đời thanh thản.", "collocations": ["pass away at age..."]},
-    {"id": 50, "word": "dedicated to something", "wordForm": "structure", "ipa": /ˈdedɪkeɪtɪd tʊ ˈsʌmθɪŋ/, "vietnamese_meaning": "cống hiến cho cái gì", "example_sentence": "She is dedicated to her job.", "example_translation": "Cô ấy tận tụy với công việc.", "collocations": ["dedicated to the cause"]}
+   {
+  "id": 44,
+  "word": "devote something to (doing) something",
+  "wordForm": "structure",
+  "ipa": "/dɪˈvəʊt ˈsʌmθɪŋ tə (ˈduːɪŋ) ˈsʌmθɪŋ/",
+  "vietnamese_meaning": "cống hiến thứ gì cho việc gì",
+  "example_sentence": "She devoted her life to helping others.",
+  "example_translation": "Cô ấy đã cống hiến cuộc đời mình để giúp đỡ người khác.",
+  "collocations": [
+    "devote time to",
+    "devote one's life to"
   ]
+},
+{
+  "id": 45,
+  "word": "attend school/college",
+  "wordForm": "structure",
+  "ipa": "/əˈtend skuːl/ /ˈkɒlɪdʒ/",
+  "vietnamese_meaning": "đi học (trường học, cao đẳng, đại học)",
+  "example_sentence": "She attended college in Hanoi.",
+  "example_translation": "Cô ấy đã học đại học ở Hà Nội.",
+  "collocations": [
+    "attend school",
+    "attend college"
+  ]
+},
+{
+  "id": 46,
+  "word": "be admired for something",
+  "wordForm": "structure",
+  "ipa": "/biː ədˈmaɪəd fɔː(r) ˈsʌmθɪŋ/",
+  "vietnamese_meaning": "được ngưỡng mộ vì điều gì",
+  "example_sentence": "She is admired for her courage.",
+  "example_translation": "Cô ấy được ngưỡng mộ vì lòng dũng cảm.",
+  "collocations": [
+    "be admired for bravery",
+    "be admired by many people"
+  ]
+},
+{
+  "id": 47,
+  "word": "drop out",
+  "wordForm": "structure",
+  "ipa": "/drɒp aʊt/",
+  "vietnamese_meaning": "bỏ học",
+  "example_sentence": "He dropped out of school at the age of sixteen.",
+  "example_translation": "Anh ấy đã bỏ học khi 16 tuổi.",
+  "collocations": [
+    "drop out of school",
+    "drop out of college"
+  ]
+},
+{
+  "id": 48,
+  "word": "be diagnosed with something",
+  "wordForm": "structure",
+  "ipa": "/biː ˈdaɪəɡnəʊzd wɪð ˈsʌmθɪŋ/",
+  "vietnamese_meaning": "được chẩn đoán mắc bệnh gì",
+  "example_sentence": "He was diagnosed with cancer last year.",
+  "example_translation": "Ông ấy đã được chẩn đoán mắc bệnh ung thư vào năm ngoái.",
+  "collocations": [
+    "be diagnosed with cancer",
+    "be diagnosed with a disease"
+  ]
+},
+{
+  "id": 49,
+  "word": "pass away",
+  "wordForm": "structure",
+  "ipa": "/pɑːs əˈweɪ/",
+  "vietnamese_meaning": "qua đời",
+  "example_sentence": "The famous doctor passed away peacefully.",
+  "example_translation": "Vị bác sĩ nổi tiếng đã qua đời thanh thản.",
+  "collocations": [
+    "pass away peacefully",
+    "pass away at the age of"
+  ]
+},
+{
+  "id": 50,
+  "word": "be dedicated to something",
+  "wordForm": "structure",
+  "ipa": "/biː ˈdedɪkeɪtɪd tə ˈsʌmθɪŋ/",
+  "vietnamese_meaning": "cống hiến cho điều gì",
+  "example_sentence": "She is dedicated to helping children.",
+  "example_translation": "Cô ấy cống hiến cho việc giúp đỡ trẻ em.",
+  "collocations": [
+    "be dedicated to education",
+    "be dedicated to helping others"
+  ]
+}
 }
