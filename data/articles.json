@@ -26,6 +26,19 @@
       "file": "grade12-can-ban.json",
       "tags": ["grade12", "can-ban"]
     },
+      {
+      "id": "grade12-unit1",
+      "title": "Grade12 - Unit 1",
+      "description": "Từ vựng, ngữ pháp căn bản",
+      "category": "grade12",
+      "level": "grade12",
+      "icon": "️️🎨",
+      "vocabCount": 30,
+      "exerciseCount": 8,
+      "thumbnail": "sports.jpg",    
+      "file": "grade12-unit1.json",
+      "tags": ["grade12", "unit1"]
+    },
     {
       "id": "ielts-speaking-sports",
       "title": "IELTS Speaking: Sports",
