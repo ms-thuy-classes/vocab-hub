@@ -1,0 +1,359 @@
+{
+  "id": "toeic-test3-ets2025",
+  "title": "TOEIC TEST 4 ETS 2025",
+  "description": "Từ vựng TOEIC",
+  "icon": "💼",
+  "thumbnail": "toeic-test3-ets2025.jpg",
+"vocabulary": [
+    {
+      "id": 1,
+      "word": "mutual",
+      "wordForm": "adjective",
+      "ipa": "/ˈmjuːtʃuəl/",
+      "vietnamese_meaning": "lẫn nhau, chung (cho cả hai)",
+      "example_sentence": "The mentorship program connects new hires with senior employees to the mutual benefit of both parties.",
+      "example_translation": "Chương trình cố vấn kết nối nhân viên mới với nhân viên lâu năm vì lợi ích chung của cả hai bên.",
+      "collocations": [
+        "mutual benefit",
+        "mutual respect",
+        "mutual agreement"
+      ]
+    },
+    {
+      "id": 2,
+      "word": "voluntary",
+      "wordForm": "adjective",
+      "ipa": "/ˈvɒləntri/",
+      "vietnamese_meaning": "tự nguyện",
+      "example_sentence": "Due to safety concerns, the Ladner Corporation has made a voluntary decision to recall some models of its bicycle tires.",
+      "example_translation": "Do lo ngại về an toàn, Tập đoàn Ladner đã đưa ra quyết định tự nguyện thu hồi một số mẫu lốp xe đạp của mình.",
+      "collocations": [
+        "voluntary decision",
+        "voluntary work",
+        "voluntary contribution"
+      ]
+    },
+    {
+      "id": 3,
+      "word": "equal",
+      "wordForm": "adjective",
+      "ipa": "/ˈiːkwəl/",
+      "vietnamese_meaning": "công bằng, ngang nhau",
+      "example_sentence": "Each participant in the debate will have an equal amount of speaking time.",
+      "example_translation": "Mỗi người tham gia cuộc tranh luận sẽ có một thời lượng phát biểu ngang nhau.",
+      "collocations": [
+        "equal amount",
+        "equal rights",
+        "equal opportunity"
+      ]
+    },
+    {
+      "id": 4,
+      "word": "infrastructure",
+      "wordForm": "noun",
+      "ipa": "/ˈɪnfrəstrʌktʃə(r)/",
+      "vietnamese_meaning": "cơ sở hạ tầng",
+      "example_sentence": "Demand for public transportation has grown beyond the capacity of the city's current infrastructure.",
+      "example_translation": "Nhu cầu giao thông công cộng đã tăng vượt quá khả năng đáp ứng của cơ sở hạ tầng hiện tại của thành phố.",
+      "collocations": [
+        "current infrastructure",
+        "improve infrastructure",
+        "transport infrastructure"
+      ]
+    },
+    {
+      "id": 5,
+      "word": "beyond",
+      "wordForm": "preposition",
+      "ipa": "/bɪˈjɒnd/",
+      "vietnamese_meaning": "vượt quá, vượt ra ngoài",
+      "example_sentence": "The success of the marketing campaign was beyond our expectations.",
+      "example_translation": "Sự thành công của chiến dịch tiếp thị đã vượt quá mong đợi của chúng tôi.",
+      "collocations": [
+        "beyond the capacity",
+        "beyond expectations",
+        "beyond recognition"
+      ]
+    },
+    {
+      "id": 6,
+      "word": "slightly",
+      "wordForm": "adverb",
+      "ipa": "/ˈslaɪtli/",
+      "vietnamese_meaning": "một chút, nhẹ nhàng",
+      "example_sentence": "Though the amusement park remains open year-round, its hours are reduced slightly for the winter season.",
+      "example_translation": "Mặc dù công viên giải trí mở cửa quanh năm, thời gian hoạt động của nó giảm đi một chút vào mùa đông.",
+      "collocations": [
+        "reduced slightly",
+        "slightly different",
+        "increase slightly"
+      ]
+    },
+    {
+      "id": 7,
+      "word": "standardize",
+      "wordForm": "verb",
+      "ipa": "/ˈstændədaɪz/",
+      "vietnamese_meaning": "tiêu chuẩn hóa",
+      "example_sentence": "All component parts of Lowry automatic doors are standardized for easy replacement.",
+      "example_translation": "Tất cả các bộ phận cấu thành của cửa tự động Lowry đều được tiêu chuẩn hóa để dễ dàng thay thế.",
+      "collocations": [
+        "highly standardized",
+        "standardize procedures",
+        "standardize testing"
+      ]
+    },
+    {
+      "id": 8,
+      "word": "suggest",
+      "wordForm": "verb",
+      "ipa": "/səɡˈdʒest/",
+      "vietnamese_meaning": "gợi ý, cho thấy",
+      "example_sentence": "A recent study by Melbourne University researchers suggests that blue-light glasses may not prevent eye strain.",
+      "example_translation": "Một nghiên cứu gần đây của các nhà nghiên cứu Đại học Melbourne cho thấy kính chống ánh sáng xanh có thể không thực sự ngăn ngừa mỏi mắt.",
+      "collocations": [
+        "study suggests",
+        "strongly suggest",
+        "suggest a solution"
+      ]
+    },
+    {
+      "id": 9,
+      "word": "mentorship",
+      "wordForm": "noun",
+      "ipa": "/ˈmentɔːʃɪp/",
+      "vietnamese_meaning": "chương trình/sự hướng dẫn (của người cố vấn)",
+      "example_sentence": "The mentorship program pairs experienced executives with new managers.",
+      "example_translation": "Chương trình cố vấn ghép đôi các nhà quản lý kỳ cựu với những quản lý mới.",
+      "collocations": [
+        "mentorship program",
+        "provide mentorship",
+        "seek mentorship"
+      ]
+    },
+    {
+      "id": 10,
+      "word": "unlike",
+      "wordForm": "preposition",
+      "ipa": "/ʌnˈlaɪk/",
+      "vietnamese_meaning": "không giống như, trái với",
+      "example_sentence": "Unlike its neighboring cities, Finley has not seen a rise in its real estate prices.",
+      "example_translation": "Không giống như các thành phố lân cận, Finley không chứng kiến sự gia tăng giá bất động sản.",
+      "collocations": [
+        "unlike neighboring",
+        "unlike anyone else",
+        "not unlike"
+      ]
+    },
+    {
+      "id": 11,
+      "word": "during",
+      "wordForm": "preposition",
+      "ipa": "/ˈdjʊərɪŋ/",
+      "vietnamese_meaning": "trong suốt (khoảng thời gian)",
+      "example_sentence": "New employees are allowed just one week of vacation time during their first year of work.",
+      "example_translation": "Nhân viên mới chỉ được phép nghỉ phép một tuần trong suốt năm làm việc đầu tiên của họ.",
+      "collocations": [
+        "during the first year",
+        "during the meeting",
+        "during the winter season"
+      ]
+    },
+    {
+      "id": 12,
+      "word": "postpone",
+      "wordForm": "verb",
+      "ipa": "/pəʊˈspəʊn/",
+      "vietnamese_meaning": "trì hoãn",
+      "example_sentence": "Because of staffing difficulties, the grand opening of our second store location must be postponed by a few days.",
+      "example_translation": "Vì lý do khó khăn về nhân sự, buổi lễ khai trương cơ sở thứ hai phải bị trì hoãn vài ngày.",
+      "collocations": [
+        "postpone personal phone calls",
+        "be postponed by",
+        "postpone indefinitely"
+      ]
+    },
+    {
+      "id": 13,
+      "word": "accordingly",
+      "wordForm": "adverb",
+      "ipa": "/əˈkɔːdɪŋli/",
+      "vietnamese_meaning": "một cách phù hợp, theo đó",
+      "example_sentence": "We always ask participants beforehand about their particular interests and adjust the workshop's focus accordingly.",
+      "example_translation": "Chúng tôi luôn hỏi trước người tham gia về sở thích cụ thể của họ và điều chỉnh trọng tâm của hội thảo theo đó.",
+      "collocations": [
+        "adjust accordingly",
+        "act accordingly",
+        "plan accordingly"
+      ]
+    },
+    {
+      "id": 14,
+      "word": "application",
+      "wordForm": "noun",
+      "ipa": "/ˌæplɪˈkeɪʃn/",
+      "vietnamese_meaning": "ứng dụng",
+      "example_sentence": "Glintech's flagship mobile application has been downloaded by over 10 million people.",
+      "example_translation": "Ứng dụng di động hàng đầu của Glintech đã được tải xuống bởi hơn 10 triệu người.",
+      "collocations": [
+        "mobile application",
+        "submit an application",
+        "application form"
+      ]
+    },
+    {
+      "id": 15,
+      "word": "comparable",
+      "wordForm": "adjective",
+      "ipa": "/ˈkɒmpərəbl/",
+      "vietnamese_meaning": "có thể so sánh được, tương đương",
+      "example_sentence": "Comparable to luggage sold by luxury fashion brands, the Naviga suitcase is remarkably elegant.",
+      "example_translation": "Có thể so sánh với hành lý được bán bởi các thương hiệu thời trang xa xỉ, chiếc vali Naviga thanh lịch rõ rệt.",
+      "collocations": [
+        "comparable to",
+        "comparable quality",
+        "broadly comparable"
+      ]
+    },
+    {
+      "id": 16,
+      "word": "perform",
+      "wordForm": "verb",
+      "ipa": "/pəˈfɔːm/",
+      "vietnamese_meaning": "thực hiện, tiến hành",
+      "example_sentence": "Repairs to the electrical system at Perron Hospital must be performed by a licensed electrician.",
+      "example_translation": "Việc sửa chữa hệ thống điện tại Bệnh viện Perron phải được thực hiện bởi thợ điện có giấy phép hành nghề.",
+      "collocations": [
+        "be performed by",
+        "perform duties",
+        "perform an analysis"
+      ]
+    },
+    {
+      "id": 17,
+      "word": "numerous",
+      "wordForm": "adjective",
+      "ipa": "/ˈnjuːmərəs/",
+      "vietnamese_meaning": "nhiều, đông đảo",
+      "example_sentence": "The Gimdan Company supplies numerous industries, including packaging, automotive, and construction.",
+      "example_translation": "Công ty Gimdan cung cấp cho nhiều ngành công nghiệp, bao gồm bao bì, ô tô và xây dựng.",
+      "collocations": [
+        "numerous industries",
+        "numerous awards",
+        "on numerous occasions"
+      ]
+    },
+    {
+      "id": 18,
+      "word": "accommodate",
+      "wordForm": "verb",
+      "ipa": "/əˈkɒmədeɪt/",
+      "vietnamese_meaning": "đáp ứng, tạo điều kiện",
+      "example_sentence": "To accommodate students with limited availability, the institute permits flexible scheduling.",
+      "example_translation": "Để đáp ứng các học sinh có thời gian rảnh hạn chế, học viện cho phép lên lịch linh hoạt.",
+      "collocations": [
+        "accommodate students",
+        "accommodate needs",
+        "accommodate guests"
+      ]
+    },
+    {
+      "id": 19,
+      "word": "division",
+      "wordForm": "noun",
+      "ipa": "/dɪˈvɪʒn/",
+      "vietnamese_meaning": "phòng ban, bộ phận",
+      "example_sentence": "Marcum Limited's distribution division is currently advertising multiple openings for truck drivers.",
+      "example_translation": "Bộ phận phân phối của Marcum Limited hiện đang quảng cáo nhiều vị trí tuyển dụng cho tài xế xe tải.",
+      "collocations": [
+        "distribution division",
+        "head of division",
+        "division manager"
+      ]
+    },
+    {
+      "id": 20,
+      "word": "opposition",
+      "wordForm": "noun",
+      "ipa": "/ˌɒpəˈzɪʃn/",
+      "vietnamese_meaning": "sự phản đối",
+      "example_sentence": "Yowton City's plans to build a wind farm were canceled in response to opposition from residents.",
+      "example_translation": "Kế hoạch xây dựng trang trại điện gió của Thành phố Yowton đã bị hủy bỏ để phản hồi lại sự phản đối từ cư dân.",
+      "collocations": [
+        "opposition from",
+        "meet with opposition",
+        "strong opposition"
+      ]
+    },
+    {
+      "id": 21,
+      "word": "correspondence",
+      "wordForm": "noun",
+      "ipa": "/ˌkɒrəˈspɒndəns/",
+      "vietnamese_meaning": "thư từ trao đổi, sự liên lạc",
+      "example_sentence": "Ms. Waggoner has directed the billing department to keep any correspondence with clients regarding payment.",
+      "example_translation": "Bà Waggoner đã chỉ thị bộ phận thanh toán lưu lại bất kỳ thư từ trao đổi nào với khách hàng liên quan đến việc thanh toán.",
+      "collocations": [
+        "keep correspondence",
+        "business correspondence",
+        "written correspondence"
+      ]
+    },
+    {
+      "id": 22,
+      "word": "thoroughly",
+      "wordForm": "adverb",
+      "ipa": "/ˈθʌrəli/",
+      "vietnamese_meaning": "kĩ lưỡng, hoàn toàn",
+      "example_sentence": "In spite of the high temperatures outdoors, Ms. Delvay thoroughly inspected the exterior of the property.",
+      "example_translation": "Bất chấp nhiệt độ ngoài trời cao, bà Delvay đã kiểm tra kỹ lưỡng bên ngoài của bất động sản.",
+      "collocations": [
+        "thoroughly inspected",
+        "thoroughly enjoy",
+        "understand thoroughly"
+      ]
+    },
+    {
+      "id": 23,
+      "word": "availability",
+      "wordForm": "noun",
+      "ipa": "/əˌveɪləˈbɪləti/",
+      "vietnamese_meaning": "sự sẵn có, thời gian rảnh",
+      "example_sentence": "Please check the room availability online before planning your conference.",
+      "example_translation": "Vui lòng kiểm tra sự sẵn có của phòng trực tuyến trước khi lập kế hoạch hội nghị của bạn.",
+      "collocations": [
+        "limited availability",
+        "room availability",
+        "product availability"
+      ]
+    },
+    {
+      "id": 24,
+      "word": "exchange",
+      "wordForm": "verb",
+      "ipa": "/ɪksˈtʃeɪndʒ/",
+      "vietnamese_meaning": "trao đổi, đổi (hàng hóa)",
+      "example_sentence": "Staff at Haney Supermarket may exchange their uniform shirt for one in a different size at no charge.",
+      "example_translation": "Nhân viên tại Siêu thị Haney có thể đổi áo đồng phục của họ lấy một chiếc có kích cỡ khác miễn phí.",
+      "collocations": [
+        "exchange uniform shirt",
+        "exchange rate",
+        "exchange ideas"
+      ]
+    },
+    {
+      "id": 25,
+      "word": "response",
+      "wordForm": "noun",
+      "ipa": "/rɪˈspɒns/",
+      "vietnamese_meaning": "sự phản hồi, sự đáp lại",
+      "example_sentence": "We received an immediate response to our request for additional technical support.",
+      "example_translation": "Chúng tôi đã nhận được sự phản hồi ngay lập tức đối với yêu cầu hỗ trợ kỹ thuật bổ sung.",
+      "collocations": [
+        "in response to",
+        "immediate response",
+        "positive response"
+      ]
+    }
+  ]
+}
