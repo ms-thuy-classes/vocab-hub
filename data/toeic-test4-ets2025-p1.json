@@ -1,0 +1,259 @@
+{
+  "id": "toeic-test4-ets2025-p1",
+  "title": "TOEIC TEST 4 ETS 2025 P1",
+  "description": "Từ vựng TOEIC",
+  "icon": "🌺",
+  "thumbnail": "toeic-test3-ets2025.jpg",
+"vocabulary": [
+    {
+      "id": 1,
+      "word": "Harvest",
+      "wordForm": "verb/noun",
+      "ipa": "/ˈhɑːr.vəst/",
+      "vietnamese_meaning": "thu hoạch",
+      "example_sentence": "The farmer is harvesting the crops.",
+      "example_translation": "Người nông dân đang thu hoạch mùa màng.",
+      "collocations": ["harvest crops", "harvest season"]
+    },
+    {
+      "id": 2,
+      "word": "Water",
+      "wordForm": "verb",
+      "ipa": "/ˈwɔː.tər/",
+      "vietnamese_meaning": "tưới nước",
+      "example_sentence": "She is watering the flowers in the garden.",
+      "example_translation": "Cô ấy đang tưới hoa ở trong vườn.",
+      "collocations": ["water the plants", "water the flowers"]
+    },
+    {
+      "id": 3,
+      "word": "Sound equipment",
+      "wordForm": "noun phrase",
+      "ipa": "/saʊnd ɪˈkwɪp.mənt/",
+      "vietnamese_meaning": "thiết bị âm thanh",
+      "example_sentence": "Some technicians are setting up the sound equipment.",
+      "example_translation": "Một vài kỹ thuật viên đang lắp đặt thiết bị âm thanh.",
+      "collocations": ["audio and sound equipment", "set up sound equipment"]
+    },
+    {
+      "id": 4,
+      "word": "Adjust",
+      "wordForm": "verb",
+      "ipa": "/əˈdʒʌst/",
+      "vietnamese_meaning": "điều chỉnh",
+      "example_sentence": "The man is adjusting his microphone.",
+      "example_translation": "Người đàn ông đang điều chỉnh micrô của mình.",
+      "collocations": ["adjust the volume", "adjust the equipment"]
+    },
+    {
+      "id": 5,
+      "word": "Musical instrument",
+      "wordForm": "noun phrase",
+      "ipa": "/ˈmjuː.zɪ.kəl ˈɪn.strə.mənt/",
+      "vietnamese_meaning": "nhạc cụ",
+      "example_sentence": "There are several musical instruments on the stage.",
+      "example_translation": "Có một vài nhạc cụ ở trên sân khấu.",
+      "collocations": ["play a musical instrument", "traditional musical instrument"]
+    },
+    {
+      "id": 6,
+      "word": "Skyscraper",
+      "wordForm": "noun",
+      "ipa": "/ˈskaɪˌskreɪ.pər/",
+      "vietnamese_meaning": "tòa nhà chọc trời",
+      "example_sentence": "Tall skyscrapers can be seen in the background.",
+      "example_translation": "Có thể nhìn thấy những tòa nhà chọc trời cao tầng ở phía sau.",
+      "collocations": ["modern skyscraper", "towering skyscraper"]
+    },
+    {
+      "id": 7,
+      "word": "In the distance",
+      "wordForm": "phrase",
+      "ipa": "/ɪn ðə ˈdɪs.təns/",
+      "vietnamese_meaning": "ở đằng xa, phía xa",
+      "example_sentence": "There is a mountain in the distance.",
+      "example_translation": "Có một ngọn núi ở phía đằng xa.",
+      "collocations": ["visible in the distance", "see in the distance"]
+    },
+    {
+      "id": 8,
+      "word": "Waterway",
+      "wordForm": "noun",
+      "ipa": "/ˈwɔː.tər.weɪ/",
+      "vietnamese_meaning": "tuyến đường thủy",
+      "example_sentence": "The boat is moving along the waterway.",
+      "example_translation": "Con thuyền đang di chuyển dọc theo tuyến đường thủy.",
+      "collocations": ["inland waterway", "busy waterway"]
+    },
+    {
+      "id": 9,
+      "word": "Plant",
+      "wordForm": "verb/noun",
+      "ipa": "/plænt/",
+      "vietnamese_meaning": "trồng (cây) / thực vật",
+      "example_sentence": "A worker is planting a tree in the park.",
+      "example_translation": "Một công nhân đang trồng cây trong công viên.",
+      "collocations": ["plant a tree", "potted plant"]
+    },
+    {
+      "id": 10,
+      "word": "Exercise machine",
+      "wordForm": "noun phrase",
+      "ipa": "/ˈek.sə.saɪz məˈʃiːn/",
+      "vietnamese_meaning": "máy tập thể dục",
+      "example_sentence": "He is using an exercise machine at the gym.",
+      "example_translation": "Anh ấy đang sử dụng máy tập thể dục ở phòng gym.",
+      "collocations": ["use an exercise machine"]
+    },
+    {
+      "id": 11,
+      "word": "Staircase",
+      "wordForm": "noun",
+      "ipa": "/ˈster.keɪs/",
+      "vietnamese_meaning": "cầu thang",
+      "example_sentence": "They are walking up the wooden staircase.",
+      "example_translation": "Họ đang đi bộ lên cầu thang gỗ.",
+      "collocations": ["spiral staircase", "walk up a staircase"]
+    },
+    {
+      "id": 12,
+      "word": "Railing",
+      "wordForm": "noun",
+      "ipa": "/ˈreɪ.lɪŋ/",
+      "vietnamese_meaning": "lan can, tay vịn",
+      "example_sentence": "A man is leaning against the metal railing.",
+      "example_translation": "Một người đàn ông đang tựa lưng vào lan can kim loại.",
+      "collocations": ["metal railing", "lean against the railing"]
+    },
+    {
+      "id": 13,
+      "word": "Install",
+      "wordForm": "verb",
+      "ipa": "/ɪnˈstɔːl/",
+      "vietnamese_meaning": "lắp đặt",
+      "example_sentence": "The workers are installing new lights.",
+      "example_translation": "Các công nhân đang lắp đặt hệ thống đèn mới.",
+      "collocations": ["install equipment", "install a system"]
+    },
+    {
+      "id": 14,
+      "word": "Window ledge",
+      "wordForm": "noun phrase",
+      "ipa": "/ˈwɪn.doʊ ledʒ/",
+      "vietnamese_meaning": "bậu cửa sổ",
+      "example_sentence": "There are some plants on the window ledge.",
+      "example_translation": "Có một vài chậu cây trên bậu cửa sổ.",
+      "collocations": ["sit on the window ledge"]
+    },
+    {
+      "id": 15,
+      "word": "Decorate",
+      "wordForm": "verb",
+      "ipa": "/ˈdek.ə.reɪt/",
+      "vietnamese_meaning": "trang trí",
+      "example_sentence": "The room is decorated with colorful balloons.",
+      "example_translation": "Căn phòng được trang trí bằng những quả bóng bay đầy màu sắc.",
+      "collocations": ["beautifully decorated", "decorate a room"]
+    },
+    {
+      "id": 16,
+      "word": "Sweep",
+      "wordForm": "verb",
+      "ipa": "/swiːp/",
+      "vietnamese_meaning": "quét (nhà, đường)",
+      "example_sentence": "A man is sweeping the floor with a broom.",
+      "example_translation": "Một người đàn ông đang quét sàn nhà bằng một cây chổi.",
+      "collocations": ["sweep the floor", "sweep the walkway"]
+    },
+    {
+      "id": 17,
+      "word": "Handbag",
+      "wordForm": "noun",
+      "ipa": "/ˈhænd.bæɡ/",
+      "vietnamese_meaning": "túi xách",
+      "example_sentence": "The woman is carrying a leather handbag.",
+      "example_translation": "Người phụ nữ đang mang một chiếc túi xách bằng da.",
+      "collocations": ["leather handbag", "carry a handbag"]
+    },
+    {
+      "id": 18,
+      "word": "Carry",
+      "wordForm": "verb",
+      "ipa": "/ˈkær.i/",
+      "vietnamese_meaning": "mang, vác, bế, chở",
+      "example_sentence": "The man is carrying a heavy box.",
+      "example_translation": "Người đàn ông đang bê một chiếc hộp nặng.",
+      "collocations": ["carry a box", "carry items"]
+    },
+    {
+      "id": 19,
+      "word": "Press",
+      "wordForm": "verb",
+      "ipa": "/pres/",
+      "vietnamese_meaning": "nhấn, ấn",
+      "example_sentence": "She is pressing a button on the elevator.",
+      "example_translation": "Cô ấy đang nhấn một nút trên thang máy.",
+      "collocations": ["press a button", "press a key"]
+    },
+    {
+      "id": 20,
+      "word": "Line up",
+      "wordForm": "phrasal verb",
+      "ipa": "/laɪn ʌp/",
+      "vietnamese_meaning": "xếp hàng",
+      "example_sentence": "People are lining up at the ticket counter.",
+      "example_translation": "Mọi người đang xếp hàng tại quầy bán vé.",
+      "collocations": ["line up in a row", "line up for tickets"]
+    },
+    {
+      "id": 21,
+      "word": "Airline staff",
+      "wordForm": "noun phrase",
+      "ipa": "/ˈer.laɪn stæf/",
+      "vietnamese_meaning": "nhân viên hãng hàng không",
+      "example_sentence": "The airline staff are checking the passports.",
+      "example_translation": "Nhân viên hãng hàng không đang kiểm tra hộ chiếu.",
+      "collocations": ["friendly airline staff"]
+    },
+    {
+      "id": 22,
+      "word": "Passenger",
+      "wordForm": "noun",
+      "ipa": "/ˈpæs.ən.dʒər/",
+      "vietnamese_meaning": "hành khách",
+      "example_sentence": "The passengers are waiting for their flight.",
+      "example_translation": "Các hành khách đang chờ đợi chuyến bay của họ.",
+      "collocations": ["flight passenger", "train passenger"]
+    },
+    {
+      "id": 23,
+      "word": "Flight attendant",
+      "wordForm": "noun phrase",
+      "ipa": "/ˈflaɪt əˌten.dənt/",
+      "vietnamese_meaning": "tiếp viên hàng không",
+      "example_sentence": "The flight attendant is serving drinks.",
+      "example_translation": "Tiếp viên hàng không đang phục vụ đồ uống.",
+      "collocations": ["professional flight attendant"]
+    },
+    {
+      "id": 24,
+      "word": "Gesture",
+      "wordForm": "verb/noun",
+      "ipa": "/ˈdʒes.tʃər/",
+      "vietnamese_meaning": "khoa tay, ra hiệu",
+      "example_sentence": "The guide is gesturing toward the entrance.",
+      "example_translation": "Người hướng dẫn viên đang ra hiệu về phía lối vào.",
+      "collocations": ["gesture toward something", "make a gesture"]
+    },
+    {
+      "id": 25,
+      "word": "Storage compartment",
+      "wordForm": "noun phrase",
+      "ipa": "/ˈstɔːr.ɪdʒ kəmˈpɑːrt.mənt/",
+      "vietnamese_meaning": "ngăn chứa đồ, khoang chứa hành lý",
+      "example_sentence": "Please put your bag in the storage compartment.",
+      "example_translation": "Vui lòng đặt túi của bạn vào ngăn chứa đồ.",
+      "collocations": ["overhead storage compartment"]
+    }
+  ]
+}
